@@ -1,0 +1,36 @@
+Nautilus-iDeviceInfo
+--------------------
+
+Nautilus-iDeviceInfo is a nautilus extension showing extended device
+information in the nautilus properties dialog. It shows details like
+serial number, software version, baseband/modem firmware version, and
+storage usage (with nice eye candy).
+
+Dependencies
+------------
+libimobiledevice - http://www.libimobiledevice.org/
+libplist
+libglib-2.0
+libgtk+-2.0
+libcairo
+libpango
+libpangocairo
+libnautilusextension
+
+Optional Dependencies
+---------------------
+libgpod -- to enable detailled Audio/Video information
+
+Installation
+------------
+
+Installation is simple. Just run:
+$ ./autogen.sh
+$ make && sudo make install
+
+Source Code Repository:
+	http://cgit.sukimashita.com/nautilus-ideviceinfo.git/
+
+README updated on:
+	2010-03-21
+

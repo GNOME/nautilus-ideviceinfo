@@ -1,0 +1,127 @@
+# French translation for libimobiledevice
+# Copyright (C) 2010 Nikias Bassen
+# This file is distributed under the same license as the libimobiledevice package.
+# Nikias Bassen <nikias@gmx.li>, 2010.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: libimobiledevice 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-03-20 23:26+0100\n"
+"PO-Revision-Date: 2010-03-19 18:55+0100\n"
+"Last-Translator: Nikias Bassen <nikias@gmx.li>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nautilus-ideviceinfo.c:397
+msgid "Photos"
+msgstr "Photos"
+
+#: ../src/nautilus-ideviceinfo.c:398 ../src/nautilus-ideviceinfo.c:402
+#: ../src/nautilus-ideviceinfo.c:405
+msgid "Apps"
+msgstr "Applications"
+
+#: ../src/nautilus-ideviceinfo.c:401
+msgid "Other"
+msgstr "Autres"
+
+#: ../src/nautilus-ideviceinfo.c:402
+msgid "Audio Files"
+msgstr "Fichiers Audio"
+
+#: ../src/nautilus-ideviceinfo.c:402
+msgid "Video Files"
+msgstr "Fichiers Vidéos"
+
+#: ../src/nautilus-ideviceinfo.c:404
+msgid "Other & Media"
+msgstr "Autres & Media"
+
+#: ../src/nautilus-ideviceinfo.c:409
+msgid "Free"
+msgstr "Libre"
+
+#: ../src/nautilus-ideviceinfo.c:429
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"Impossible d'ouvrir '%s'.\n"
+"Considerez réinstallation d'application."
+
+#: ../src/nautilus-ideviceinfo.c:461
+msgid "Details"
+msgstr "Détails"
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "Adresse Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "General"
+msgstr "Général"
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "ICCID:"
+msgstr "ICCID"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Mobile Carrier:"
+msgstr "Opérateur Mobile:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Model:"
+msgstr "Modèle:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Modem Firmware:"
+msgstr "Firmware du Modem:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Name:"
+msgstr "Nom:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Network"
+msgstr "Résau"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Phone"
+msgstr "Téléphone"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone Number:"
+msgstr "N° Téléphone:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Serial Number:"
+msgstr "N° de Série:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Software Version:"
+msgstr "Version du Logiciel:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Storage"
+msgstr "Mémoire"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "WiFi Address:"
+msgstr "Adresse WiFi:"

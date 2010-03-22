@@ -389,19 +389,19 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		rb_segmented_bar_set_value_formatter(RB_SEGMENTED_BAR(segbar), value_formatter, GSIZE_TO_POINTER((data_total/1048576)));
 
 		if (audio_usage > 0) {
-			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), "Audio", percent_audio, 0, 0, 1, 0.8);
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), "Audio", percent_audio, 0.45, 0.62, 0.81, 1.0);
 		}
 		if (video_usage > 0) {
-			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), "Video", percent_video, 1, 0, 1, 0.8);
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), "Video", percent_video, 0.67, 0.5, 0.66, 1.0);
 		}
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Photos"), percent_camera, 1.0, 1.0, 0, 0.8);
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Apps"), percent_apps, 0, 1, 0, 0.8);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Photos"), percent_camera, 0.98, 0.91, 0.31, 1.0);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Apps"), percent_apps, 0.54, 0.88, 0.2, 1.0);
 		char *new_text;
 #ifdef HAVE_LIBGPOD
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other"), percent_other, 1.0, 0.5, 0, 0.8);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other"), percent_other, 0.98, 0.68, 0.24, 1.0);
 		new_text = g_strdup_printf("%s: %d, %s: %d, %s: %d", _("Audio Files"), number_of_audio, _("Video Files"), number_of_video, _("Apps"), number_of_apps);
 #else
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other & Media"), percent_other, 1.0, 0.5, 0, 0.8);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other & Media"), percent_other, 0.98, 0.68, 0.24, 1.0);
 		new_text = g_strdup_printf("%s: %d", _("Apps"), number_of_apps);
 #endif
 		gtk_label_set_text(lbiPodInfo, new_text);

@@ -10,6 +10,7 @@
       <object class="GtkFrame" id="frGeneral">
         <property name="visible">True</property>
         <property name="label_xalign">0</property>
+        <property name="shadow_type">none</property>
         <child>
           <object class="GtkAlignment" id="alignment1">
             <property name="visible">True</property>
@@ -239,6 +240,9 @@
           <object class="GtkLabel" id="label1">
             <property name="visible">True</property>
             <property name="label" translatable="yes">General</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
           </object>
         </child>
       </object>
@@ -249,6 +253,7 @@
     <child>
       <object class="GtkFrame" id="frPhone">
         <property name="label_xalign">0</property>
+        <property name="shadow_type">none</property>
         <child>
           <object class="GtkAlignment" id="alignment2">
             <property name="visible">True</property>
@@ -494,6 +499,9 @@
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
             <property name="label" translatable="yes">Phone</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
           </object>
         </child>
       </object>
@@ -505,6 +513,7 @@
       <object class="GtkFrame" id="frNetwork">
         <property name="visible">True</property>
         <property name="label_xalign">0</property>
+        <property name="shadow_type">none</property>
         <child>
           <object class="GtkAlignment" id="alignment3">
             <property name="visible">True</property>
@@ -593,6 +602,9 @@
           <object class="GtkLabel" id="label3">
             <property name="visible">True</property>
             <property name="label" translatable="yes">Network</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
           </object>
         </child>
       </object>
@@ -604,6 +616,7 @@
       <object class="GtkFrame" id="frStorage">
         <property name="visible">True</property>
         <property name="label_xalign">0</property>
+        <property name="shadow_type">none</property>
         <child>
           <object class="GtkAlignment" id="alignment4">
             <property name="visible">True</property>
@@ -640,6 +653,9 @@
           <object class="GtkLabel" id="label4">
             <property name="visible">True</property>
             <property name="label" translatable="yes">Storage</property>
+            <attributes>
+              <attribute name="weight" value="bold"/>
+            </attributes>
           </object>
         </child>
       </object>

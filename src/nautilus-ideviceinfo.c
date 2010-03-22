@@ -286,6 +286,8 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			if (val) {
 				gtk_label_set_text(lbIMSI, val);
 				gtk_widget_show(GTK_WIDGET(hbIMSI));
+				gtk_label_set_text(lbCarrier, "");
+				gtk_widget_show(GTK_WIDGET(hbCarrier));
 				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
@@ -326,14 +328,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	if (dict) {
 		plist_free(dict);
 	}
-
-	/* TODO { */
-	if (lbCarrier) {
-		//gtk_label_set_text(lbCarrier, "");
-		gtk_widget_show(GTK_WIDGET(hbCarrier));
-		gtk_widget_show(GTK_WIDGET(frPhone));
-	}
-	/* } TODO */
 
 	/* disk usage */
 	uint64_t data_total = 0;

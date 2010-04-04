@@ -75,6 +75,8 @@ static gboolean ideviceinfo_load_data(gpointer data)
 
 	uint64_t audio_usage = 0;
 	uint64_t video_usage = 0;
+	gboolean is_phone = FALSE;
+	gboolean is_ipod_touch = FALSE;
 #ifdef HAVE_LIBGPOD
 	const char *mount_path = g_object_get_data (G_OBJECT (builder),
 				 "Nautilus_iDeviceInfo::mount_path");
@@ -137,6 +139,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	GtkFrame *frPhone = GTK_FRAME(gtk_builder_get_object (builder, "frPhone"));
 	GtkHBox *hbModemFw = GTK_HBOX(gtk_builder_get_object (builder, "hbModemFw"));
 	GtkLabel *lbModemFw = GTK_LABEL(gtk_builder_get_object (builder, "lbModemFwText"));
+	GtkWidget *vbPhone = GTK_WIDGET(gtk_builder_get_object (builder, "vbPhone"));
 	GtkHBox *hbTelNo = GTK_HBOX(gtk_builder_get_object (builder, "hbTelNo"));
 	GtkLabel *lbTelNo = GTK_LABEL(gtk_builder_get_object (builder, "lbTelNoText"));
 	GtkHBox *hbIMEI = GTK_HBOX(gtk_builder_get_object (builder, "hbIMEI"));
@@ -195,6 +198,8 @@ static gboolean ideviceinfo_load_data(gpointer data)
 					}
 				}
 			}
+			if (g_str_has_prefix(devtype, "iPod"))
+				is_ipod_touch = TRUE;
 			node = plist_dict_get_item(dict, "ModelNumber");
 			if (node) {
 				plist_get_string_val(node, &val2);
@@ -219,6 +224,13 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			char *str = NULL;
 			char *val2 = NULL;
 			plist_get_string_val(node, &val);
+
+			/* No Bluetooth for 2.x OS for iPod Touch */
+			if (is_ipod_touch && g_str_has_prefix(val, "2."))
+				gtk_widget_hide(GTK_WIDGET(hbBTMac));
+			else
+				gtk_widget_show(GTK_WIDGET(hbBTMac));
+
 			node = plist_dict_get_item(dict, "BuildVersion");
 			if (node) {
 				plist_get_string_val(node, &val2);
@@ -262,6 +274,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
+				is_phone = TRUE;
 				gtk_label_set_text(lbTelNo, val);
 				gtk_widget_show(GTK_WIDGET(hbTelNo));
 				gtk_widget_show(GTK_WIDGET(frPhone));
@@ -273,6 +286,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
+				is_phone = TRUE;
 				gtk_label_set_text(lbIMEI, val);
 				gtk_widget_show(GTK_WIDGET(hbIMEI));
 				gtk_widget_show(GTK_WIDGET(frPhone));
@@ -284,6 +298,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
+				is_phone = TRUE;
 				gtk_label_set_text(lbIMSI, val);
 				gtk_widget_show(GTK_WIDGET(hbIMSI));
 				gtk_label_set_text(lbCarrier, "");
@@ -309,7 +324,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			plist_get_string_val(node, &val);
 			if (val) {
 				gtk_label_set_text(lbBTMac, val);
-				gtk_widget_show(GTK_WIDGET(hbBTMac));
 				free(val);
 			}
 			val = NULL;
@@ -323,6 +337,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 				free(val);
 			}
 			val = NULL;
+		}
+		if (!is_phone) {
+			gtk_widget_hide(GTK_WIDGET(vbPhone));
 		}
 	}
 	if (dict) {

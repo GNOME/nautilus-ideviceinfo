@@ -272,7 +272,16 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
+				unsigned int i;
 				is_phone = TRUE;
+				/* replace spaces, otherwise the telephone
+				 * number will be mixed up when displaying
+				 * in RTL mode */
+				for (i = 0; i < strlen(val); i++) {
+					if (val[i] == ' ') {
+						val[i] = '-';
+					}
+				}
 				gtk_label_set_text(lbTelNo, val);
 				gtk_widget_show(GTK_WIDGET(hbTelNo));
 				free(val);

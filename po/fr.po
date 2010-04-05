@@ -1,14 +1,14 @@
-# French translation for libimobiledevice
+# French translation for nautilus-ideviceinfo
 # Copyright (C) 2010 Nikias Bassen
-# This file is distributed under the same license as the libimobiledevice package.
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
 # Nikias Bassen <nikias@gmx.li>, 2010.
 #
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libimobiledevice 1.0\n"
+"Project-Id-Version: nautilus-ideviceinfo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-20 23:26+0100\n"
+"POT-Creation-Date: 2010-04-05 08:39+0200\n"
 "PO-Revision-Date: 2010-03-19 18:55+0100\n"
 "Last-Translator: Nikias Bassen <nikias@gmx.li>\n"
 "Language-Team: \n"
@@ -17,35 +17,43 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../src/nautilus-ideviceinfo.c:397
+msgid "Audio"
+msgstr "Audio"
+
+#: ../src/nautilus-ideviceinfo.c:400
+msgid "Video"
+msgstr "Vidéos"
+
+#: ../src/nautilus-ideviceinfo.c:402
 msgid "Photos"
 msgstr "Photos"
 
-#: ../src/nautilus-ideviceinfo.c:398 ../src/nautilus-ideviceinfo.c:402
-#: ../src/nautilus-ideviceinfo.c:405
+#: ../src/nautilus-ideviceinfo.c:403 ../src/nautilus-ideviceinfo.c:407
+#: ../src/nautilus-ideviceinfo.c:410
 msgid "Apps"
 msgstr "Applications"
 
-#: ../src/nautilus-ideviceinfo.c:401
+#: ../src/nautilus-ideviceinfo.c:406
 msgid "Other"
 msgstr "Autres"
 
-#: ../src/nautilus-ideviceinfo.c:402
+#: ../src/nautilus-ideviceinfo.c:407
 msgid "Audio Files"
 msgstr "Fichiers Audio"
 
-#: ../src/nautilus-ideviceinfo.c:402
+#: ../src/nautilus-ideviceinfo.c:407
 msgid "Video Files"
 msgstr "Fichiers Vidéos"
 
-#: ../src/nautilus-ideviceinfo.c:404
+#: ../src/nautilus-ideviceinfo.c:409
 msgid "Other & Media"
 msgstr "Autres & Media"
 
-#: ../src/nautilus-ideviceinfo.c:409
+#: ../src/nautilus-ideviceinfo.c:414
 msgid "Free"
 msgstr "Libre"
 
-#: ../src/nautilus-ideviceinfo.c:429
+#: ../src/nautilus-ideviceinfo.c:434
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
@@ -54,7 +62,7 @@ msgstr ""
 "Impossible d'ouvrir '%s'.\n"
 "Considerez réinstallation d'application."
 
-#: ../src/nautilus-ideviceinfo.c:461
+#: ../src/nautilus-ideviceinfo.c:466
 msgid "Details"
 msgstr "Détails"
 

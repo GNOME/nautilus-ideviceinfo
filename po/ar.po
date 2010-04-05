@@ -1,0 +1,135 @@
+# Arabic translation for nautilus-ideviceinfo
+# Copyright (C) 2010 Hanéne Samara (حنان سمارة)
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Hanéne Samara <samara@tzi.de>, 2010
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-04-05 08:39+0200\n"
+"PO-Revision-Date: 2010-03-19 18:55+0100\n"
+"Last-Translator: Hanéne Samara <samara@tzi.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/nautilus-ideviceinfo.c:397
+msgid "Audio"
+msgstr "الأغاني"
+
+#: ../src/nautilus-ideviceinfo.c:400
+msgid "Video"
+msgstr "اﻷفلام"
+
+#: ../src/nautilus-ideviceinfo.c:402
+msgid "Photos"
+msgstr "الصور"
+
+#: ../src/nautilus-ideviceinfo.c:403 ../src/nautilus-ideviceinfo.c:407
+#: ../src/nautilus-ideviceinfo.c:410
+msgid "Apps"
+msgstr "التطبيقات"
+
+#: ../src/nautilus-ideviceinfo.c:406
+msgid "Other"
+msgstr "أخرى"
+
+#: ../src/nautilus-ideviceinfo.c:407
+msgid "Audio Files"
+msgstr "ملفات الأغاني"
+
+#: ../src/nautilus-ideviceinfo.c:407
+msgid "Video Files"
+msgstr "ملفات اﻷفلام"
+
+#: ../src/nautilus-ideviceinfo.c:409
+msgid "Other & Media"
+msgstr "ملفات أخرى و الوسائط"
+
+#: ../src/nautilus-ideviceinfo.c:414
+msgid "Free"
+msgstr "خالي"
+
+#: ../src/nautilus-ideviceinfo.c:434
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+".'%s' خطأ عند تحميل\n"
+"إعادة تثبيت هذا التطبيق قد يساعد."
+
+#: ../src/nautilus-ideviceinfo.c:466
+msgid "Details"
+msgstr "التفاصيل"
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr ":Bluetooth عنوان"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "General"
+msgstr "عام"
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "ICCID:"
+msgstr ":ICCID"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "IMEI:"
+msgstr ":IMEI"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMSI:"
+msgstr ":IMSI"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Mobile Carrier:"
+msgstr "شركة الاتصالات:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Model:"
+msgstr "النموذج:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Modem Firmware:"
+msgstr ":(Firmware) المودم"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Name:"
+msgstr "الاسم:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Network"
+msgstr "الشبكة"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Phone"
+msgstr "الهاتف"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone Number:"
+msgstr "رقم الهاتف:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Serial Number:"
+msgstr "رقم التسلسلي:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Software Version:"
+msgstr "اﻹصدار:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Storage"
+msgstr "إشغال الذاكرة"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "UUID:"
+msgstr ":UUID"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "WiFi Address:"
+msgstr ":WiFi عنوان"

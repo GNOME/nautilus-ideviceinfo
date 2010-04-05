@@ -136,7 +136,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 
 	GtkLabel *lbDeviceVersion = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceVersionText"));
 	GtkLabel *lbDeviceSerial = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceSerialText"));
-	GtkFrame *frPhone = GTK_FRAME(gtk_builder_get_object (builder, "frPhone"));
 	GtkHBox *hbModemFw = GTK_HBOX(gtk_builder_get_object (builder, "hbModemFw"));
 	GtkLabel *lbModemFw = GTK_LABEL(gtk_builder_get_object (builder, "lbModemFwText"));
 	GtkWidget *vbPhone = GTK_WIDGET(gtk_builder_get_object (builder, "vbPhone"));
@@ -265,7 +264,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			if (val) {
 				gtk_label_set_text(lbModemFw, val);
 				gtk_widget_show(GTK_WIDGET(hbModemFw));
-				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
 			val = NULL;
@@ -277,7 +275,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 				is_phone = TRUE;
 				gtk_label_set_text(lbTelNo, val);
 				gtk_widget_show(GTK_WIDGET(hbTelNo));
-				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
 			val = NULL;
@@ -289,7 +286,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 				is_phone = TRUE;
 				gtk_label_set_text(lbIMEI, val);
 				gtk_widget_show(GTK_WIDGET(hbIMEI));
-				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
 			val = NULL;
@@ -303,7 +299,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 				gtk_widget_show(GTK_WIDGET(hbIMSI));
 				gtk_label_set_text(lbCarrier, "");
 				gtk_widget_show(GTK_WIDGET(hbCarrier));
-				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
 			val = NULL;
@@ -314,7 +309,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			if (val) {
 				gtk_label_set_text(lbICCID, val);
 				gtk_widget_show(GTK_WIDGET(hbICCID));
-				gtk_widget_show(GTK_WIDGET(frPhone));
 				free(val);
 			}
 			val = NULL;

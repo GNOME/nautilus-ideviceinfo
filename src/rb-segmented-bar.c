@@ -472,11 +472,12 @@ static void rb_segmented_bar_render_segments (RBSegmentedBar *bar,
 	gdouble last;
 	GList *it;
 	RBSegmentedBarPrivate *priv;
+	gboolean is_rtl = (gtk_widget_get_direction(GTK_WIDGET(bar)) == GTK_TEXT_DIR_RTL);
 
 	last = 0.0;
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (bar);
 	grad = cairo_pattern_create_linear (0, 0, width, 0);
-	for (it = priv->segments; it != NULL; it = it->next) {
+	for (it = is_rtl ? g_list_last(priv->segments) : priv->segments; it != NULL; it = is_rtl ? it->prev : it->next) {
 		Segment *segment = (Segment *)it->data;
 		if (segment->percent > 0) {
 			gdouble percent = (segment->percent < 0.009) ? 0.009 : segment->percent;
@@ -649,6 +650,7 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 	GdkColor *gdk_color;
 	int x = 0;
 	GList *it;
+	gboolean is_rtl = (gtk_widget_get_direction(GTK_WIDGET(bar)) == GTK_TEXT_DIR_RTL);
 
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (RB_SEGMENTED_BAR (bar));
 
@@ -661,6 +663,9 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 	text_color.blue = gdk_color->blue / 65535.0;
 	text_color.alpha = 1.0;
 	layout = NULL;
+	if (is_rtl) {
+		x = priv->layout_width - priv->segment_box_size;
+	}
 	for (it = priv->segments; it != NULL; it = it->next) {
 		cairo_pattern_t *grad;
 		int layout_width;
@@ -684,7 +689,10 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 		cairo_stroke (context);
 		cairo_pattern_destroy (grad);
 
-		x += priv->segment_box_size + priv->segment_box_spacing;
+		if (is_rtl)
+			x -= (segment->layout_width + priv->segment_box_spacing);
+		else
+			x += priv->segment_box_size + priv->segment_box_spacing;
 
 		layout = create_adapt_layout (GTK_WIDGET (bar), layout,
 					      FALSE, TRUE);
@@ -692,7 +700,7 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 		pango_layout_get_pixel_size (layout,
 					     &layout_width, &layout_height);
 
-		cairo_move_to (context, x, 0);
+		cairo_move_to (context, (is_rtl) ? x+((int)segment->layout_width - (int)layout_width) : x, 0);
 		cairo_set_source_rgba (context,
 				       text_color.red, text_color.green,
 				       text_color.blue, 0.9);
@@ -707,14 +715,25 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 		pango_layout_set_text (layout, value_str, -1);
 		g_free (value_str);
 
-		cairo_move_to (context, x, layout_height);
+		if (is_rtl && ((int)layout_width >= (int)segment->layout_width)) {
+			int value_layout_width = layout_width;
+			int value_layout_height = layout_height;
+			pango_layout_get_pixel_size (layout,
+					     &value_layout_width, &value_layout_height);
+			cairo_move_to (context, x+(segment->layout_width-value_layout_width), layout_height);
+		} else {
+			cairo_move_to (context, x, layout_height);
+		}
 		cairo_set_source_rgba (context,
 				       text_color.red, text_color.green,
 				       text_color.blue, 0.75);
 		pango_cairo_show_layout (context, layout);
 		cairo_fill (context);
 
-		x += segment->layout_width + priv->segment_label_spacing;
+		if (is_rtl)
+			x -= (priv->segment_box_size + priv->segment_label_spacing);
+		else
+			x += segment->layout_width + priv->segment_label_spacing;
 	}
 	g_object_unref (G_OBJECT (layout));
 }

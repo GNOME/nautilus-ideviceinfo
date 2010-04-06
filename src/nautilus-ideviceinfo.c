@@ -32,6 +32,7 @@
 
 #include <libimobiledevice/libimobiledevice.h>
 #include <libimobiledevice/lockdown.h>
+#include <libimobiledevice/installation_proxy.h>
 
 #include <plist/plist.h>
 
@@ -381,11 +382,22 @@ static gboolean ideviceinfo_load_data(gpointer data)
 
 	/* get number of applications */
 	uint32_t number_of_apps = 0;
-	dict = NULL;
-	if ((lockdownd_get_value(client, "com.apple.iTunes", NULL, &dict) == LOCKDOWN_E_SUCCESS) && dict) {
-		node = plist_dict_get_item(dict, "SyncedApplications");
-		if (node) {
-			number_of_apps = plist_array_get_size(node);
+	uint16_t iport = 0;
+
+	if ((lockdownd_start_service(client, "com.apple.mobile.installation_proxy", &iport) == LOCKDOWN_E_SUCCESS) && iport) {
+		instproxy_client_t ipc = NULL;
+		if (instproxy_client_new(dev, iport, &ipc) == INSTPROXY_E_SUCCESS) {
+			plist_t opts = instproxy_client_options_new();
+			plist_t apps = NULL;
+			instproxy_client_options_add(opts, "ApplicationType", "User", NULL);
+			if ((instproxy_browse(ipc, opts, &apps) == INSTPROXY_E_SUCCESS) && apps) {
+				number_of_apps = plist_array_get_size(apps);
+			}
+			if (apps) {
+				plist_free(apps);
+			}
+			instproxy_client_options_free(opts);
+			instproxy_client_free(ipc);
 		}
 	}
 

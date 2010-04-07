@@ -31,30 +31,10 @@
 
 #include <libnautilus-extension/nautilus-property-page-provider.h>
 
-#include <libimobiledevice/libimobiledevice.h>
-#include <libimobiledevice/lockdown.h>
-#include <libimobiledevice/installation_proxy.h>
-
-#include <plist/plist.h>
-
 #include <glib.h>
 #include <glib/gi18n-lib.h>
 #include <gio/gio.h>
 #include <gtk/gtk.h>
-
-#include <errno.h>
-#include <fcntl.h>
-#include <stdlib.h> /* for atoi */
-#include <string.h> /* for strcmp */
-#include <sys/stat.h>
-
-#ifdef HAVE_LIBGPOD
-#include <gpod/itdb.h>
-#endif
-
-#include "rb-segmented-bar.h"
-
-static const char UIFILE[] = NAUTILUS_EXTENSION_DIR "/nautilus-ideviceinfo.ui";
 
 static void nautilus_ideviceinfo_instance_init (Nautilus_iDeviceInfo      *cvs);
 static void nautilus_ideviceinfo_class_init    (Nautilus_iDeviceInfoClass *class);

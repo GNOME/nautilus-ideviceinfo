@@ -79,10 +79,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	uint32_t number_of_video = 0;
 	uint64_t media_usage = 0;
 	Itdb_iTunesDB *itdb = itdb_parse(mount_path, NULL);
-	GList *tracks = itdb->tracks;
-	guint t = 0;
-	for (t = 0; t < g_list_length(tracks); t++) {
-		Itdb_Track *track = g_list_nth_data(tracks, t);
+	GList *it;
+	for (it = itdb->tracks; it != NULL; it = it->next) {
+		Itdb_Track *track = (Itdb_Track *)it->data;
 		media_usage += track->size;
 		switch (track->mediatype) {
 			case 1:

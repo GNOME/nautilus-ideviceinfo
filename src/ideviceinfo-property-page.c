@@ -84,9 +84,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		Itdb_Track *track = (Itdb_Track *)it->data;
 		media_usage += track->size;
 		switch (track->mediatype) {
-			case 1:
-			case 4:
-			case 8:
+			case ITDB_MEDIATYPE_AUDIO:
+			case ITDB_MEDIATYPE_PODCAST:
+			case ITDB_MEDIATYPE_AUDIOBOOK:
 				audio_usage += track->size;
 				number_of_audio++;
 				break;

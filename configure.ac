@@ -23,9 +23,9 @@ LIBGPOD_REQS=0.7.90
 
 # Checks for libraries.
 PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
-		          libglib2, glib-2.0 >= $GLIB2_REQS
-			  libplist, libplist >= $LIBPLIST_REQS
-			  libgtk, gtk+-2.0 >= $GTK2_REQS)
+		          glib-2.0 >= $GLIB2_REQS
+			  libplist >= $LIBPLIST_REQS
+			  gtk+-2.0 >= $GTK2_REQS)
 PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= $NAUTILUS_REQS)
 PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=yes, enable_libgpod=no)
 

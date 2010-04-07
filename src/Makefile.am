@@ -15,6 +15,10 @@ INCLUDES = \
 	$(libgpod_CFLAGS) \
 	$(libnautilusextension_CFLAGS)
 
+noinst_LTLIBRARIES = libideviceinfo.la
+libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h
+libideviceinfo_la_LIBADD = $(libimobiledevice_LIBS) $(libglib2_LIBS) $(libgtk_LIBS) $(libpango_LIBS) $(libcairo_LIBS) $(libpangocairo_LIBS) $(libgpod_LIBS)
+
 nautilus_extensiondir=$(NAUTILUS_EXTENSION_DIR)
 
 nautilus_extension_LTLIBRARIES=libnautilus-ideviceinfo.la
@@ -27,7 +31,7 @@ libnautilus_ideviceinfo_la_SOURCES = \
 	nautilus-idevinfo.c
 
 libnautilus_ideviceinfo_la_LDFLAGS = -module -avoid-version
-libnautilus_ideviceinfo_la_LIBADD  = $(libimobiledevice_LIBS) $(libglib2_LIBS) $(libgtk_LIBS) $(libpango_LIBS) $(libcairo_LIBS) $(libpangocairo_LIBS) $(libgpod_LIBS) $(libnautilusextension_LIBS)
+libnautilus_ideviceinfo_la_LIBADD  = $(libnautilusextension_LIBS) libideviceinfo.la
 
 nautilus_extension_DATA = nautilus-ideviceinfo.ui
 EXTRA_DIST=$(nautilus_extension_DATA)

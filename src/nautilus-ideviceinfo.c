@@ -45,7 +45,6 @@
 #include <fcntl.h>
 #include <stdlib.h> /* for atoi */
 #include <string.h> /* for strcmp */
-#include <unistd.h> /* for chdir */
 #include <sys/stat.h>
 
 #ifdef HAVE_LIBGPOD

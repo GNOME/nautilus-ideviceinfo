@@ -26,7 +26,7 @@
 
 #include <locale.h>
 
-#include "nautilus-ideviceinfo.h"
+#include "ideviceinfo-property-page.h"
 
 #include <libnautilus-extension/nautilus-property-page-provider.h>
 
@@ -54,11 +54,6 @@
 #include "rb-segmented-bar.h"
 
 static const char UIFILE[] = NAUTILUS_EXTENSION_DIR "/nautilus-ideviceinfo.ui";
-
-static void nautilus_ideviceinfo_instance_init (Nautilus_iDeviceInfo      *cvs);
-static void nautilus_ideviceinfo_class_init    (Nautilus_iDeviceInfoClass *class);
-
-static GType ideviceinfo_type = 0;
 
 static gchar *value_formatter(gdouble percent, gpointer user_data)
 {

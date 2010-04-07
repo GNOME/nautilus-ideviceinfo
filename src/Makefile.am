@@ -17,7 +17,7 @@ INCLUDES = \
 
 noinst_LTLIBRARIES = libideviceinfo.la
 libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h
-libideviceinfo_la_LIBADD = $(libimobiledevice_LIBS) $(libglib2_LIBS) $(libgtk_LIBS) $(libpango_LIBS) $(libcairo_LIBS) $(libpangocairo_LIBS) $(libgpod_LIBS)
+libideviceinfo_la_LIBADD = $(WIDGET_LIBS) $(libgpod_LIBS)
 
 nautilus_extensiondir=$(NAUTILUS_EXTENSION_DIR)
 

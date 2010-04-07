@@ -14,16 +14,20 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_LIBTOOL
 
+LIBIMOBILE_REQS=0.9.7
+GLIB2_REQS=2.14.1
+LIBPLIST_REQS=0.15
+GTK2_REQS=2.16
+NAUTILUS_REQS=2.21.2
+LIBGPOD_REQS=0.7.90
+
 # Checks for libraries.
-PKG_CHECK_MODULES(libimobiledevice, libimobiledevice-1.0 >= 0.9.7)
-PKG_CHECK_MODULES(libglib2, glib-2.0 >= 2.14.1)
-PKG_CHECK_MODULES(libplist, libplist >= 0.15)
-PKG_CHECK_MODULES(libgtk, gtk+-2.0 >= 2.16)
-PKG_CHECK_MODULES(libcairo, cairo >= 1.8.8)
-PKG_CHECK_MODULES(libpango, pango >= 1.26.2)
-PKG_CHECK_MODULES(libpangocairo, pangocairo >= 1.26.2)
-PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= 2.21.2)
-PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= 0.7.90, enable_libgpod=yes, enable_libgpod=no)
+PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
+		          libglib2, glib-2.0 >= $GLIB2_REQS
+			  libplist, libplist >= $LIBPLIST_REQS
+			  libgtk, gtk+-2.0 >= $GTK2_REQS)
+PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= $NAUTILUS_REQS)
+PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=yes, enable_libgpod=no)
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdint.h stdlib.h string.h])

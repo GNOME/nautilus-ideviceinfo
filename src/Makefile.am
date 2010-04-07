@@ -16,16 +16,18 @@ INCLUDES = \
 	$(libnautilusextension_CFLAGS)
 
 noinst_LTLIBRARIES = libideviceinfo.la
-libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h
+libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h rb-segmented-bar.h rb-segmented-bar.c
 libideviceinfo_la_LIBADD = $(WIDGET_LIBS) $(libgpod_LIBS)
+
+noinst_PROGRAMS = test-property-tab
+test_property_tab_SOURCES = test-property-tab.c
+test_property_tab_LDADD = libideviceinfo.la
 
 nautilus_extensiondir=$(NAUTILUS_EXTENSION_DIR)
 
 nautilus_extension_LTLIBRARIES=libnautilus-ideviceinfo.la
 
 libnautilus_ideviceinfo_la_SOURCES = \
-	rb-segmented-bar.h \
-	rb-segmented-bar.c \
 	nautilus-ideviceinfo.h \
 	nautilus-ideviceinfo.c \
 	nautilus-idevinfo.c

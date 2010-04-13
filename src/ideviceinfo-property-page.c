@@ -132,24 +132,26 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	uint32_t number_of_video = 0;
 	uint64_t media_usage = 0;
 	Itdb_iTunesDB *itdb = itdb_parse(mount_path, NULL);
-	GList *it;
-	for (it = itdb->tracks; it != NULL; it = it->next) {
-		Itdb_Track *track = (Itdb_Track *)it->data;
-		media_usage += track->size;
-		switch (track->mediatype) {
-			case ITDB_MEDIATYPE_AUDIO:
-			case ITDB_MEDIATYPE_PODCAST:
-			case ITDB_MEDIATYPE_AUDIOBOOK:
-				audio_usage += track->size;
-				number_of_audio++;
-				break;
-			default:
-				video_usage += track->size;
-				number_of_video++;
-				break;
+	if (itdb) {
+		GList *it;
+		for (it = itdb->tracks; it != NULL; it = it->next) {
+			Itdb_Track *track = (Itdb_Track *)it->data;
+			media_usage += track->size;
+			switch (track->mediatype) {
+				case ITDB_MEDIATYPE_AUDIO:
+				case ITDB_MEDIATYPE_PODCAST:
+				case ITDB_MEDIATYPE_AUDIOBOOK:
+					audio_usage += track->size;
+					number_of_audio++;
+					break;
+				default:
+					video_usage += track->size;
+					number_of_video++;
+					break;
+			}
 		}
+		itdb_free(itdb);
 	}
-	itdb_free(itdb);
 #endif
 
 	idevice_t dev = NULL;

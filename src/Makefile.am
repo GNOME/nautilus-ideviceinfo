@@ -13,11 +13,13 @@ INCLUDES = \
 	$(libcairo_CFLAGS) \
 	$(libpangocairo_CFLAGS) \
 	$(libgpod_CFLAGS) \
+	$(libxml_CFLAGS) \
+	$(providerinfo_CFLAGS) \
 	$(libnautilusextension_CFLAGS)
 
 noinst_LTLIBRARIES = libideviceinfo.la
 libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h rb-segmented-bar.h rb-segmented-bar.c
-libideviceinfo_la_LIBADD = $(WIDGET_LIBS) $(libgpod_LIBS)
+libideviceinfo_la_LIBADD = $(WIDGET_LIBS) $(libgpod_LIBS) $(libxml_LIBS)
 
 noinst_PROGRAMS = test-property-tab
 test_property_tab_SOURCES = test-property-tab.c

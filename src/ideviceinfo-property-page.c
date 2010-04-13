@@ -51,6 +51,10 @@
 #include <gpod/itdb.h>
 #endif
 
+#include <libxml/tree.h>
+#include <libxml/parser.h>
+#include <libxml/xpath.h>
+
 #include "rb-segmented-bar.h"
 
 static const char UIFILE[] = NAUTILUS_EXTENSION_DIR "/nautilus-ideviceinfo.ui";
@@ -59,6 +63,55 @@ static gchar *value_formatter(gdouble percent, gpointer user_data)
 {
 	gsize total_size = GPOINTER_TO_SIZE(user_data);
 	return g_format_size_for_display (percent * total_size * 1048576);
+}
+
+static char *get_carrier_from_imsi(const char *imsi)
+{
+	char *carrier = NULL;
+	xmlDocPtr doc;
+	xmlXPathContextPtr xpathCtx;
+	xmlXPathObjectPtr xpathObj;
+	char xpathExpr[] = "//network-id[@mcc=\"000\" and @mnc=\"00\"]/../../name";
+;
+	int omcc = 19;
+	int omnc = 34;
+
+	if (!imsi || (strlen(imsi) < 5)) {
+		return NULL;
+	}
+
+	doc = xmlParseFile(MOBILE_BROADBAND_PROVIDER_INFO);
+	if (!doc) {
+		return NULL;
+	}
+	xpathCtx = xmlXPathNewContext(doc);
+	if (!xpathCtx) {
+		xmlFreeDoc(doc);
+		return NULL;
+	}
+
+	strncpy(xpathExpr+omcc, imsi, 3);
+	strncpy(xpathExpr+omnc, imsi+3, 2);
+
+	xpathObj = xmlXPathEvalExpression(BAD_CAST xpathExpr, xpathCtx);
+	if(xpathObj == NULL) {
+		xmlXPathFreeContext(xpathCtx); 
+		xmlFreeDoc(doc); 
+		return NULL;
+	}
+
+	xmlNodeSet *nodes = xpathObj->nodesetval;
+	if (nodes && (nodes->nodeNr >= 1) && (nodes->nodeTab[0]->type == XML_ELEMENT_NODE)) {
+		xmlChar *content = xmlNodeGetContent(nodes->nodeTab[0]);
+		carrier = strdup((char*)content);
+		xmlFree(content);
+	}
+
+	xmlXPathFreeObject(xpathObj);
+	xmlXPathFreeContext(xpathCtx);
+	xmlFreeDoc(doc);
+
+	return carrier;
 }
 
 static gboolean ideviceinfo_load_data(gpointer data)
@@ -297,10 +350,17 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
+				char *carrier;
 				is_phone = TRUE;
 				gtk_label_set_text(lbIMSI, val);
 				gtk_widget_show(GTK_WIDGET(hbIMSI));
-				gtk_label_set_text(lbCarrier, "");
+				carrier = get_carrier_from_imsi(val);
+				if (carrier) {
+					gtk_label_set_text(lbCarrier, carrier);
+					free(carrier);
+				} else {
+					gtk_label_set_text(lbCarrier, "");
+				}
 				gtk_widget_show(GTK_WIDGET(hbCarrier));
 				free(val);
 			}

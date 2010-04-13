@@ -20,6 +20,7 @@ LIBPLIST_REQS=0.15
 GTK2_REQS=2.16
 NAUTILUS_REQS=2.21.2
 LIBGPOD_REQS=0.7.90
+LIBXML_REQS=2.6.30
 
 # Checks for libraries.
 PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
@@ -28,6 +29,8 @@ PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
 			  gtk+-2.0 >= $GTK2_REQS)
 PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= $NAUTILUS_REQS)
 PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=yes, enable_libgpod=no)
+PKG_CHECK_MODULES(libxml, libxml-2.0 >= $LIBXML_REQS)
+PKG_CHECK_MODULES(providerinfo, mobile-broadband-provider-info)
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdint.h stdlib.h string.h])

@@ -51,9 +51,11 @@
 #include <gpod/itdb.h>
 #endif
 
+#ifdef HAVE_MOBILE_PROVIDER_INFO
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 #include <libxml/xpath.h>
+#endif
 
 #include "rb-segmented-bar.h"
 
@@ -65,6 +67,7 @@ static gchar *value_formatter(gdouble percent, gpointer user_data)
 	return g_format_size_for_display (percent * total_size * 1048576);
 }
 
+#ifdef HAVE_MOBILE_PROVIDER_INFO
 static char *get_carrier_from_imsi(const char *imsi)
 {
 	char *carrier = NULL;
@@ -113,6 +116,7 @@ static char *get_carrier_from_imsi(const char *imsi)
 
 	return carrier;
 }
+#endif
 
 static gboolean ideviceinfo_load_data(gpointer data)
 {
@@ -355,10 +359,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
-				char *carrier;
 				is_phone = TRUE;
-				gtk_label_set_text(lbIMSI, val);
-				gtk_widget_show(GTK_WIDGET(hbIMSI));
+#ifdef HAVE_MOBILE_PROVIDER_INFO
+				char *carrier;
 				carrier = get_carrier_from_imsi(val);
 				if (carrier) {
 					gtk_label_set_text(lbCarrier, carrier);
@@ -367,6 +370,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 					gtk_label_set_text(lbCarrier, "");
 				}
 				gtk_widget_show(GTK_WIDGET(hbCarrier));
+#endif
+				gtk_label_set_text(lbIMSI, val);
+				gtk_widget_show(GTK_WIDGET(hbIMSI));
 				free(val);
 			}
 			val = NULL;

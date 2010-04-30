@@ -30,7 +30,7 @@ PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
 PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= $NAUTILUS_REQS)
 PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=yes, enable_libgpod=no)
 PKG_CHECK_MODULES(libxml, libxml-2.0 >= $LIBXML_REQS)
-PKG_CHECK_MODULES(providerinfo, mobile-broadband-provider-info)
+PKG_CHECK_MODULES(providerinfo, mobile-broadband-provider-info, enable_carrier_lookup=yes, enable_carrier_lookup=no)
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdint.h stdlib.h string.h])
@@ -54,6 +54,10 @@ if test "x$enable_libgpod" = "xyes"; then
 	AC_SUBST(libgpod_LIBS)
 fi
 AM_CONDITIONAL(HAVE_LIBGPOD, test x"$enable_libgpod" = xyes)
+
+if test "x$enable_carrier_lookup" = "xyes"; then
+	AC_DEFINE(HAVE_MOBILE_PROVIDER_INFO, 1, [Define if mobile-broadband-provider-info is available])
+fi
 
 NAUTILUS_EXTENSION_DIR=`$PKG_CONFIG --variable=extensiondir libnautilus-extension`
 AC_SUBST(NAUTILUS_EXTENSION_DIR)
@@ -81,6 +85,9 @@ Configuration for $PACKAGE $VERSION:
 -------------------------------------------
 
   Installation directory: $NAUTILUS_EXTENSION_DIR
+
+  Use libgpod:		$enable_libgpod
+  Show mobile carrier:	$enable_carrier_lookup
 
   Now type 'make' to build $PACKAGE $VERSION,
   and then 'make install' for installation.

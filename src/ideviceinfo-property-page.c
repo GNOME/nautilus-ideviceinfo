@@ -206,6 +206,8 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	GtkLabel *lbBTMac = GTK_LABEL(gtk_builder_get_object (builder, "lbBTMacText"));
 	GtkLabel *lbiPodInfo = GTK_LABEL(gtk_builder_get_object (builder, "lbiPodInfo"));
 
+	GtkLabel *lbStorage = GTK_LABEL(gtk_builder_get_object (builder, "label4"));
+
 	if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(dev, &client, "nautilus-ideviceinfo")) {
 		idevice_free(dev);
 		goto leave;
@@ -411,9 +413,14 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	uint64_t camera_usage = 0;
 	uint64_t app_usage = 0;
 	uint64_t other_usage = 0; 
+	uint64_t disk_total = 0;
 
 	dict = NULL;
 	if ((lockdownd_get_value(client, "com.apple.disk_usage", NULL, &dict) == LOCKDOWN_E_SUCCESS) && dict) {
+		node = plist_dict_get_item(dict, "TotalDiskCapacity");
+		if (node) {
+			plist_get_uint_val(node, &disk_total);
+		}
 		node = plist_dict_get_item(dict, "TotalDataCapacity");
 		if (node) {
 			plist_get_uint_val(node, &data_total);
@@ -455,6 +462,16 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			instproxy_client_free(ipc);
 		}
 	}
+
+	/* set disk usage information */
+	char *storage_formatted_size = NULL;
+	char *markup = NULL;
+	storage_formatted_size = g_format_size_for_display (disk_total);
+	markup = g_markup_printf_escaped ("<b>%s</b> (%s)", _("Storage"), storage_formatted_size);
+	gtk_label_set_markup(lbStorage, markup);
+	g_free(storage_formatted_size);
+	g_free(markup);
+
 
 	if (data_total > 0) {
 		other_usage = (data_total - data_free) - (audio_usage + video_usage + camera_usage + app_usage);

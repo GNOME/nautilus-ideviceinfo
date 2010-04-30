@@ -72,7 +72,7 @@ static char *get_carrier_from_imsi(const char *imsi)
 	xmlXPathContextPtr xpathCtx;
 	xmlXPathObjectPtr xpathObj;
 	char xpathExpr[] = "//network-id[@mcc=\"000\" and @mnc=\"00\"]/../../name";
-;
+
 	int omcc = 19;
 	int omnc = 34;
 

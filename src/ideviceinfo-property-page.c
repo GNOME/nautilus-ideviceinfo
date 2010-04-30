@@ -227,13 +227,14 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		node = plist_dict_get_item(dict, "ProductType");
 		if (node) {
 			char *devtype = NULL;
-			const char *devtypes[6][2] = {
+			const char *devtypes[7][2] = {
 			    {"iPhone1,1", "iPhone"},
 			    {"iPhone1,2", "iPhone 3G"},
 			    {"iPhone2,1", "iPhone 3GS"},
 			    {"iPod1,1", "iPod Touch"},
-			    {"iPod2,1", "iPod touch (2G)"},
-			    {"iPod3,1", "iPod Touch (3G)"}
+			    {"iPod2,1", "iPod Touch (2G)"},
+			    {"iPod3,1", "iPod Touch (3G)"},
+			    {"iPad1,1", "iPad"}
 			};
 			char *str = NULL;
 			char *val2 = NULL;

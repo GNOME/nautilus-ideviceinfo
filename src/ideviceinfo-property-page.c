@@ -324,68 +324,84 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			}
 			val = NULL;
 		}
-		node = plist_dict_get_item(dict, "PhoneNumber");
-		if (node) {
-			plist_get_string_val(node, &val);
-			if (val) {
-				unsigned int i;
-				is_phone = TRUE;
-				/* replace spaces, otherwise the telephone
-				 * number will be mixed up when displaying
-				 * in RTL mode */
-				for (i = 0; i < strlen(val); i++) {
-					if (val[i] == ' ') {
-						val[i] = '-';
+		if (!is_ipod_touch) {
+			node = plist_dict_get_item(dict, "PhoneNumber");
+			if (node) {
+				plist_get_string_val(node, &val);
+				if (val) {
+					unsigned int i;
+					is_phone = TRUE;
+					/* replace spaces, otherwise the telephone
+					 * number will be mixed up when displaying
+					 * in RTL mode */
+					for (i = 0; i < strlen(val); i++) {
+						if (val[i] == ' ') {
+							val[i] = '-';
+						}
 					}
+					gtk_label_set_text(lbTelNo, val);
+					gtk_widget_show(GTK_WIDGET(hbTelNo));
+					free(val);
 				}
-				gtk_label_set_text(lbTelNo, val);
-				gtk_widget_show(GTK_WIDGET(hbTelNo));
-				free(val);
+				val = NULL;
+			} else {
+				gtk_widget_hide(GTK_WIDGET(hbTelNo));
+				gtk_widget_hide(GTK_WIDGET(lbTelNo));
 			}
-			val = NULL;
-		}
-		node = plist_dict_get_item(dict, "InternationalMobileEquipmentIdentity");
-		if (node) {
-			plist_get_string_val(node, &val);
-			if (val) {
-				is_phone = TRUE;
-				gtk_label_set_text(lbIMEI, val);
-				gtk_widget_show(GTK_WIDGET(hbIMEI));
-				free(val);
+			node = plist_dict_get_item(dict, "InternationalMobileEquipmentIdentity");
+			if (node) {
+				plist_get_string_val(node, &val);
+				if (val) {
+					is_phone = TRUE;
+					gtk_label_set_text(lbIMEI, val);
+					gtk_widget_show(GTK_WIDGET(hbIMEI));
+					free(val);
+				}
+				val = NULL;
 			}
-			val = NULL;
-		}
-		node = plist_dict_get_item(dict, "InternationalMobileSubscriberIdentity");
-		if (node) {
-			plist_get_string_val(node, &val);
-			if (val) {
-				is_phone = TRUE;
+			node = plist_dict_get_item(dict, "InternationalMobileSubscriberIdentity");
+			if (node) {
+				plist_get_string_val(node, &val);
+				if (val) {
+					is_phone = TRUE;
 #ifdef HAVE_MOBILE_PROVIDER_INFO
-				char *carrier;
-				carrier = get_carrier_from_imsi(val);
-				if (carrier) {
-					gtk_label_set_text(lbCarrier, carrier);
-					free(carrier);
-				} else {
-					gtk_label_set_text(lbCarrier, "");
-				}
-				gtk_widget_show(GTK_WIDGET(hbCarrier));
+					char *carrier;
+					carrier = get_carrier_from_imsi(val);
+					if (carrier) {
+						gtk_label_set_text(lbCarrier, carrier);
+						free(carrier);
+					} else {
+						gtk_label_set_text(lbCarrier, "");
+					}
+					gtk_widget_show(GTK_WIDGET(hbCarrier));
 #endif
-				gtk_label_set_text(lbIMSI, val);
-				gtk_widget_show(GTK_WIDGET(hbIMSI));
-				free(val);
+					gtk_label_set_text(lbIMSI, val);
+					gtk_widget_show(GTK_WIDGET(hbIMSI));
+					free(val);
+				}
+				val = NULL;
+			} else {
+				/* hide SIM related infos */
+				gtk_widget_hide(GTK_WIDGET(hbIMSI));
+				gtk_widget_hide(GTK_WIDGET(lbIMSI));
+				gtk_widget_hide(GTK_WIDGET(lbCarrier));
+				gtk_widget_hide(GTK_WIDGET(hbCarrier));
 			}
-			val = NULL;
-		}
-		node = plist_dict_get_item(dict, "IntegratedCircuitCardIdentity");
-		if (node) {
-			plist_get_string_val(node, &val);
-			if (val) {
-				gtk_label_set_text(lbICCID, val);
-				gtk_widget_show(GTK_WIDGET(hbICCID));
-				free(val);
+			node = plist_dict_get_item(dict, "IntegratedCircuitCardIdentity");
+			if (node) {
+				plist_get_string_val(node, &val);
+				if (val) {
+					gtk_label_set_text(lbICCID, val);
+					gtk_widget_show(GTK_WIDGET(hbICCID));
+					free(val);
+				}
+				val = NULL;
+			} else {
+				gtk_widget_hide(GTK_WIDGET(hbICCID));
+				gtk_widget_hide(GTK_WIDGET(lbICCID));
 			}
-			val = NULL;
+		} else {
+			gtk_widget_hide(GTK_WIDGET(vbPhone));
 		}
 		node = plist_dict_get_item(dict, "BluetoothAddress");
 		if (node) {

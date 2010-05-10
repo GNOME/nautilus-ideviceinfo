@@ -219,10 +219,10 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	GtkHBox *hbCarrier = GTK_HBOX(gtk_builder_get_object (builder, "hbCarrier"));
 	GtkLabel *lbCarrier = GTK_LABEL(gtk_builder_get_object (builder, "lbCarrierText"));
 
-	GtkHBox *hbWiFiMac = GTK_HBOX(gtk_builder_get_object (builder, "hbWiFiMac"));
-	GtkLabel *lbWiFiMac = GTK_LABEL(gtk_builder_get_object (builder, "lbWiFiMacText"));
-	GtkHBox *hbBTMac = GTK_HBOX(gtk_builder_get_object (builder, "hbBTMac"));
-	GtkLabel *lbBTMac = GTK_LABEL(gtk_builder_get_object (builder, "lbBTMacText"));
+	GtkLabel *lbWiFiMac = GTK_LABEL(gtk_builder_get_object (builder, "lbWiFiMac"));
+	GtkLabel *lbWiFiMacText = GTK_LABEL(gtk_builder_get_object (builder, "lbWiFiMacText"));
+	GtkLabel *lbBTMac = GTK_LABEL(gtk_builder_get_object (builder, "lbBTMac"));
+	GtkLabel *lbBTMacText = GTK_LABEL(gtk_builder_get_object (builder, "lbBTMacText"));
 	GtkLabel *lbiPodInfo = GTK_LABEL(gtk_builder_get_object (builder, "lbiPodInfo"));
 
 	GtkLabel *lbStorage = GTK_LABEL(gtk_builder_get_object (builder, "label4"));
@@ -296,10 +296,13 @@ static gboolean ideviceinfo_load_data(gpointer data)
 			plist_get_string_val(node, &val);
 
 			/* No Bluetooth for 2.x OS for iPod Touch */
-			if (is_ipod_touch && g_str_has_prefix(val, "2."))
-				gtk_widget_hide(GTK_WIDGET(hbBTMac));
-			else
-				gtk_widget_show(GTK_WIDGET(hbBTMac));
+			if (is_ipod_touch && g_str_has_prefix(val, "2.")) {
+				gtk_widget_hide(GTK_WIDGET(lbBTMac));
+				gtk_widget_hide(GTK_WIDGET(lbBTMacText));
+			} else {
+				gtk_widget_show(GTK_WIDGET(lbBTMac));
+				gtk_widget_show(GTK_WIDGET(lbBTMacText));
+			}
 
 			node = plist_dict_get_item(dict, "BuildVersion");
 			if (node) {
@@ -422,7 +425,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			val = get_mac_address_val(node);
 			if (val) {
-				gtk_label_set_text(lbBTMac, val);
+				gtk_label_set_text(lbBTMacText, val);
 				free(val);
 			}
 			val = NULL;
@@ -431,8 +434,9 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (node) {
 			val = get_mac_address_val(node);
 			if (val) {
-				gtk_label_set_text(lbWiFiMac, val);
-				gtk_widget_show(GTK_WIDGET(hbWiFiMac));
+				gtk_label_set_text(lbWiFiMacText, val);
+				gtk_widget_show(GTK_WIDGET(lbWiFiMac));
+				gtk_widget_show(GTK_WIDGET(lbWiFiMacText));
 				free(val);
 			}
 			val = NULL;

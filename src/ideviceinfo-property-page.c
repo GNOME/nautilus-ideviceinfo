@@ -118,6 +118,21 @@ static char *get_carrier_from_imsi(const char *imsi)
 }
 #endif
 
+static char *
+get_mac_address_val(plist_t node)
+{
+	char *val;
+	char *mac;
+
+	val = NULL;
+	plist_get_string_val(node, &val);
+	if (!val)
+		return NULL;
+	mac = g_ascii_strup(val, -1);
+	g_free(val);
+	return mac;
+}
+
 static gboolean ideviceinfo_load_data(gpointer data)
 {
 	GtkBuilder *builder = (GtkBuilder*)data;
@@ -405,7 +420,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		}
 		node = plist_dict_get_item(dict, "BluetoothAddress");
 		if (node) {
-			plist_get_string_val(node, &val);
+			val = get_mac_address_val(node);
 			if (val) {
 				gtk_label_set_text(lbBTMac, val);
 				free(val);
@@ -414,7 +429,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		}
 		node = plist_dict_get_item(dict, "WiFiAddress");
 		if (node) {
-			plist_get_string_val(node, &val);
+			val = get_mac_address_val(node);
 			if (val) {
 				gtk_label_set_text(lbWiFiMac, val);
 				gtk_widget_show(GTK_WIDGET(hbWiFiMac));

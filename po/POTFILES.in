@@ -1,4 +1,5 @@
 # List of source files containing translatable strings.
 # Please keep this list in alphabetic order.
+src/ideviceinfo-property-page.c
 src/nautilus-ideviceinfo.c
 [type: gettext/glade]src/nautilus-ideviceinfo.ui

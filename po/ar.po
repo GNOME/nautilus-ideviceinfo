@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-05 08:39+0200\n"
+"POT-Creation-Date: 2010-05-23 12:16+0200\n"
 "PO-Revision-Date: 2010-03-19 18:55+0100\n"
 "Last-Translator: Hanéne Samara <samara@tzi.de>\n"
 "Language-Team: \n"
@@ -16,44 +16,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/nautilus-ideviceinfo.c:397
+#: ../src/ideviceinfo-property-page.c:512 ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Storage"
+msgstr "إشغال الذاكرة"
+
+#: ../src/ideviceinfo-property-page.c:532
 msgid "Audio"
 msgstr "الأغاني"
 
-#: ../src/nautilus-ideviceinfo.c:400
+#: ../src/ideviceinfo-property-page.c:535
 msgid "Video"
 msgstr "اﻷفلام"
 
-#: ../src/nautilus-ideviceinfo.c:402
+#: ../src/ideviceinfo-property-page.c:537
 msgid "Photos"
 msgstr "الصور"
 
-#: ../src/nautilus-ideviceinfo.c:403 ../src/nautilus-ideviceinfo.c:407
-#: ../src/nautilus-ideviceinfo.c:410
-msgid "Apps"
+#: ../src/ideviceinfo-property-page.c:538
+#: ../src/ideviceinfo-property-page.c:542
+#: ../src/ideviceinfo-property-page.c:545
+msgid "Applications"
 msgstr "التطبيقات"
 
-#: ../src/nautilus-ideviceinfo.c:406
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Other"
 msgstr "أخرى"
 
-#: ../src/nautilus-ideviceinfo.c:407
+#: ../src/ideviceinfo-property-page.c:542
 msgid "Audio Files"
 msgstr "ملفات الأغاني"
 
-#: ../src/nautilus-ideviceinfo.c:407
+#: ../src/ideviceinfo-property-page.c:542
 msgid "Video Files"
 msgstr "ملفات اﻷفلام"
 
-#: ../src/nautilus-ideviceinfo.c:409
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Other & Media"
 msgstr "ملفات أخرى و الوسائط"
 
-#: ../src/nautilus-ideviceinfo.c:414
+#: ../src/ideviceinfo-property-page.c:549
 msgid "Free"
 msgstr "خالي"
 
-#: ../src/nautilus-ideviceinfo.c:434
+#: ../src/ideviceinfo-property-page.c:569
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
@@ -62,7 +67,7 @@ msgstr ""
 ".'%s' خطأ عند تحميل\n"
 "إعادة تثبيت هذا التطبيق قد يساعد."
 
-#: ../src/nautilus-ideviceinfo.c:466
+#: ../src/nautilus-ideviceinfo.c:55
 msgid "Details"
 msgstr "التفاصيل"
 
@@ -121,10 +126,6 @@ msgstr "رقم التسلسلي:"
 #: ../src/nautilus-ideviceinfo.ui.h:14
 msgid "Software Version:"
 msgstr "اﻹصدار:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Storage"
-msgstr "إشغال الذاكرة"
 
 #: ../src/nautilus-ideviceinfo.ui.h:16
 msgid "UUID:"

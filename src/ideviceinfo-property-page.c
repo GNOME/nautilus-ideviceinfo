@@ -62,6 +62,7 @@
 struct NautilusIdeviceinfoPagePrivate {
 	GtkBuilder *builder;
 	GtkWidget  *segbar;
+	GThread    *thread;
 };
 
 G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_VBOX)
@@ -142,7 +143,7 @@ get_mac_address_val(plist_t node)
 	return mac;
 }
 
-static gboolean ideviceinfo_load_data(gpointer data)
+static gpointer ideviceinfo_load_data(gpointer data)
 {
 	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) data;
 	GtkBuilder *builder = di->priv->builder;
@@ -233,6 +234,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 
 	/* run query and output information */
 	if ((lockdownd_get_value(client, NULL, NULL, &dict) == LOCKDOWN_E_SUCCESS) && dict) {
+		GDK_THREADS_ENTER();
 		node = plist_dict_get_item(dict, "DeviceName");
 		if (node) {
 			plist_get_string_val(node, &val);
@@ -443,6 +445,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		if (!is_phone) {
 			gtk_widget_hide(GTK_WIDGET(vbPhone));
 		}
+		GDK_THREADS_LEAVE();
 	}
 	if (dict) {
 		plist_free(dict);
@@ -504,6 +507,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		}
 	}
 
+	GDK_THREADS_ENTER();
 	/* set disk usage information */
 	char *storage_formatted_size = NULL;
 	char *markup = NULL;
@@ -547,13 +551,15 @@ static gboolean ideviceinfo_load_data(gpointer data)
 		g_free(new_text);
 		rb_segmented_bar_add_segment_default_color(RB_SEGMENTED_BAR(di->priv->segbar), _("Free"), percent_free);
 	}
+	GDK_THREADS_LEAVE();
 
 	lockdownd_client_free(client);
 	idevice_free(dev);
 
 leave:
 	g_object_unref (G_OBJECT(builder));
-	return FALSE;
+	di->priv->builder = NULL;
+	return NULL;
 }
 
 static void
@@ -567,6 +573,10 @@ nautilus_ideviceinfo_page_dispose (GObject *object)
 			di->priv->builder = NULL;
 		}
 		di->priv->segbar = NULL;
+		if (di->priv->thread) {
+			g_thread_join (di->priv->thread);
+			di->priv->thread = NULL;
+		}
 	}
 }
 
@@ -635,7 +645,7 @@ GtkWidget *nautilus_ideviceinfo_page_new(const char *uuid, const char *mount_pat
 			       (gpointer)g_strdup(mount_path),
 			       (GDestroyNotify) g_free);
 
-	g_idle_add(ideviceinfo_load_data, di);
+	di->priv->thread = g_thread_create(ideviceinfo_load_data, di, TRUE, NULL);
 
 	return GTK_WIDGET (di);
 }

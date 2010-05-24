@@ -192,7 +192,8 @@
     </child>
     <child>
       <object class="GtkVBox" id="vbPhone">
-        <property name="visible">True</property>
+        <property name="visible">False</property>
+        <property name="no-show-all">True</property>
         <child>
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>

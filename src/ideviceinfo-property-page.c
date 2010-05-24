@@ -61,6 +61,7 @@
 
 struct NautilusIdeviceinfoPagePrivate {
 	GtkBuilder *builder;
+	GtkWidget  *segbar;
 };
 
 G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_VBOX)
@@ -193,17 +194,6 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	if (ret != IDEVICE_E_SUCCESS) {
 		goto leave;
 	}
-
-	GtkWidget *segbar = rb_segmented_bar_new();
-	g_object_set(G_OBJECT(segbar),
-		"show-reflection", TRUE,
-		"show-labels", TRUE,
-		NULL);
-	gtk_widget_show(segbar);
-
-	GtkAlignment *align = GTK_ALIGNMENT(gtk_builder_get_object (builder, "disk_usage"));
-	gtk_alignment_set_padding(align, 4, 4, 8, 8);
-	gtk_container_add(GTK_CONTAINER(align), segbar);
 
 	GtkLabel *lbUUIDText = GTK_LABEL(gtk_builder_get_object (builder, "lbUUIDText"));
 	gtk_label_set_text(GTK_LABEL(lbUUIDText), uuid);
@@ -535,27 +525,27 @@ static gboolean ideviceinfo_load_data(gpointer data)
 
 		double percent_other = (1.0 - percent_free) - (percent_audio + percent_video + percent_camera + percent_apps);
 
-		rb_segmented_bar_set_value_formatter(RB_SEGMENTED_BAR(segbar), value_formatter, GSIZE_TO_POINTER((data_total/1048576)));
+		rb_segmented_bar_set_value_formatter(RB_SEGMENTED_BAR(di->priv->segbar), value_formatter, GSIZE_TO_POINTER((data_total/1048576)));
 
 		if (audio_usage > 0) {
-			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Audio"), percent_audio, 0.45, 0.62, 0.81, 1.0);
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Audio"), percent_audio, 0.45, 0.62, 0.81, 1.0);
 		}
 		if (video_usage > 0) {
-			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Video"), percent_video, 0.67, 0.5, 0.66, 1.0);
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Video"), percent_video, 0.67, 0.5, 0.66, 1.0);
 		}
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Photos"), percent_camera, 0.98, 0.91, 0.31, 1.0);
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Applications"), percent_apps, 0.54, 0.88, 0.2, 1.0);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Photos"), percent_camera, 0.98, 0.91, 0.31, 1.0);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Applications"), percent_apps, 0.54, 0.88, 0.2, 1.0);
 		char *new_text;
 #ifdef HAVE_LIBGPOD
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other"), percent_other, 0.98, 0.68, 0.24, 1.0);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Other"), percent_other, 0.98, 0.68, 0.24, 1.0);
 		new_text = g_strdup_printf("%s: %d, %s: %d, %s: %d", _("Audio Files"), number_of_audio, _("Video Files"), number_of_video, _("Applications"), number_of_apps);
 #else
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(segbar), _("Other & Media"), percent_other, 0.98, 0.68, 0.24, 1.0);
+		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Other & Media"), percent_other, 0.98, 0.68, 0.24, 1.0);
 		new_text = g_strdup_printf("%s: %d", _("Applications"), number_of_apps);
 #endif
 		gtk_label_set_text(lbiPodInfo, new_text);
 		g_free(new_text);
-		rb_segmented_bar_add_segment_default_color(RB_SEGMENTED_BAR(segbar), _("Free"), percent_free);
+		rb_segmented_bar_add_segment_default_color(RB_SEGMENTED_BAR(di->priv->segbar), _("Free"), percent_free);
 	}
 
 	lockdownd_client_free(client);
@@ -571,9 +561,12 @@ nautilus_ideviceinfo_page_dispose (GObject *object)
 {
 	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) di;
 
-	if (di != NULL && di->priv != NULL && di->priv->builder != NULL) {
-		g_object_unref (di->priv->builder);
-		di->priv->builder = NULL;
+	if (di && di->priv) {
+		if (di->priv->builder) {
+			g_object_unref (di->priv->builder);
+			di->priv->builder = NULL;
+		}
+		di->priv->segbar = NULL;
 	}
 }
 
@@ -603,8 +596,23 @@ nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 		g_object_unref (G_OBJECT(builder));
 		container = gtk_label_new(g_strdup_printf(_("There was an error loading '%s'.\nConsider reinstalling the application."), UIFILE));
 	} else {
+		GtkAlignment *align;
+
 		di->priv->builder = builder;
 		g_object_ref (container);
+
+		/* Add segmented bar */
+		di->priv->segbar = rb_segmented_bar_new();
+		g_object_set(G_OBJECT(di->priv->segbar),
+			     "show-reflection", TRUE,
+			     "show-labels", TRUE,
+			     NULL);
+		gtk_widget_show(di->priv->segbar);
+
+		align = GTK_ALIGNMENT(gtk_builder_get_object (di->priv->builder, "disk_usage"));
+		gtk_alignment_set_padding(align, 4, 4, 8, 8);
+		gtk_container_add(GTK_CONTAINER(align), di->priv->segbar);
+
 	}
 	gtk_widget_show(container);
 	gtk_container_add(GTK_CONTAINER(di), container);

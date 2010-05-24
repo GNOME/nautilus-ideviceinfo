@@ -63,6 +63,7 @@ struct NautilusIdeviceinfoPagePrivate {
 	GtkBuilder *builder;
 	GtkWidget  *segbar;
 	GThread    *thread;
+	gboolean    thread_cancelled;
 };
 
 G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_VBOX)
@@ -142,11 +143,14 @@ get_mac_address_val(plist_t node)
 	g_free(val);
 	return mac;
 }
-
+#define CHECK_CANCELLED if (di->priv->thread_cancelled != FALSE) { goto leave; }
 static gpointer ideviceinfo_load_data(gpointer data)
 {
 	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) data;
 	GtkBuilder *builder = di->priv->builder;
+	plist_t dict = NULL;
+	idevice_t dev = NULL;
+	lockdownd_client_t client = NULL;
 
 	const char *uuid = g_object_get_data (G_OBJECT (di),
 			   "Nautilus_iDeviceInfo::uuid");
@@ -182,12 +186,10 @@ static gpointer ideviceinfo_load_data(gpointer data)
 		}
 		itdb_free(itdb);
 	}
+	CHECK_CANCELLED;
 #endif
 
-	idevice_t dev = NULL;
-	lockdownd_client_t client = NULL;
 	idevice_error_t ret;
-	plist_t dict = NULL;
 	plist_t node = NULL;
 	char *val = NULL;
 
@@ -228,12 +230,14 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	GtkLabel *lbStorage = GTK_LABEL(gtk_builder_get_object (builder, "label4"));
 
 	if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(dev, &client, "nautilus-ideviceinfo")) {
-		idevice_free(dev);
+		client = NULL;
 		goto leave;
 	}
+	CHECK_CANCELLED;
 
 	/* run query and output information */
 	if ((lockdownd_get_value(client, NULL, NULL, &dict) == LOCKDOWN_E_SUCCESS) && dict) {
+		CHECK_CANCELLED;
 		GDK_THREADS_ENTER();
 		node = plist_dict_get_item(dict, "DeviceName");
 		if (node) {
@@ -449,6 +453,7 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	}
 	if (dict) {
 		plist_free(dict);
+		dict = NULL;
 	}
 
 	/* disk usage */
@@ -461,6 +466,7 @@ static gpointer ideviceinfo_load_data(gpointer data)
 
 	dict = NULL;
 	if ((lockdownd_get_value(client, "com.apple.disk_usage", NULL, &dict) == LOCKDOWN_E_SUCCESS) && dict) {
+		CHECK_CANCELLED;
 		node = plist_dict_get_item(dict, "TotalDiskCapacity");
 		if (node) {
 			plist_get_uint_val(node, &disk_total);
@@ -484,6 +490,7 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	}
 	if (dict) {
 		plist_free(dict);
+		dict = NULL;
 	}
 
 	/* get number of applications */
@@ -491,6 +498,7 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	uint16_t iport = 0;
 
 	if ((lockdownd_start_service(client, "com.apple.mobile.installation_proxy", &iport) == LOCKDOWN_E_SUCCESS) && iport) {
+		CHECK_CANCELLED;
 		instproxy_client_t ipc = NULL;
 		if (instproxy_client_new(dev, iport, &ipc) == INSTPROXY_E_SUCCESS) {
 			plist_t opts = instproxy_client_options_new();
@@ -557,10 +565,14 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	}
 	GDK_THREADS_LEAVE();
 
-	lockdownd_client_free(client);
-	idevice_free(dev);
 
 leave:
+	if (client != NULL)
+		lockdownd_client_free(client);
+	if (dev != NULL)
+		idevice_free(dev);
+	if (dict)
+		plist_free(dict);
 	g_object_unref (G_OBJECT(builder));
 	di->priv->builder = NULL;
 	return NULL;

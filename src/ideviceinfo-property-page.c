@@ -59,6 +59,12 @@
 
 #include "rb-segmented-bar.h"
 
+struct NautilusIdeviceinfoPagePrivate {
+	GtkBuilder *builder;
+};
+
+G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_VBOX)
+
 static const char UIFILE[] = NAUTILUS_EXTENSION_DIR "/nautilus-ideviceinfo.ui";
 
 static gchar *value_formatter(gdouble percent, gpointer user_data)
@@ -137,9 +143,10 @@ get_mac_address_val(plist_t node)
 
 static gboolean ideviceinfo_load_data(gpointer data)
 {
-	GtkBuilder *builder = (GtkBuilder*)data;
+	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) data;
+	GtkBuilder *builder = di->priv->builder;
 
-	const char *uuid = g_object_get_data (G_OBJECT (builder),
+	const char *uuid = g_object_get_data (G_OBJECT (di),
 			   "Nautilus_iDeviceInfo::uuid");
 
 	uint64_t audio_usage = 0;
@@ -147,7 +154,7 @@ static gboolean ideviceinfo_load_data(gpointer data)
 	gboolean is_phone = FALSE;
 	gboolean is_ipod_touch = FALSE;
 #ifdef HAVE_LIBGPOD
-	const char *mount_path = g_object_get_data (G_OBJECT (builder),
+	const char *mount_path = g_object_get_data (G_OBJECT (di),
 				 "Nautilus_iDeviceInfo::mount_path");
 	uint32_t number_of_audio = 0;
 	uint32_t number_of_video = 0;
@@ -559,32 +566,68 @@ leave:
 	return FALSE;
 }
 
-GtkWidget *nautilus_ideviceinfo_new(const char *uuid, const char *mount_path)
+static void
+nautilus_ideviceinfo_page_dispose (GObject *object)
+{
+	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) di;
+
+	if (di != NULL && di->priv != NULL && di->priv->builder != NULL) {
+		g_object_unref (di->priv->builder);
+		di->priv->builder = NULL;
+	}
+}
+
+static void
+nautilus_ideviceinfo_page_class_init (NautilusIdeviceinfoPageClass *klass)
+{
+	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+
+	g_type_class_add_private (klass, sizeof (NautilusIdeviceinfoPagePrivate));
+	object_class->dispose = nautilus_ideviceinfo_page_dispose;
+}
+
+static void
+nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 {
 	GtkBuilder *builder;
+	GtkWidget *container;
+
+	di->priv = G_TYPE_INSTANCE_GET_PRIVATE (di, NAUTILUS_TYPE_IDEVICEINFO_PAGE, NautilusIdeviceinfoPagePrivate);
+
 	builder = gtk_builder_new();
 	gtk_builder_add_from_file (builder, UIFILE, NULL);
 	gtk_builder_connect_signals (builder, NULL);
-	GtkWidget *container = GTK_WIDGET(gtk_builder_get_object(builder, "ideviceinfo"));
+
+	container = GTK_WIDGET(gtk_builder_get_object(builder, "ideviceinfo"));
 	if (!container) {
 		g_object_unref (G_OBJECT(builder));
 		container = gtk_label_new(g_strdup_printf(_("There was an error loading '%s'.\nConsider reinstalling the application."), UIFILE));
-		goto leave;
+	} else {
+		di->priv->builder = builder;
+		g_object_ref (container);
 	}
+	gtk_widget_show(container);
+	gtk_container_add(GTK_CONTAINER(di), container);
+}
 
-	g_object_ref (container);
+GtkWidget *nautilus_ideviceinfo_page_new(const char *uuid, const char *mount_path)
+{
+	NautilusIdeviceinfoPage *di;
 
-	g_object_set_data (G_OBJECT (builder),
-			   "Nautilus_iDeviceInfo::uuid",
-			   (gpointer)g_strdup(uuid));
-	g_object_set_data (G_OBJECT (builder),
-			   "Nautilus_iDeviceInfo::mount_path",
-			   (gpointer)g_strdup(mount_path));
+	di = g_object_new(NAUTILUS_TYPE_IDEVICEINFO_PAGE, NULL);
+	if (di->priv->builder == NULL)
+		return GTK_WIDGET (di);
 
-	g_idle_add(ideviceinfo_load_data, builder);
+	g_object_set_data_full(G_OBJECT (di),
+			       "Nautilus_iDeviceInfo::uuid",
+			       (gpointer)g_strdup(uuid),
+			       (GDestroyNotify) g_free);
+	g_object_set_data_full(G_OBJECT (di),
+			       "Nautilus_iDeviceInfo::mount_path",
+			       (gpointer)g_strdup(mount_path),
+			       (GDestroyNotify) g_free);
 
-leave:
-	gtk_widget_show (container);
+	g_idle_add(ideviceinfo_load_data, di);
 
-	return container;
+	return GTK_WIDGET (di);
 }

@@ -21,7 +21,32 @@
  * USA
  */
 
+#include <glib-object.h>
 #include <gtk/gtk.h>
 
-GtkWidget *nautilus_ideviceinfo_new(const char *uuid, const char *mount_path);
+#ifndef IDEVICEINFO_PROPERTY_PAGE_H
+#define IDEVICEINFO_PROPERTY_PAGE_H
 
+G_BEGIN_DECLS
+
+#define NAUTILUS_TYPE_IDEVICEINFO_PAGE (nautilus_ideviceinfo_page_get_type())
+
+typedef struct NautilusIdeviceinfoPage NautilusIdeviceinfoPage;
+typedef struct NautilusIdeviceinfoPageClass NautilusIdeviceinfoPageClass;
+typedef struct NautilusIdeviceinfoPagePrivate NautilusIdeviceinfoPagePrivate;
+
+struct NautilusIdeviceinfoPage {
+	GtkVBox parent;
+	NautilusIdeviceinfoPagePrivate *priv;
+};
+
+struct NautilusIdeviceinfoPageClass {
+	GtkVBoxClass parent_class;
+};
+
+GType nautilus_ideviceinfo_page_get_type(void);
+GtkWidget *nautilus_ideviceinfo_page_new(const char *uuid, const char *mount_path);
+
+G_END_DECLS
+
+#endif /* IDEVICEINFO_PROPERTY_PAGE_H */

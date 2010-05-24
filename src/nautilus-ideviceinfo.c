@@ -50,7 +50,7 @@ static NautilusPropertyPage *ideviceinfo_property_page_new(NautilusPropertyPageP
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	page = nautilus_ideviceinfo_new(uuid, mount_path);
+	page = nautilus_ideviceinfo_page_new(uuid, mount_path);
 
 	ret = nautilus_property_page_new ("ideviceinfo-page", gtk_label_new(_("Details")), page);
 

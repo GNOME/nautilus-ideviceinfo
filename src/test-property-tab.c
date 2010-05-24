@@ -16,6 +16,8 @@ main (int argc, char **argv)
 	char *uuid, *uri, *path;
 	GFile *file;
 
+	g_thread_init (NULL);
+	gdk_threads_init ();
 	gtk_init (&argc, &argv);
 
 	if (argc != 2) {
@@ -34,7 +36,7 @@ main (int argc, char **argv)
 			  G_CALLBACK (delete_event), NULL);
 	g_signal_connect (G_OBJECT (window), "delete-event",
 			  G_CALLBACK (delete_event), NULL);
-	tab = nautilus_ideviceinfo_new (uuid, path);
+	tab = nautilus_ideviceinfo_page_new (uuid, path);
 	gtk_container_add (GTK_CONTAINER (window), tab);
 	gtk_widget_show_all (window);
 

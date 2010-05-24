@@ -206,19 +206,13 @@ static gpointer ideviceinfo_load_data(gpointer data)
 
 	GtkLabel *lbDeviceVersion = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceVersionText"));
 	GtkLabel *lbDeviceSerial = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceSerialText"));
-	GtkHBox *hbModemFw = GTK_HBOX(gtk_builder_get_object (builder, "hbModemFw"));
 	GtkLabel *lbModemFw = GTK_LABEL(gtk_builder_get_object (builder, "lbModemFwText"));
 	GtkWidget *vbPhone = GTK_WIDGET(gtk_builder_get_object (builder, "vbPhone"));
-	GtkHBox *hbTelNo = GTK_HBOX(gtk_builder_get_object (builder, "hbTelNo"));
 	GtkLabel *lbTelNo = GTK_LABEL(gtk_builder_get_object (builder, "lbTelNoText"));
-	GtkHBox *hbIMEI = GTK_HBOX(gtk_builder_get_object (builder, "hbIMEI"));
 	GtkLabel *lbIMEI = GTK_LABEL(gtk_builder_get_object (builder, "lbIMEIText"));
-	GtkHBox *hbIMSI = GTK_HBOX(gtk_builder_get_object (builder, "hbIMSI"));
 	GtkLabel *lbIMSI = GTK_LABEL(gtk_builder_get_object (builder, "lbIMSIText"));
-	GtkHBox *hbICCID = GTK_HBOX(gtk_builder_get_object (builder, "hbICCID"));
 	GtkLabel *lbICCID = GTK_LABEL(gtk_builder_get_object (builder, "lbICCIDText"));
 
-	GtkHBox *hbCarrier = GTK_HBOX(gtk_builder_get_object (builder, "hbCarrier"));
 	GtkLabel *lbCarrier = GTK_LABEL(gtk_builder_get_object (builder, "lbCarrierText"));
 
 	GtkLabel *lbWiFiMac = GTK_LABEL(gtk_builder_get_object (builder, "lbWiFiMac"));
@@ -342,7 +336,6 @@ static gpointer ideviceinfo_load_data(gpointer data)
 			plist_get_string_val(node, &val);
 			if (val) {
 				gtk_label_set_text(lbModemFw, val);
-				gtk_widget_show(GTK_WIDGET(hbModemFw));
 				free(val);
 			}
 			val = NULL;
@@ -363,12 +356,10 @@ static gpointer ideviceinfo_load_data(gpointer data)
 						}
 					}
 					gtk_label_set_text(lbTelNo, val);
-					gtk_widget_show(GTK_WIDGET(hbTelNo));
 					free(val);
 				}
 				val = NULL;
 			} else {
-				gtk_widget_hide(GTK_WIDGET(hbTelNo));
 				gtk_widget_hide(GTK_WIDGET(lbTelNo));
 			}
 			node = plist_dict_get_item(dict, "InternationalMobileEquipmentIdentity");
@@ -377,7 +368,6 @@ static gpointer ideviceinfo_load_data(gpointer data)
 				if (val) {
 					is_phone = TRUE;
 					gtk_label_set_text(lbIMEI, val);
-					gtk_widget_show(GTK_WIDGET(hbIMEI));
 					free(val);
 				}
 				val = NULL;
@@ -396,31 +386,25 @@ static gpointer ideviceinfo_load_data(gpointer data)
 					} else {
 						gtk_label_set_text(lbCarrier, "");
 					}
-					gtk_widget_show(GTK_WIDGET(hbCarrier));
 #endif
 					gtk_label_set_text(lbIMSI, val);
-					gtk_widget_show(GTK_WIDGET(hbIMSI));
 					free(val);
 				}
 				val = NULL;
 			} else {
 				/* hide SIM related infos */
-				gtk_widget_hide(GTK_WIDGET(hbIMSI));
 				gtk_widget_hide(GTK_WIDGET(lbIMSI));
 				gtk_widget_hide(GTK_WIDGET(lbCarrier));
-				gtk_widget_hide(GTK_WIDGET(hbCarrier));
 			}
 			node = plist_dict_get_item(dict, "IntegratedCircuitCardIdentity");
 			if (node) {
 				plist_get_string_val(node, &val);
 				if (val) {
 					gtk_label_set_text(lbICCID, val);
-					gtk_widget_show(GTK_WIDGET(hbICCID));
 					free(val);
 				}
 				val = NULL;
 			} else {
-				gtk_widget_hide(GTK_WIDGET(hbICCID));
 				gtk_widget_hide(GTK_WIDGET(lbICCID));
 			}
 		} else {

@@ -430,8 +430,8 @@ static gpointer ideviceinfo_load_data(gpointer data)
 			}
 			val = NULL;
 		}
-		if (!is_phone) {
-			gtk_widget_hide(GTK_WIDGET(vbPhone));
+		if (is_phone) {
+			gtk_widget_show(GTK_WIDGET(vbPhone));
 		}
 		GDK_THREADS_LEAVE();
 	}

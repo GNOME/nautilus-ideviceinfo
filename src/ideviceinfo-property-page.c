@@ -537,8 +537,12 @@ static gpointer ideviceinfo_load_data(gpointer data)
 		if (video_usage > 0) {
 			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Video"), percent_video, 0.67, 0.5, 0.66, 1.0);
 		}
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Photos"), percent_camera, 0.98, 0.91, 0.31, 1.0);
-		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Applications"), percent_apps, 0.54, 0.88, 0.2, 1.0);
+		if (percent_camera > 0) {
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Photos"), percent_camera, 0.98, 0.91, 0.31, 1.0);
+		}
+		if (percent_apps > 0) {
+			rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Applications"), percent_apps, 0.54, 0.88, 0.2, 1.0);
+		}
 		char *new_text;
 #ifdef HAVE_LIBGPOD
 		rb_segmented_bar_add_segment(RB_SEGMENTED_BAR(di->priv->segbar), _("Other"), percent_other, 0.98, 0.68, 0.24, 1.0);

@@ -68,16 +68,14 @@ static gchar *value_formatter(gdouble percent, gpointer user_data)
 }
 
 #ifdef HAVE_MOBILE_PROVIDER_INFO
+#define XPATH_EXPR "//network-id[@mcc=\"%s\" and @mnc=\"%s\"]/../../name"
 static char *get_carrier_from_imsi(const char *imsi)
 {
 	char *carrier = NULL;
 	xmlDocPtr doc;
 	xmlXPathContextPtr xpathCtx;
 	xmlXPathObjectPtr xpathObj;
-	char xpathExpr[] = "//network-id[@mcc=\"000\" and @mnc=\"00\"]/../../name";
-
-	int omcc = 19;
-	int omnc = 34;
+	char *xpathExpr, *mcc, *mnc;
 
 	if (!imsi || (strlen(imsi) < 5)) {
 		return NULL;
@@ -93,10 +91,14 @@ static char *get_carrier_from_imsi(const char *imsi)
 		return NULL;
 	}
 
-	strncpy(xpathExpr+omcc, imsi, 3);
-	strncpy(xpathExpr+omnc, imsi+3, 2);
+	mcc = g_strndup(imsi, 3);
+	mnc = g_strndup(imsi+3, 2);
+	xpathExpr = g_strdup_printf(XPATH_EXPR, mcc, mnc);
+	g_free(mcc);
+	g_free(mnc);
 
 	xpathObj = xmlXPathEvalExpression(BAD_CAST xpathExpr, xpathCtx);
+	g_free(xpathExpr);
 	if(xpathObj == NULL) {
 		xmlXPathFreeContext(xpathCtx); 
 		xmlFreeDoc(doc); 

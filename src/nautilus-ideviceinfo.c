@@ -51,6 +51,7 @@ static NautilusPropertyPage *ideviceinfo_property_page_new(NautilusPropertyPageP
 	textdomain (GETTEXT_PACKAGE);
 
 	page = nautilus_ideviceinfo_page_new(uuid, mount_path);
+	gtk_widget_show (page);
 
 	ret = nautilus_property_page_new ("ideviceinfo-page", gtk_label_new(_("Details")), page);
 

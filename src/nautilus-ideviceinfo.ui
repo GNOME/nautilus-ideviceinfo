@@ -192,8 +192,7 @@
     </child>
     <child>
       <object class="GtkVBox" id="vbPhone">
-        <property name="visible">False</property>
-        <property name="no-show-all">True</property>
+        <property name="no_show_all">True</property>
         <child>
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
@@ -507,6 +506,7 @@
     <child>
       <object class="GtkVBox" id="vbStorage">
         <property name="visible">True</property>
+        <property name="spacing">4</property>
         <child>
           <object class="GtkLabel" id="label4">
             <property name="visible">True</property>
@@ -558,6 +558,21 @@
       <packing>
         <property name="expand">False</property>
         <property name="position">3</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkButton" id="afc2_button">
+        <property name="label" translatable="yes">Browse jailbroken filesystem...</property>
+        <property name="can_focus">True</property>
+        <property name="receives_default">True</property>
+        <property name="no_show_all">True</property>
+        <property name="use_action_appearance">False</property>
+      </object>
+      <packing>
+        <property name="expand">False</property>
+        <property name="fill">False</property>
+        <property name="pack_type">end</property>
+        <property name="position">4</property>
       </packing>
     </child>
   </object>

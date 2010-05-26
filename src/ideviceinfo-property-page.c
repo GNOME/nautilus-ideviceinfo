@@ -147,6 +147,44 @@ static char *get_carrier_from_imsi(const char *imsi)
 #endif
 
 static void
+mount_finish_cb (GObject *source_object,
+		 GAsyncResult *res,
+		 gpointer user_data)
+{
+	GError *error = NULL;
+	char *uri;
+
+	if (g_file_mount_enclosing_volume_finish (G_FILE (source_object),
+						  res, &error) == FALSE) {
+		g_printerr ("Failed to mount AFC volume: %s", error->message);
+		g_error_free (error);
+		return;
+	}
+
+	uri = g_file_get_uri (G_FILE (source_object));
+	if (gtk_show_uri (NULL, uri, GDK_CURRENT_TIME, &error) == FALSE) {
+		g_printerr ("Failed to open %s: %s", uri, error->message);
+		g_error_free (error);
+	}
+	g_free (uri);
+}
+
+static void
+afc2_button_clicked (GtkButton *button,
+		     NautilusIdeviceinfoPage *di)
+{
+	char *uri;
+	GFile *file;
+
+	uri = g_strdup_printf ("afc://%s:2/", di->priv->uuid);
+	file = g_file_new_for_uri (uri);
+	g_free (uri);
+
+	g_file_mount_enclosing_volume (file, G_MOUNT_MOUNT_NONE, NULL, NULL, mount_finish_cb, NULL);
+	g_object_unref (file);
+}
+
+static void
 completed_message_free (CompletedMessage *msg)
 {
 	if (msg->dev_info)
@@ -484,6 +522,15 @@ update_ui (CompletedMessage *msg)
 		gtk_label_set_text(lbiPodInfo, new_text);
 		g_free(new_text);
 		rb_segmented_bar_add_segment_default_color(RB_SEGMENTED_BAR(di->priv->segbar), _("Free"), percent_free);
+	}
+
+	if (msg->has_afc2) {
+		GtkWidget *button;
+
+		button = GTK_WIDGET(gtk_builder_get_object (builder, "afc2_button"));
+		g_signal_connect (G_OBJECT(button), "clicked",
+				  G_CALLBACK(afc2_button_clicked), di);
+		gtk_widget_show (button);
 	}
 
 	g_object_unref (G_OBJECT(builder));

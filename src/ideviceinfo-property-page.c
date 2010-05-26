@@ -62,6 +62,8 @@
 struct NautilusIdeviceinfoPagePrivate {
 	GtkBuilder *builder;
 	GtkWidget  *segbar;
+	char       *uuid;
+	char       *mount_path;
 	GThread    *thread;
 	gboolean    thread_cancelled;
 };
@@ -152,20 +154,15 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	idevice_t dev = NULL;
 	lockdownd_client_t client = NULL;
 
-	const char *uuid = g_object_get_data (G_OBJECT (di),
-			   "Nautilus_iDeviceInfo::uuid");
-
 	uint64_t audio_usage = 0;
 	uint64_t video_usage = 0;
 	gboolean is_phone = FALSE;
 	gboolean is_ipod_touch = FALSE;
 #ifdef HAVE_LIBGPOD
-	const char *mount_path = g_object_get_data (G_OBJECT (di),
-				 "Nautilus_iDeviceInfo::mount_path");
 	uint32_t number_of_audio = 0;
 	uint32_t number_of_video = 0;
 	uint64_t media_usage = 0;
-	Itdb_iTunesDB *itdb = itdb_parse(mount_path, NULL);
+	Itdb_iTunesDB *itdb = itdb_parse(di->priv->mount_path, NULL);
 	if (itdb) {
 		GList *it;
 		for (it = itdb->tracks; it != NULL; it = it->next) {
@@ -193,13 +190,13 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	plist_t node = NULL;
 	char *val = NULL;
 
-	ret = idevice_new(&dev, uuid);
+	ret = idevice_new(&dev, di->priv->uuid);
 	if (ret != IDEVICE_E_SUCCESS) {
 		goto leave;
 	}
 
 	GtkLabel *lbUUIDText = GTK_LABEL(gtk_builder_get_object (builder, "lbUUIDText"));
-	gtk_label_set_text(GTK_LABEL(lbUUIDText), uuid);
+	gtk_label_set_text(GTK_LABEL(lbUUIDText), di->priv->uuid);
 
 	GtkLabel *lbDeviceName = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceNameText"));
 	GtkLabel *lbDeviceModel = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceModelText"));
@@ -577,6 +574,10 @@ nautilus_ideviceinfo_page_dispose (GObject *object)
 			g_thread_join (di->priv->thread);
 			di->priv->thread = NULL;
 		}
+		g_free (di->priv->uuid);
+		di->priv->uuid = NULL;
+		g_free (di->priv->mount_path);
+		di->priv->mount_path = NULL;
 	}
 }
 
@@ -636,14 +637,8 @@ GtkWidget *nautilus_ideviceinfo_page_new(const char *uuid, const char *mount_pat
 	if (di->priv->builder == NULL)
 		return GTK_WIDGET (di);
 
-	g_object_set_data_full(G_OBJECT (di),
-			       "Nautilus_iDeviceInfo::uuid",
-			       (gpointer)g_strdup(uuid),
-			       (GDestroyNotify) g_free);
-	g_object_set_data_full(G_OBJECT (di),
-			       "Nautilus_iDeviceInfo::mount_path",
-			       (gpointer)g_strdup(mount_path),
-			       (GDestroyNotify) g_free);
+	di->priv->uuid = g_strdup (uuid);
+	di->priv->mount_path = g_strdup(mount_path);
 
 	di->priv->thread = g_thread_create(ideviceinfo_load_data, di, TRUE, NULL);
 

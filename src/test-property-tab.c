@@ -16,8 +16,6 @@ main (int argc, char **argv)
 	char *uuid, *uri, *path;
 	GFile *file;
 
-	g_thread_init (NULL);
-	gdk_threads_init ();
 	gtk_init (&argc, &argv);
 
 	if (argc != 2) {

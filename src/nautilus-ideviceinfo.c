@@ -46,19 +46,10 @@ static NautilusPropertyPage *ideviceinfo_property_page_new(NautilusPropertyPageP
 	NautilusPropertyPage *ret;
 	GtkWidget *page;
 
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
-	textdomain (GETTEXT_PACKAGE);
-
 	page = nautilus_ideviceinfo_page_new(uuid, mount_path);
 	gtk_widget_show (page);
 
 	ret = nautilus_property_page_new ("ideviceinfo-page", gtk_label_new(_("Details")), page);
-
-	/* trick to prevent nautilus' localization getting messed up */
-	bindtextdomain ("nautilus", GNOMELOCALEDIR);
-	bind_textdomain_codeset ("nautilus", "UTF-8");
-	textdomain ("nautilus");
 
 	return ret;
 }
@@ -99,7 +90,7 @@ nautilus_ideviceinfo_property_page_provider_iface_init (NautilusPropertyPageProv
 	iface->get_pages = nautilus_ideviceinfo_property_page;
 }
 
-static void 
+static void
 nautilus_ideviceinfo_instance_init (Nautilus_iDeviceInfo *di)
 {
 }

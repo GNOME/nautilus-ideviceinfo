@@ -32,7 +32,9 @@ nautilus_extension_LTLIBRARIES=libnautilus-ideviceinfo.la
 libnautilus_ideviceinfo_la_SOURCES = \
 	nautilus-ideviceinfo.h \
 	nautilus-ideviceinfo.c \
-	nautilus-idevinfo.c
+	nautilus-idevinfo.c \
+	nautilus-afc2-warning-bar.c \
+	nautilus-afc2-warning-bar.h
 
 libnautilus_ideviceinfo_la_LDFLAGS = -module -avoid-version
 libnautilus_ideviceinfo_la_LIBADD  = $(libnautilusextension_LIBS) libideviceinfo.la

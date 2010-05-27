@@ -28,8 +28,10 @@
 
 #include "nautilus-ideviceinfo.h"
 #include "ideviceinfo-property-page.h"
+#include "nautilus-afc2-warning-bar.h"
 
 #include <libnautilus-extension/nautilus-property-page-provider.h>
+#include <libnautilus-extension/nautilus-location-widget-provider.h>
 
 #include <glib.h>
 #include <glib/gi18n-lib.h>
@@ -84,10 +86,40 @@ static GList *nautilus_ideviceinfo_property_page (NautilusPropertyPageProvider *
 	return pages;
 }
 
+/* The length of the afc://<uuid> */
+#define SCHEME_UUID_LEN 3 + 3 + 40
+static GtkWidget *
+nautilus_ideviceinfo_location_widget (NautilusLocationWidgetProvider *iface,
+				      const char                     *uri,
+				      GtkWidget                      *window)
+{
+	GFile *file;
+
+	file = g_file_new_for_uri (uri);
+	if (g_file_has_uri_scheme (file, "afc") == FALSE) {
+		g_object_unref (file);
+		return NULL;
+	}
+	g_object_unref (file);
+
+	if (strlen (uri) < SCHEME_UUID_LEN)
+		return NULL;
+	if (strncmp (uri + SCHEME_UUID_LEN, ":2", 2) != 0)
+		return NULL;
+
+	return nautilus_afc2_warning_bar_new ();
+}
+
 static void
 nautilus_ideviceinfo_property_page_provider_iface_init (NautilusPropertyPageProviderIface *iface)
 {
 	iface->get_pages = nautilus_ideviceinfo_property_page;
+}
+
+static void
+nautilus_ideviceinfo_location_widget_provider_iface_init (NautilusLocationWidgetProviderIface *iface)
+{
+	iface->get_widget = nautilus_ideviceinfo_location_widget;
 }
 
 static void
@@ -106,7 +138,7 @@ nautilus_ideviceinfo_class_finalize (Nautilus_iDeviceInfoClass *class)
 }
 
 GType
-nautilus_ideviceinfo_get_type (void) 
+nautilus_ideviceinfo_get_type (void)
 {
 	return ideviceinfo_type;
 }
@@ -132,6 +164,12 @@ nautilus_ideviceinfo_register_type (GTypeModule *module)
 		NULL,
 		NULL
 	};
+	static const GInterfaceInfo location_widget_iface_info = {
+		(GInterfaceInitFunc) nautilus_ideviceinfo_location_widget_provider_iface_init,
+		NULL,
+		NULL
+	};
+
 
 	ideviceinfo_type = g_type_module_register_type (module,
 						     G_TYPE_OBJECT,
@@ -142,4 +180,8 @@ nautilus_ideviceinfo_register_type (GTypeModule *module)
 				     ideviceinfo_type,
 				     NAUTILUS_TYPE_PROPERTY_PAGE_PROVIDER,
 				     &property_page_iface_info);
+	g_type_module_add_interface (module,
+				     ideviceinfo_type,
+				     NAUTILUS_TYPE_LOCATION_WIDGET_PROVIDER,
+				     &location_widget_iface_info);
 }

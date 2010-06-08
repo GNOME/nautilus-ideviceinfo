@@ -1,5 +1,5 @@
 INCLUDES = \
-	-DG_LOG_DOMAIN=\"Nautilus_iDeviceInfo\" \
+	-DG_LOG_DOMAIN=\"nautilus-ideviceinfo\" \
 	-DDATADIR=\"$(datadir)\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DNAUTILUS_EXTENSION_DIR=\"$(NAUTILUS_EXTENSION_DIR)\" \

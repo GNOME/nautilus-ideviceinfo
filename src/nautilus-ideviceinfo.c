@@ -173,7 +173,7 @@ nautilus_ideviceinfo_register_type (GTypeModule *module)
 
 	ideviceinfo_type = g_type_module_register_type (module,
 						     G_TYPE_OBJECT,
-						     "Nautilus_iDeviceInfo",
+						     "nautilus-ideviceinfo",
 						     &info, 0);
 
 	g_type_module_add_interface (module,

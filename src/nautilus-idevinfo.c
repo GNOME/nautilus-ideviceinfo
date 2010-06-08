@@ -36,7 +36,7 @@ void nautilus_module_list_types (const GType **types, int *num_types);
 
 void nautilus_module_initialize (GTypeModule *module)
 {
-	g_print ("Initializing Nautilus_iDeviceInfo extension\n");
+	g_print ("Initializing nautilus-ideviceinfo extension\n");
 
 	nautilus_ideviceinfo_register_type (module);
 	type_list[0] = NAUTILUS_TYPE_IDEVICEINFO;
@@ -47,7 +47,7 @@ void nautilus_module_initialize (GTypeModule *module)
 
 void nautilus_module_shutdown (void)
 {
-	g_print ("Shutting down Nautilus_iDeviceInfo extension\n");
+	g_print ("Shutting down nautilus-ideviceinfo extension\n");
 }
 
 void nautilus_module_list_types (const GType **types, int *num_types)

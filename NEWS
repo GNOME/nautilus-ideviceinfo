@@ -1,0 +1,8 @@
+Version 0.1.0
+~~~~~~~~~~~~~
+
+- Initial release
+- Features:
+  * Shows various information about the device
+  * Segmented bar shows disk usage of device
+  * Detect and open jailbroken filesystems

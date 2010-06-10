@@ -690,6 +690,7 @@ nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 	di->priv = G_TYPE_INSTANCE_GET_PRIVATE (di, NAUTILUS_TYPE_IDEVICEINFO_PAGE, NautilusIdeviceinfoPagePrivate);
 
 	builder = gtk_builder_new();
+	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
 	gtk_builder_add_from_file (builder, UIFILE, NULL);
 	gtk_builder_connect_signals (builder, NULL);
 

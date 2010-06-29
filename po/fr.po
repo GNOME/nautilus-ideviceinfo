@@ -1,136 +1,152 @@
 # French translation for nautilus-ideviceinfo
-# Copyright (C) 2010 Nikias Bassen
+# Copyright (C) 2010 Listed translators
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 # Nikias Bassen <nikias@gmx.li>, 2010.
-#
+# Claude Paroz <claude@2xlibre.net>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-23 12:16+0200\n"
-"PO-Revision-Date: 2010-03-19 18:55+0100\n"
-"Last-Translator: Nikias Bassen <nikias@gmx.li>\n"
-"Language-Team: \n"
+"POT-Creation-Date: 2010-06-29 06:23+0000\n"
+"PO-Revision-Date: 2010-06-29 08:36+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/ideviceinfo-property-page.c:512 ../src/nautilus-ideviceinfo.ui.h:15
+#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
 msgid "Storage"
 msgstr "Mémoire"
 
-#: ../src/ideviceinfo-property-page.c:532
+#: ../src/ideviceinfo-property-page.c:510
 msgid "Audio"
 msgstr "Audio"
 
-#: ../src/ideviceinfo-property-page.c:535
+#: ../src/ideviceinfo-property-page.c:513
 msgid "Video"
-msgstr "Vidéos"
+msgstr "Vidéo"
 
-#: ../src/ideviceinfo-property-page.c:537
+#: ../src/ideviceinfo-property-page.c:516
 msgid "Photos"
 msgstr "Photos"
 
-#: ../src/ideviceinfo-property-page.c:538
-#: ../src/ideviceinfo-property-page.c:542
-#: ../src/ideviceinfo-property-page.c:545
+#: ../src/ideviceinfo-property-page.c:519
+#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:527
 msgid "Applications"
 msgstr "Applications"
 
-#: ../src/ideviceinfo-property-page.c:541
+#: ../src/ideviceinfo-property-page.c:523
 msgid "Other"
 msgstr "Autres"
 
-#: ../src/ideviceinfo-property-page.c:542
+#: ../src/ideviceinfo-property-page.c:524
 msgid "Audio Files"
-msgstr "Fichiers Audio"
+msgstr "Fichiers audio"
 
-#: ../src/ideviceinfo-property-page.c:542
+#: ../src/ideviceinfo-property-page.c:524
 msgid "Video Files"
-msgstr "Fichiers Vidéos"
+msgstr "Fichiers vidéo"
 
-#: ../src/ideviceinfo-property-page.c:544
+#: ../src/ideviceinfo-property-page.c:526
 msgid "Other & Media"
-msgstr "Autres & Media"
+msgstr "Autres et médias"
 
-#: ../src/ideviceinfo-property-page.c:549
+#: ../src/ideviceinfo-property-page.c:531
 msgid "Free"
 msgstr "Libre"
 
-#: ../src/ideviceinfo-property-page.c:569
+#: ../src/ideviceinfo-property-page.c:700
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
 "Consider reinstalling the application."
 msgstr ""
-"Impossible d'ouvrir '%s'.\n"
-"Considerez réinstallation d'application."
+"Impossible d'ouvrir « %s ».\n"
+"Essayez de réinstaller l'application."
 
-#: ../src/nautilus-ideviceinfo.c:55
+#: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
 msgstr "Détails"
 
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "La consultation d'un système de fichiers débridé n'est pas prise en charge"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"L'accès au système de fichiers racine de l'appareil peut l'endommager. Si des "
+"problèmes surviennent, une restauration peut s'avérer nécessaire."
+
 #: ../src/nautilus-ideviceinfo.ui.h:1
 msgid "Bluetooth Address:"
-msgstr "Adresse Bluetooth:"
+msgstr "Adresse Bluetooth :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "Consulter le système de fichiers débridé..."
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "Général"
 
-#: ../src/nautilus-ideviceinfo.ui.h:3
-msgid "ICCID:"
-msgstr "ICCID"
-
 #: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "IMEI:"
-msgstr "IMEI:"
+msgid "ICCID:"
+msgstr "ICCID :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMSI:"
-msgstr "IMSI:"
+msgid "IMEI:"
+msgstr "IMEI :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "Mobile Carrier:"
-msgstr "Opérateur Mobile:"
+msgid "IMSI:"
+msgstr "IMSI :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Model:"
-msgstr "Modèle:"
+msgid "Mobile Carrier:"
+msgstr "Opérateur mobile :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Modem Firmware:"
-msgstr "Firmware du Modem:"
+msgid "Model:"
+msgstr "Modèle :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Name:"
-msgstr "Nom:"
+msgid "Modem Firmware:"
+msgstr "Micrologiciel du modem :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Network"
-msgstr "Résau"
+msgid "Name:"
+msgstr "Nom :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "Réseau"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
 msgid "Phone"
 msgstr "Téléphone"
 
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone Number:"
-msgstr "N° Téléphone:"
-
 #: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Serial Number:"
-msgstr "N° de Série:"
+msgid "Phone Number:"
+msgstr "N° téléphone :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Software Version:"
-msgstr "Version du Logiciel:"
+msgid "Serial Number:"
+msgstr "N° de série :"
 
-#: ../src/nautilus-ideviceinfo.ui.h:16
-msgid "UUID:"
-msgstr "UUID:"
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "Version du logiciel :"
 
 #: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
 msgid "WiFi Address:"
-msgstr "Adresse WiFi:"
+msgstr "Adresse WiFi :"

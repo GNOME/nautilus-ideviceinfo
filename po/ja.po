@@ -1,0 +1,151 @@
+# nautilus-ideviceinfo ja.po
+# Copyright (C) 2010 Takeshi AIHANA <takeshi.aihana@gmail.com>
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Takeshi AIHANA <takeshi.aihana@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-04 21:43+0900\n"
+"PO-Revision-Date: 2010-07-04 21:47+0900\n"
+"Last-Translator: Takeshi AIHANA <takeshi.aihana@gmail.com>\n"
+"Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "ストレージ"
+
+#: ../src/ideviceinfo-property-page.c:510
+msgid "Audio"
+msgstr "オーディオ"
+
+#: ../src/ideviceinfo-property-page.c:513
+msgid "Video"
+msgstr "ビデオ"
+
+#: ../src/ideviceinfo-property-page.c:516
+msgid "Photos"
+msgstr "写真"
+
+#: ../src/ideviceinfo-property-page.c:519
+#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:527
+msgid "Applications"
+msgstr "アプリケーション"
+
+#: ../src/ideviceinfo-property-page.c:523
+msgid "Other"
+msgstr "その他"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Audio Files"
+msgstr "楽曲ファイル"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Video Files"
+msgstr "ビデオ・ファイル"
+
+#: ../src/ideviceinfo-property-page.c:526
+msgid "Other & Media"
+msgstr "その他＆メディア"
+
+#: ../src/ideviceinfo-property-page.c:531
+msgid "Free"
+msgstr "空き"
+
+#: ../src/ideviceinfo-property-page.c:700
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"UI ファイル ('%s') を読み込む際にエラーが発生しました。\n"
+"本アプリケーションの再インストールを検討してみて下さい。"
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "詳細"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "Jailbreak されたファイルシステムはサポートしていません"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"デバイスの roor ファイルシステムへのアクセスは障害を発生させる可能性がありま"
+"す。もし問題が発生した場合、リストアが必要になるでしょう。"
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "Bluetooth のアドレス:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "Jailbreak されたファイルシステムの参照..."
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "全般"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "携帯のキャリア:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "型式:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "ファームウェア:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "名称:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "ネットワーク"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "電話"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "電話番号:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "シリアル番号:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "ソフトウェアのバージョン:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "WiFi のアドレス:"

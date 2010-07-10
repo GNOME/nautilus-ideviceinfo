@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-29 06:37+0000\n"
-"PO-Revision-Date: 2010-06-29 15:12+0100\n"
+"POT-Creation-Date: 2010-07-04 12:53+0000\n"
+"PO-Revision-Date: 2010-07-10 16:39+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
@@ -57,7 +57,7 @@ msgstr "Video datoteke"
 
 #: ../src/ideviceinfo-property-page.c:526
 msgid "Other & Media"
-msgstr "Večpredstavnostno"
+msgstr "Večpredstavnost"
 
 #: ../src/ideviceinfo-property-page.c:531
 msgid "Free"
@@ -77,9 +77,8 @@ msgid "Details"
 msgstr "Podrobnosti"
 
 #: ../src/nautilus-afc2-warning-bar.c:80
-#, fuzzy
 msgid "Jailbroken filesystem browsing is unsupported"
-msgstr "Brskanje pobeglega (jailbreak) datotečnega sistema ni podprto"
+msgstr "Brskanje po odklenjenem datotečnem sistemu ni podprto"
 
 #: ../src/nautilus-afc2-warning-bar.c:86
 msgid "Accessing the root filesystem of the device can cause damage. If problems occur, a restore will be necessary."
@@ -90,9 +89,8 @@ msgid "Bluetooth Address:"
 msgstr "Bluetooth naslov:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:2
-#, fuzzy
 msgid "Browse jailbroken filesystem..."
-msgstr "Brskanje pobeglega (jailbreak) datotečnega sistema ..."
+msgstr "Brskanje po odklenjenem datotečnem sistemu ..."
 
 #: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
@@ -120,7 +118,7 @@ msgstr "Model:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:9
 msgid "Modem Firmware:"
-msgstr "Različica strojne opreme modea:"
+msgstr "Različica strojne opreme modema:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:10
 msgid "Name:"
@@ -140,7 +138,7 @@ msgstr "Telefonska številka:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:14
 msgid "Serial Number:"
-msgstr "Serijska številka:"
+msgstr "Zaporedna številka:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:15
 msgid "Software Version:"

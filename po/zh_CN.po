@@ -1,0 +1,150 @@
+# Chinese (China) translation for nautilus-ideviceinfo.
+# Copyright (C) 2010 nautilus-ideviceinfo's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# maonx  <lovemaonx@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-10 14:40+0000\n"
+"PO-Revision-Date: 2010-07-14 13:06+0800\n"
+"Last-Translator: maonx <lovemaonx@gmail.com>\n"
+"Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "储存"
+
+#: ../src/ideviceinfo-property-page.c:510
+msgid "Audio"
+msgstr "音频"
+
+#: ../src/ideviceinfo-property-page.c:513
+msgid "Video"
+msgstr "视频"
+
+#: ../src/ideviceinfo-property-page.c:516
+msgid "Photos"
+msgstr "照片"
+
+#: ../src/ideviceinfo-property-page.c:519
+#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:527
+msgid "Applications"
+msgstr "应用程序"
+
+#: ../src/ideviceinfo-property-page.c:523
+msgid "Other"
+msgstr "其它"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Audio Files"
+msgstr "音频文件"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Video Files"
+msgstr "视频文件"
+
+#: ../src/ideviceinfo-property-page.c:526
+msgid "Other & Media"
+msgstr "其它 & 媒体"
+
+#: ../src/ideviceinfo-property-page.c:531
+#, fuzzy
+msgid "Free"
+msgstr "免费"
+
+#: ../src/ideviceinfo-property-page.c:700
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"载入“%s”时出现错误。\n"
+"建议重新安装应用程序。"
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "详细信息"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr ""
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr "访问该设备的根文件系统可能造成损害，如果出现问题，需要恢复。"
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "蓝牙地址："
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr ""
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "常规"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "集成电路卡识别码："
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "手机串号(IMEI)："
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "国际移动用户识别码(IMSI)："
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "移动载体："
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "型号："
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "调制解调器固件："
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "名称："
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "网络"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "电话"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "电话号码："
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "序列号："
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "软件版本："
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID："
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "WiFi 地址："

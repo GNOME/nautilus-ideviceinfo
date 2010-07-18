@@ -2,14 +2,15 @@
 # Copyright (C) 2010 nautilus-ideviceinfo's COPYRIGHT HOLDER
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 # maonx  <lovemaonx@gmail.com>, 2010.
+# du baodao <centerpoint@139.com>, 2010
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-10 14:40+0000\n"
-"PO-Revision-Date: 2010-07-14 13:06+0800\n"
-"Last-Translator: maonx <lovemaonx@gmail.com>\n"
+"POT-Creation-Date: 2010-07-14 05:22+0000\n"
+"PO-Revision-Date: 2010-07-19 01:05+0800\n"
+"Last-Translator: du baodao <centerpoint@139.com>\n"
 "Language-Team: Chinese (China) <i18n-zh@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -54,9 +55,8 @@ msgid "Other & Media"
 msgstr "其它 & 媒体"
 
 #: ../src/ideviceinfo-property-page.c:531
-#, fuzzy
 msgid "Free"
-msgstr "免费"
+msgstr "自由"
 
 #: ../src/ideviceinfo-property-page.c:700
 #, c-format
@@ -73,7 +73,7 @@ msgstr "详细信息"
 
 #: ../src/nautilus-afc2-warning-bar.c:80
 msgid "Jailbroken filesystem browsing is unsupported"
-msgstr ""
+msgstr "不支持浏览解锁文件系统"
 
 #: ../src/nautilus-afc2-warning-bar.c:86
 msgid ""
@@ -87,7 +87,7 @@ msgstr "蓝牙地址："
 
 #: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "Browse jailbroken filesystem..."
-msgstr ""
+msgstr "浏览解锁文件系统"
 
 #: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"

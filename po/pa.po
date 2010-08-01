@@ -1,0 +1,154 @@
+# Punjabi translation for nautilus-ideviceinfo.
+# Copyright (C) 2010 nautilus-ideviceinfo's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+#
+# A S Alam <aalam@users.sf.net>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-07-26 20:52+0000\n"
+"PO-Revision-Date: 2010-08-01 17:52+0530\n"
+"Last-Translator: A S Alam <aalam@users.sf.net>\n"
+"Language-Team: pa-IN-3.3-m84 <punjabi-users@lists.sf.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "ਸਟੋਰੇਜ਼"
+
+#: ../src/ideviceinfo-property-page.c:510
+msgid "Audio"
+msgstr "ਆਡੀਓ"
+
+#: ../src/ideviceinfo-property-page.c:513
+msgid "Video"
+msgstr "ਵਿਡੀਓ"
+
+#: ../src/ideviceinfo-property-page.c:516
+msgid "Photos"
+msgstr "ਫੋਟੋ"
+
+#: ../src/ideviceinfo-property-page.c:519
+#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:527
+msgid "Applications"
+msgstr "ਐਪਲੀਕੇਸ਼ਨ"
+
+#: ../src/ideviceinfo-property-page.c:523
+msgid "Other"
+msgstr "ਹੋਰ"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Audio Files"
+msgstr "ਆਡੀਓ ਫਾਇਲਾਂ"
+
+#: ../src/ideviceinfo-property-page.c:524
+msgid "Video Files"
+msgstr "ਵਿਡੀਓ ਫਾਇਲਾਂ"
+
+#: ../src/ideviceinfo-property-page.c:526
+msgid "Other & Media"
+msgstr "ਹੋਰ ਮੀਡਿਆ"
+
+#: ../src/ideviceinfo-property-page.c:531
+msgid "Free"
+msgstr "ਖਾਲੀ"
+
+#: ../src/ideviceinfo-property-page.c:700
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"'%s' ਲੋਡ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ ਹੈ।\n"
+"ਐਪਲੀਕੇਸ਼ਨ ਮੁੜ-ਇੰਸਟਾਲ ਕਰਨ ਬਾਰੇ ਵਿਚਾਰੋ।"
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "ਵੇਰਵਾ"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "ਜੇਲਬਰੋਕਨ ਫਾਇਲ ਸਿਸਟਮ ਬਰਾਊਜ਼ ਕਰਨ ਲਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"ਜੰਤਰ ਦੇ ਰੂਟ ਫਾਇਲ-ਸਿਸਟਮ ਨੂੰ ਵਰਤਣ ਨਾਲ ਨੁਕਸਾਨ ਹੋ ਸਕਦਾ ਹੈ। ਜੇ ਸਮੱਸਿਆ ਆਉਂਦੀ ਹੈ "
+"ਤਾਂ ਮੁੜ-ਸਟੋਰ ਕਰਨਾ ਲਾਜ਼ਮੀ ਹੋਵੇਗਾ।"
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "ਬਲਿਊਟੁੱਥ ਐਡਰੈੱਸ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "ਜੇਲਬਰੋਕਨ ਫਾਇਲ-ਸਿਸਟਮ ਝਲਕ..."
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "ਆਮ"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "ਮੋਬਾਇਲ ਕੈਰੀਅਰ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "ਮਾਡਲ"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "ਮਾਡਮ ਫਿਰਮਵੇਅਰ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "ਨਾਂ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "ਨੈੱਟਵਰਕ"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "ਫੋਨ"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "ਫੋਨ ਨੰਬਰ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "ਸੀਰੀਅਲ ਨੰਬਰ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "ਸਾਫਟਵੇਅਰ ਵਰਜਨ:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "ਵਾਈਫਾਈ ਐਡਰੈੱਸ:"
+

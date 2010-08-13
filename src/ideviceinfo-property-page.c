@@ -224,6 +224,7 @@ update_ui (CompletedMessage *msg)
 
 	gboolean is_phone = FALSE;
 	gboolean is_ipod_touch = FALSE;
+	gboolean has_sim = FALSE;
 
 	GtkLabel *lbDeviceName = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceNameText"));
 	GtkLabel *lbDeviceModel = GTK_LABEL(gtk_builder_get_object (builder, "lbDeviceModelText"));
@@ -290,6 +291,8 @@ update_ui (CompletedMessage *msg)
 		}
 		if (g_str_has_prefix(devtype, "iPod"))
 			is_ipod_touch = TRUE;
+		else if (!g_str_has_prefix(devtype, "iPad"))
+			is_phone = TRUE;
 		node = plist_dict_get_item(dict, "ModelNumber");
 		if (node) {
 			plist_get_string_val(node, &val2);
@@ -343,6 +346,20 @@ update_ui (CompletedMessage *msg)
 		}
 		val = NULL;
 	}
+	node = plist_dict_get_item(dict, "SIMStatus");
+	if (node) {
+		plist_get_string_val(node, &val);
+		if (val) {
+			if (g_str_equal(val, "kCTSIMSupportSIMStatusNotInserted"))
+				has_sim = FALSE;
+			else
+				has_sim = TRUE;
+			free(val);
+		}
+		val = NULL;
+	} else {
+		has_sim = FALSE;
+	}
 	node = plist_dict_get_item(dict, "SerialNumber");
 	if (node) {
 		plist_get_string_val(node, &val);
@@ -361,13 +378,13 @@ update_ui (CompletedMessage *msg)
 		}
 		val = NULL;
 	}
-	if (!is_ipod_touch) {
+	if (is_phone) {
 		node = plist_dict_get_item(dict, "PhoneNumber");
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
 				unsigned int i;
-				is_phone = TRUE;
+
 				/* replace spaces, otherwise the telephone
 				 * number will be mixed up when displaying
 				 * in RTL mode */
@@ -380,6 +397,15 @@ update_ui (CompletedMessage *msg)
 				free(val);
 			}
 			val = NULL;
+		} else if (!has_sim) {
+			gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (builder, "lbTelNo")));
+			gtk_widget_hide(GTK_WIDGET(lbTelNo));
+			gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (builder, "lbIMSI")));
+			gtk_widget_hide(GTK_WIDGET(lbIMSI));
+			gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (builder, "lbCarrier")));
+			gtk_widget_hide(GTK_WIDGET(lbCarrier));
+			gtk_widget_hide (GTK_WIDGET(gtk_builder_get_object (builder, "lbICCID")));
+			gtk_widget_hide(GTK_WIDGET(lbICCID));
 		} else {
 			gtk_widget_hide(GTK_WIDGET(lbTelNo));
 		}
@@ -387,17 +413,22 @@ update_ui (CompletedMessage *msg)
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
-				is_phone = TRUE;
+
 				gtk_label_set_text(lbIMEI, val);
 				free(val);
 			}
 			val = NULL;
 		}
+
+		/* If we don't have a SIM card, there's no point in doing all that */
+		if (!has_sim)
+			goto end_phone;
+
+
 		node = plist_dict_get_item(dict, "InternationalMobileSubscriberIdentity");
 		if (node) {
 			plist_get_string_val(node, &val);
 			if (val) {
-				is_phone = TRUE;
 #ifdef HAVE_MOBILE_PROVIDER_INFO
 				char *carrier;
 				carrier = get_carrier_from_imsi(val);
@@ -416,6 +447,7 @@ update_ui (CompletedMessage *msg)
 			/* hide SIM related infos */
 			gtk_widget_hide(GTK_WIDGET(lbIMSI));
 			gtk_widget_hide(GTK_WIDGET(lbCarrier));
+			gtk_widget_hide(GTK_WIDGET(lbICCID));
 		}
 		node = plist_dict_get_item(dict, "IntegratedCircuitCardIdentity");
 		if (node) {
@@ -431,6 +463,7 @@ update_ui (CompletedMessage *msg)
 	} else {
 		gtk_widget_hide(GTK_WIDGET(vbPhone));
 	}
+end_phone:
 	node = plist_dict_get_item(dict, "BluetoothAddress");
 	if (node) {
 		val = get_mac_address_val(node);

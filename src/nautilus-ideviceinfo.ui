@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <interface>
   <requires lib="gtk+" version="2.16"/>
   <!-- interface-naming-policy project-wide -->
   <object class="GtkVBox" id="ideviceinfo">
     <property name="visible">True</property>
     <property name="border_width">12</property>
+    <property name="orientation">vertical</property>
     <property name="spacing">12</property>
     <child>
       <object class="GtkVBox" id="vbGeneral">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label1">
             <property name="visible">True</property>
@@ -193,6 +195,7 @@
     <child>
       <object class="GtkVBox" id="vbPhone">
         <property name="no_show_all">True</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label2">
             <property name="visible">True</property>
@@ -227,16 +230,21 @@
                     <property name="width_request">120</property>
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
+                    <property name="yalign">0</property>
                     <property name="xpad">1</property>
                     <property name="ypad">1</property>
                     <property name="label" translatable="yes">Phone Number:</property>
                   </object>
+                  <packing>
+                    <property name="x_options">GTK_FILL</property>
+                  </packing>
                 </child>
                 <child>
                   <object class="GtkLabel" id="lbCarrier">
                     <property name="width_request">110</property>
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
+                    <property name="yalign">0</property>
                     <property name="xpad">1</property>
                     <property name="ypad">1</property>
                     <property name="label" translatable="yes">Mobile Carrier:</property>
@@ -244,6 +252,7 @@
                   <packing>
                     <property name="left_attach">2</property>
                     <property name="right_attach">3</property>
+                    <property name="x_options">GTK_FILL</property>
                   </packing>
                 </child>
                 <child>
@@ -258,6 +267,7 @@
                   <packing>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
+                    <property name="x_options">GTK_FILL</property>
                   </packing>
                 </child>
                 <child>
@@ -274,6 +284,7 @@
                     <property name="right_attach">3</property>
                     <property name="top_attach">1</property>
                     <property name="bottom_attach">2</property>
+                    <property name="x_options">GTK_FILL</property>
                   </packing>
                 </child>
                 <child>
@@ -281,6 +292,7 @@
                     <property name="width_request">120</property>
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
+                    <property name="yalign">0</property>
                     <property name="xpad">1</property>
                     <property name="ypad">1</property>
                     <property name="label" translatable="yes">Modem Firmware:</property>
@@ -288,6 +300,7 @@
                   <packing>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
+                    <property name="x_options">GTK_FILL</property>
                   </packing>
                 </child>
                 <child>
@@ -304,6 +317,7 @@
                     <property name="right_attach">3</property>
                     <property name="top_attach">2</property>
                     <property name="bottom_attach">3</property>
+                    <property name="x_options">GTK_FILL</property>
                   </packing>
                 </child>
                 <child>
@@ -338,6 +352,7 @@
                   <object class="GtkLabel" id="lbModemFwText">
                     <property name="visible">True</property>
                     <property name="xalign">0</property>
+                    <property name="yalign">0</property>
                     <property name="xpad">1</property>
                     <property name="ypad">1</property>
                     <property name="selectable">True</property>
@@ -406,6 +421,7 @@
     <child>
       <object class="GtkVBox" id="vbNetwork">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <child>
           <object class="GtkLabel" id="label3">
             <property name="visible">True</property>
@@ -506,6 +522,7 @@
     <child>
       <object class="GtkVBox" id="vbStorage">
         <property name="visible">True</property>
+        <property name="orientation">vertical</property>
         <property name="spacing">4</property>
         <child>
           <object class="GtkLabel" id="label4">
@@ -528,6 +545,7 @@
             <child>
               <object class="GtkVBox" id="vbox8">
                 <property name="visible">True</property>
+                <property name="orientation">vertical</property>
                 <child>
                   <object class="GtkAlignment" id="disk_usage">
                     <property name="visible">True</property>
@@ -566,7 +584,6 @@
         <property name="can_focus">True</property>
         <property name="receives_default">True</property>
         <property name="no_show_all">True</property>
-        <property name="use_action_appearance">False</property>
       </object>
       <packing>
         <property name="expand">False</property>

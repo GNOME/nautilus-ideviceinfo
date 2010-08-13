@@ -265,10 +265,11 @@ update_ui (CompletedMessage *msg)
 	node = plist_dict_get_item(dict, "ProductType");
 	if (node) {
 		char *devtype = NULL;
-		const char *devtypes[7][2] = {
+		const char *devtypes[][2] = {
 			{"iPhone1,1", "iPhone"},
 			{"iPhone1,2", "iPhone 3G"},
 			{"iPhone2,1", "iPhone 3GS"},
+			{"iPhone3,1", "iPhone 4"},
 			{"iPod1,1", "iPod Touch"},
 			{"iPod2,1", "iPod Touch (2G)"},
 			{"iPod3,1", "iPod Touch (3G)"},
@@ -279,8 +280,8 @@ update_ui (CompletedMessage *msg)
 		plist_get_string_val(node, &devtype);
 		val = devtype;
 		if (devtype) {
-			int i;
-			for (i = 0; i < 6; i++) {
+			guint i;
+			for (i = 0; i < G_N_ELEMENTS(devtypes); i++) {
 				if (g_str_equal(devtypes[i][0], devtype)) {
 					val = g_strdup(devtypes[i][1]);
 					break;

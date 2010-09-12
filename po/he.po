@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-12 18:11+0200\n"
+"PO-Revision-Date: 2010-09-12 23:41+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: Gezer (Hebrew)\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Virtaal 0.6.1\n"
+
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "אחסון"
+
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Audio"
+msgstr "שמע"
+
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Video"
+msgstr "וידאו"
+
+#: ../src/ideviceinfo-property-page.c:550
+msgid "Photos"
+msgstr "תמונות"
+
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
+msgid "Applications"
+msgstr "יישומים"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other"
+msgstr "אחר"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Audio Files"
+msgstr "קובצי שמע"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Video Files"
+msgstr "קובצי וידאו"
+
+#: ../src/ideviceinfo-property-page.c:560
+msgid "Other & Media"
+msgstr "אחר ומדיה"
+
+#: ../src/ideviceinfo-property-page.c:565
+msgid "Free"
+msgstr "פנויים"
+
+#: ../src/ideviceinfo-property-page.c:734
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"אירעה שגיאה בטעינת '% s'.\n"
+"יש לשקול להתקין את היישום מחדש."
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "פרטים"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "עיון במערכת קבצים פרוצה (Jailbroken) אינו נתמך "
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"הגישה לשורש מערכת הקבצים של ההתקן עלולה לגרום לנזק. אם מתעוררות תקלות יתכן "
+"שיהיה צורך בשחזור."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "כתובת ה־Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "עיון במערכת קבצים פרוצה (Jailbroken)..."
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "כללי"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "ספק סלולרי:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "דגם:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "קושחת המודם:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "שם:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "רשת"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "טלפון"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "מספר הטלפון:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "מספר סידורי:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "גרסת התכנה:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "מזהה ייחודי:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "כתובת אלחוט:"

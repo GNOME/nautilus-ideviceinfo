@@ -1,0 +1,155 @@
+# Czech translation for nautilus-ideviceinfo.
+# Copyright (C) 2010 the author(s) of nautilus-ideviceinfo.
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Marek Černocký <marek@manet.cz>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-09-15 18:37+0200\n"
+"PO-Revision-Date: 2010-06-30 00:05+0200\n"
+"Last-Translator: Marek Černocký <marek@manet.cz>\n"
+"Language-Team: Czech <gnome-cs-list@gnome.org>\n"
+"Language: cs\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "Uložiště"
+
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Audio"
+msgstr "Zvuk"
+
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Video"
+msgstr "Video"
+
+#: ../src/ideviceinfo-property-page.c:550
+msgid "Photos"
+msgstr "Fotografie"
+
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
+msgid "Applications"
+msgstr "Aplikace"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other"
+msgstr "Ostatní"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Audio Files"
+msgstr "Zvukové soubory"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Video Files"
+msgstr "Soubory s videem"
+
+#: ../src/ideviceinfo-property-page.c:560
+msgid "Other & Media"
+msgstr "Ostatní a média"
+
+#: ../src/ideviceinfo-property-page.c:565
+msgid "Free"
+msgstr "Volné"
+
+#: ../src/ideviceinfo-property-page.c:734
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"Objevila se chyba při načítání „%s“.\n"
+"Zvažte novou instalaci aplikace."
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "Podrobnosti"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr ""
+"Procházení odblokovaného (jailbroken) souborového systému není podporováno"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"Přístup do kořene souborového systému zařízení může způsobit poškození. "
+"Pokud takový problém nastane, bude nutná obnova systému."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "Adresa Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "Procházet odblokovaný (jailbroken) souborový systém…"
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "Obecné"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "Mobilní operátor:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "Model:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "Firmware modemu:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "Název:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "Síť"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "Telefonní číslo:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "Sériové číslo:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "Verze softwaru:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "Adresa WiFi:"

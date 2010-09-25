@@ -1,0 +1,151 @@
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+# Aviary.pl
+# Jeśli masz jakiekolwiek uwagi odnoszące się do tłumaczenia lub chcesz
+# pomóc w jego rozwijaniu i pielęgnowaniu, napisz do nas:
+# gnomepl@aviary.pl
+# -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-08-13 11:18+0000\n"
+"PO-Revision-Date: 2010-09-25 14:20+0200\n"
+"Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
+"Language-Team: Polish <gnomepl@aviary.pl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: ../src/ideviceinfo-property-page.c:525
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "Pamięć masowa"
+
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Audio"
+msgstr "Dźwięk"
+
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Video"
+msgstr "Nagrania wideo"
+
+#: ../src/ideviceinfo-property-page.c:550
+msgid "Photos"
+msgstr "Zdjęcia"
+
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
+msgid "Applications"
+msgstr "Aplikacje"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other"
+msgstr "Inne"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Audio Files"
+msgstr "Pliki dźwiękowe"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Video Files"
+msgstr "Pliki wideo"
+
+#: ../src/ideviceinfo-property-page.c:560
+msgid "Other & Media"
+msgstr "Inne i multimedia"
+
+#: ../src/ideviceinfo-property-page.c:565
+msgid "Free"
+msgstr "Wolne"
+
+#: ../src/ideviceinfo-property-page.c:734
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"Wystąpił błąd podczas wczytywania aplikacji \"%s\".\n"
+"Proszę rozważyć ponowne zainstalowanie aplikacji."
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "Szczegóły"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "Przeglądanie złamanego systemu plików jest nieobsługiwane"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid "Accessing the root filesystem of the device can cause damage. If problems occur, a restore will be necessary."
+msgstr "Modyfikowanie głównego systemu plików urządzenia może spowodować uszkodzenia. Jeśli wystąpią problemy, niezbędne będzie przywrócenie ustawień fabrycznych."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "Adres Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "Przeglądaj złamany system plików..."
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "Ogólne"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "Operator komórkowy:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "Model:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "Oprogramowanie wewnętrzne modemu:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "Nazwa:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "Sieć"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "Numer telefonu:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "Numer seryjny:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "Wersja oprogramowania:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "Adres WiFi:"
+

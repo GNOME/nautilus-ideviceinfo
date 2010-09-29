@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-29 06:23+0000\n"
-"PO-Revision-Date: 2010-06-29 20:20+0100\n"
+"POT-Creation-Date: 2010-07-01 07:04+0000\n"
+"PO-Revision-Date: 2010-09-29 09:32+0100\n"
 "Last-Translator: Mario Blättermann <mariobl@gnome.org>\n"
 "Language-Team: German <gnome-de@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -74,16 +74,22 @@ msgstr ""
 msgid "Details"
 msgstr "Details"
 
+# »Jailbroken« bezeichnet hier bestimmte Dateisysteme, z.B. auf
+# Mobiltelefonen oder Spielkonsolen, die gewissen Beschränkungen
+# unterworfen sind. Das sind vor allem Einschränkungen hinsichtlich
+# Ausführung, Weitergabe und Speicherung von Programmen, DRM-Rechte usw.
 #: ../src/nautilus-afc2-warning-bar.c:80
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr ""
+"Durchsuchen eines eingeschränkten (»jailbroken«) Dateisystems wird nicht "
+"unterstützt"
 
 #: ../src/nautilus-afc2-warning-bar.c:86
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
 msgstr ""
-"Zugriff auf das Root-Dateisystems des Gerätes kann zu Beschädigungen führen. "
+"Zugriff auf das Root-Dateisystem des Gerätes kann zu Beschädigungen führen. "
 "Falls Probleme auftreten, kann eine Wiederherstellung erforderlich sein."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
@@ -92,7 +98,7 @@ msgstr "Bluetooth-Adresse:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "Browse jailbroken filesystem..."
-msgstr ""
+msgstr "Eingeschränktes (»jailbroken«) Dateisystem wird durchsucht …"
 
 #: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"

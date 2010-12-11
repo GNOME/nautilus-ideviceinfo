@@ -2,66 +2,65 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Fran Diéguez <frandieguez@ubuntu.com>, 2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-21 17:03+0200\n"
-"PO-Revision-Date: 2010-07-02 01:16+0100\n"
-"Last-Translator: \n"
-"Language-Team: galician <gnome@g11n.net>\n"
+"POT-Creation-Date: 2010-09-29 07:38+0000\n"
+"PO-Revision-Date: 2010-12-11 01:21+0100\n"
+"Last-Translator: Fran Diéguez <frandieguez@ubuntu.com>\n"
+"Language-Team: Galician <gnome-gl-list@gnome.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Poedit-Language: galician\n"
 
-#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
 msgid "Storage"
 msgstr "Almacenamento"
 
-#: ../src/ideviceinfo-property-page.c:510
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Audio"
 msgstr "Son"
 
-#: ../src/ideviceinfo-property-page.c:513
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Video"
 msgstr "Vídeo"
 
-#: ../src/ideviceinfo-property-page.c:516
+#: ../src/ideviceinfo-property-page.c:550
 msgid "Photos"
 msgstr "Fotografías"
 
-#: ../src/ideviceinfo-property-page.c:519
-#: ../src/ideviceinfo-property-page.c:524
-#: ../src/ideviceinfo-property-page.c:527
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "Aplicativos"
 
-#: ../src/ideviceinfo-property-page.c:523
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other"
 msgstr "Outros"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:558
 msgid "Audio Files"
 msgstr "Ficheiros de son"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:558
 msgid "Video Files"
 msgstr "Ficheiros de vídeo"
 
-#: ../src/ideviceinfo-property-page.c:526
-#, fuzzy
+#: ../src/ideviceinfo-property-page.c:560
 msgid "Other & Media"
-msgstr "Outros e Medios"
+msgstr "Media e outros"
 
-#: ../src/ideviceinfo-property-page.c:531
-#, fuzzy
+#: ../src/ideviceinfo-property-page.c:565
 msgid "Free"
 msgstr "Dispoñíbel"
 
-#: ../src/ideviceinfo-property-page.c:700
+#: ../src/ideviceinfo-property-page.c:734
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
@@ -72,20 +71,19 @@ msgstr ""
 
 #: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
-msgstr "Detalles"
+msgstr "Información"
 
 #: ../src/nautilus-afc2-warning-bar.c:80
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "A exploración dos sistemas de ficheiros «jailbroken» non é compatíbel"
 
 #: ../src/nautilus-afc2-warning-bar.c:86
-#, fuzzy
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
 msgstr ""
-"O acceso ao sistema de ficheiros root do dispositivo pode producir danos. Se "
-"isto sucede será preciso restabelecer."
+"O acceso ao sistema de ficheiros raíz do dispositivo pode producir danos. Se "
+"isto sucede será preciso restabelecelo."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
 msgid "Bluetooth Address:"

@@ -1,0 +1,164 @@
+# Ukrainian translation for nautilus-ideviceinfo
+#
+# Copyright (C) 2010 Itxaka Serrano
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Itxaka Serrano <itxakaserrano@gmail.com>, 2010.
+#
+# Translation by Serhij Dubyk <serhijdubyk@gmail.com>, 2011
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-04-12 01:46+0300\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Serhij Dubyk / Сергій Дубик <dubyk@library.lviv.ua>\n"
+"Language-Team: Ukrainian Linux Team <translate@linux.org.ua>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Ukrainian\n"
+"X-Poedit-Country: UKRAINE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Storage"
+msgstr "Використання пам’яті"
+
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Audio"
+msgstr "Аудіо"
+
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Video"
+msgstr "Відео"
+
+#: ../src/ideviceinfo-property-page.c:550
+msgid "Photos"
+msgstr "Фотографії"
+
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
+msgid "Applications"
+msgstr "Програми"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other"
+msgstr "Інше"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Audio Files"
+msgstr "Звукові файли"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Video Files"
+msgstr "Файли відео"
+
+#: ../src/ideviceinfo-property-page.c:560
+msgid "Other & Media"
+msgstr "Інші файли і мультимедіа"
+
+#: ../src/ideviceinfo-property-page.c:565
+msgid "Free"
+msgstr "Безкоштовно"
+
+# Розглянемо перевстановлення програми.
+# Розгляньте можливість встановлення нового додатка.
+# Докази aplicativo переселення.
+# Розглянемо переустановити додатки.
+# Перетягніть нову установку додатків розглядається.
+# Розглянемо перевстановлення програми.
+# Це може бути необхідно перевстановити програму.
+#: ../src/ideviceinfo-property-page.c:734
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"Помилка завантаження «%s».\n"
+"Повторне встановлення цієї програми може допомогти."
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "Подробиці"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "Огляд розблокованої файлової системи не підтримується"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"Доступ до кореневої файлової системи пристрою може призвести до пошкодження. "
+"Якщо у вас виникнуть проблеми, можливо, доведеться відновлювати."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "Bluetooth Address:"
+msgstr "Адреса Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Browse jailbroken filesystem..."
+msgstr "Огляд розблокованої файлової системи…"
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "General"
+msgstr "Загальне"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Mobile Carrier:"
+msgstr "Оператор мобільного зв’язку:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Model:"
+msgstr "Модель:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Modem Firmware:"
+msgstr "Мікропрограма модема:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Name:"
+msgstr "Назва:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "Network"
+msgstr "Мережа"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Phone"
+msgstr "Телефон"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Phone Number:"
+msgstr "Номер телефону:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Serial Number:"
+msgstr "Серійний номер:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Software Version:"
+msgstr "Версія програмних засобів:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "WiFi Address:"
+msgstr "Адреса WiFi:"

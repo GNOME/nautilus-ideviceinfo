@@ -1,0 +1,160 @@
+# Korean translation for nautilus-ideviceinfo.
+# Copyright (C) 2012 nautilus-ideviceinfo's COPYRIGHT HOLDER
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Seong-ho Cho <darkcircle.0426@gmail.com>, 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo master\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-20 10:28+0000\n"
+"PO-Revision-Date: 2012-09-03 01:27+0900\n"
+"Last-Translator: Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"Language-Team: Korean <gnome-kr@googlegroups.com>\n"
+"Language: ko\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:17
+msgid "Storage"
+msgstr "저장장치"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Audio"
+msgstr "노래"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Video"
+msgstr "비디오"
+
+#: ../src/ideviceinfo-property-page.c:550
+msgid "Photos"
+msgstr "사진"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
+msgid "Applications"
+msgstr "응용 프로그램"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other"
+msgstr "기타"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Audio Files"
+msgstr "노래 파일"
+
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Video Files"
+msgstr "비디오 파일"
+
+#: ../src/ideviceinfo-property-page.c:560
+msgid "Other & Media"
+msgstr "기타 & 미디어"
+
+#: ../src/ideviceinfo-property-page.c:565
+msgid "Free"
+msgstr "남은 공간"
+
+# * NOTE: application -> 응용 프로그램 : Apple iPhone 번역을 따름
+#: ../src/ideviceinfo-property-page.c:734
+#, c-format
+msgid ""
+"There was an error loading '%s'.\n"
+"Consider reinstalling the application."
+msgstr ""
+"'%s'을(를) 불러오는데 오류가 발생했습니다.\n"
+"응용 프로그램 재설치를 고려하십시오."
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "세부정보"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr "탈옥 파일 시스템 탐색을 지원하지 않습니다"
+
+#: ../src/nautilus-afc2-warning-bar.c:86
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"장치의 루트 파일 시스템에 접근하면 손상을 유발할 수 있습니다. 문제가 발생하"
+"면 복구가 필요할 수도 있습니다."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "General"
+msgstr "일반"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "Name:"
+msgstr "이름:"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Software Version:"
+msgstr "소프트웨어 버전:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Model:"
+msgstr "모델:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Serial Number:"
+msgstr "시리얼 번호:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "UUID:"
+msgstr "UUID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Phone"
+msgstr "전화기"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone Number:"
+msgstr "전화번호:"
+
+# * NOTE: Apple iPhone 번역을 따름
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Mobile Carrier:"
+msgstr "모바일 네트워크 사업자:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Modem Firmware:"
+msgstr "모뎀 펌웨어:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Network"
+msgstr "네트워크"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Bluetooth Address:"
+msgstr "블루투스 주소:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "WiFi Address:"
+msgstr "무선랜 주소:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "Browse jailbroken filesystem..."
+msgstr "탈옥 파일 시스템 탐색..."

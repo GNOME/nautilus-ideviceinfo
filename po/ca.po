@@ -135,11 +135,11 @@ msgstr "Telèfon"
 
 #: ../src/nautilus-ideviceinfo.ui.h:13
 msgid "Phone Number:"
-msgstr "Numero de telèfon:"
+msgstr "Número de telèfon:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:14
 msgid "Serial Number:"
-msgstr "Numero de sèrie:"
+msgstr "Número de sèrie:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:15
 msgid "Software Version:"

@@ -1,70 +1,72 @@
 # Swedish translation for nautilus-ideviceinfo.
-# Copyright (C) 2010 Free Software Foundation, Inc.
+# Copyright © 2010, 2014 Free Software Foundation, Inc.
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 # Daniel Nylander <po@danielnylander.se>, 2010.
+# Josef Andersson <josef.andersson@fripost.org>, 2014.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-26 22:46+0200\n"
-"PO-Revision-Date: 2010-07-26 22:51+0100\n"
-"Last-Translator: Daniel Nylander <po@danielnylander.se>\n"
+"POT-Creation-Date: 2013-12-19 15:52+0000\n"
+"PO-Revision-Date: 2014-05-20 17:40+0100\n"
+"Last-Translator: Josef Andersson <josef.andersson@fripost.org>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
 
-#: ../src/ideviceinfo-property-page.c:491
-#: ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:17
 msgid "Storage"
 msgstr "Lagring"
 
-#: ../src/ideviceinfo-property-page.c:510
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Audio"
 msgstr "Ljud"
 
-#: ../src/ideviceinfo-property-page.c:513
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Video"
 msgstr "Video"
 
-#: ../src/ideviceinfo-property-page.c:516
+#: ../src/ideviceinfo-property-page.c:550
 msgid "Photos"
 msgstr "Foton"
 
-#: ../src/ideviceinfo-property-page.c:519
-#: ../src/ideviceinfo-property-page.c:524
-#: ../src/ideviceinfo-property-page.c:527
+#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "Program"
 
-#: ../src/ideviceinfo-property-page.c:523
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other"
 msgstr "Övrigt"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:558
 msgid "Audio Files"
 msgstr "Ljudfiler"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:558
 msgid "Video Files"
 msgstr "Videofiler"
 
-#: ../src/ideviceinfo-property-page.c:526
+#: ../src/ideviceinfo-property-page.c:560
 msgid "Other & Media"
 msgstr "Övrigt och media"
 
-#: ../src/ideviceinfo-property-page.c:531
+#: ../src/ideviceinfo-property-page.c:565
 msgid "Free"
 msgstr "Ledigt"
 
-#: ../src/ideviceinfo-property-page.c:700
+#: ../src/ideviceinfo-property-page.c:734
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
 "Consider reinstalling the application."
 msgstr ""
-"Det uppstod ett fel vid inläsning av \"%s\".\n"
+"Det uppstod ett fel vid inläsning av ”%s”.\n"
 "Installera om programmet om problemet kvarstår."
 
 #: ../src/nautilus-ideviceinfo.c:54
@@ -73,77 +75,80 @@ msgstr "Detaljer"
 
 #: ../src/nautilus-afc2-warning-bar.c:80
 msgid "Jailbroken filesystem browsing is unsupported"
-msgstr "Bläddring i ett \"jailbroken\" filsystem stöds inte"
+msgstr "Bläddring i ett upplåst filsystem stöds inte"
 
 #: ../src/nautilus-afc2-warning-bar.c:86
-msgid "Accessing the root filesystem of the device can cause damage. If problems occur, a restore will be necessary."
-msgstr "Åtkomst till rotfilsystemet på enheten kan orsaka skada. Om problem uppstår kan en återställning vara nödvändig."
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"Åtkomst till rotfilsystemet på enheten kan orsaka skada. Om problem uppstår "
+"kan en återställning vara nödvändig."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Blåtandsadress:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Bläddra i \"jailbroken\" filsystem..."
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "Allmänt"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCID:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "Mobilleverantör:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "Modell:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "Fast programvara för modem:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "Name:"
 msgstr "Namn:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "Nätverk"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "Telefon"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "Telefonnummer:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "Serienummer:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
+#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "Software Version:"
 msgstr "Programversion:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Model:"
+msgstr "Modell:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Serial Number:"
+msgstr "Serienummer:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
 msgid "UUID:"
 msgstr "UUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone Number:"
+msgstr "Telefonnummer:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Mobile Carrier:"
+msgstr "Mobilleverantör:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "Modem Firmware:"
+msgstr "Fast programvara för modem:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "Network"
+msgstr "Nätverk"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Bluetooth Address:"
+msgstr "Blåtandsadress:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
 msgid "WiFi Address:"
 msgstr "WiFi-adress:"
 
+#: ../src/nautilus-ideviceinfo.ui.h:18
+msgid "Browse jailbroken filesystem..."
+msgstr "Bläddra i upplåst filsystem…"

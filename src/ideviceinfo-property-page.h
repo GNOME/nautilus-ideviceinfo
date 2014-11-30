@@ -36,12 +36,12 @@ typedef struct NautilusIdeviceinfoPageClass NautilusIdeviceinfoPageClass;
 typedef struct NautilusIdeviceinfoPagePrivate NautilusIdeviceinfoPagePrivate;
 
 struct NautilusIdeviceinfoPage {
-	GtkVBox parent;
+	GtkBox parent;
 	NautilusIdeviceinfoPagePrivate *priv;
 };
 
 struct NautilusIdeviceinfoPageClass {
-	GtkVBoxClass parent_class;
+	GtkBoxClass parent_class;
 };
 
 GType nautilus_ideviceinfo_page_get_type(void);

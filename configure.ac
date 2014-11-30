@@ -14,21 +14,21 @@ AC_PROG_CC
 AM_PROG_CC_C_O
 AC_PROG_LIBTOOL
 
-LIBIMOBILE_REQS=0.9.7
-GLIB2_REQS=2.14.1
-LIBPLIST_REQS=0.15
-GTK2_REQS=2.16
+LIBIMOBILE_REQS=1.1.7
+GLIB2_REQS=2.38.0
+LIBPLIST_REQS=1.12
+GTK3_REQS=3.10.0
 NAUTILUS_REQS=2.21.2
-LIBGPOD_REQS=0.7.90
+LIBGPOD_REQS=0.8.2
 LIBXML_REQS=2.6.30
 
 # Checks for libraries.
 PKG_CHECK_MODULES(WIDGET, libimobiledevice-1.0 >= $LIBIMOBILE_REQS
 		          glib-2.0 >= $GLIB2_REQS
 			  libplist >= $LIBPLIST_REQS
-			  gtk+-2.0 >= $GTK2_REQS)
+			  gtk+-3.0 >= $GTK3_REQS)
 PKG_CHECK_MODULES(libnautilusextension, libnautilus-extension >= $NAUTILUS_REQS)
-PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=yes, enable_libgpod=no)
+PKG_CHECK_MODULES(libgpod, libgpod-1.0 >= $LIBGPOD_REQS, enable_libgpod=no, enable_libgpod=no)
 PKG_CHECK_MODULES(libxml, libxml-2.0 >= $LIBXML_REQS)
 PKG_CHECK_MODULES(providerinfo, mobile-broadband-provider-info, enable_carrier_lookup=yes, enable_carrier_lookup=no)
 

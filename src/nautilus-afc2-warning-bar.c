@@ -42,7 +42,7 @@ enum {
        LAST_SIGNAL
 };
 
-G_DEFINE_TYPE (NautilusAfc2WarningBar, nautilus_afc2_warning_bar, GTK_TYPE_HBOX)
+G_DEFINE_TYPE (NautilusAfc2WarningBar, nautilus_afc2_warning_bar, GTK_TYPE_BOX)
 
 static void
 nautilus_afc2_warning_bar_class_init (NautilusAfc2WarningBarClass *klass)
@@ -57,7 +57,7 @@ nautilus_afc2_warning_bar_class_init (NautilusAfc2WarningBarClass *klass)
 static void
 nautilus_afc2_warning_bar_init (NautilusAfc2WarningBar *bar)
 {
-	GtkWidget   *label;
+        GtkWidget   *label;
         GtkWidget   *hbox;
         GtkWidget   *vbox;
         GtkWidget   *image;
@@ -69,16 +69,17 @@ nautilus_afc2_warning_bar_init (NautilusAfc2WarningBar *bar)
         gtk_box_set_spacing (GTK_BOX (bar), 6);
         gtk_widget_show (hbox);
 
-        image = gtk_image_new_from_stock (GTK_STOCK_DIALOG_WARNING, GTK_ICON_SIZE_DIALOG);
+        image = gtk_image_new_from_icon_name ("dialog-warning", GTK_ICON_SIZE_DIALOG);
         gtk_widget_show (image);
         gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, TRUE, 4);
 
-        vbox = gtk_vbox_new (FALSE, 6);
+        vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
         gtk_widget_show (vbox);
         gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
 
         label = gtk_label_new (_("Jailbroken filesystem browsing is unsupported"));
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_widget_set_halign (label, GTK_ALIGN_START);
+        gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
         gtk_widget_show (label);
         gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, TRUE, 0);
 
@@ -86,7 +87,8 @@ nautilus_afc2_warning_bar_init (NautilusAfc2WarningBar *bar)
         hint = g_strdup_printf ("<i>%s</i>", _("Accessing the root filesystem of the device can cause damage. If problems occur, a restore will be necessary."));
         gtk_label_set_markup (GTK_LABEL (label), hint);
         g_free (hint);
-        gtk_misc_set_alignment (GTK_MISC (label), 0.0, 0.5);
+        gtk_widget_set_halign (label, GTK_ALIGN_START);
+        gtk_widget_set_valign (label, GTK_ALIGN_CENTER);
         gtk_widget_show (label);
         gtk_box_pack_start (GTK_BOX (vbox), label, TRUE, TRUE, 0);
 }

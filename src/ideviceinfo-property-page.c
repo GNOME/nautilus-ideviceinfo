@@ -31,6 +31,7 @@
 #include <libnautilus-extension/nautilus-property-page-provider.h>
 
 #include <libimobiledevice/libimobiledevice.h>
+#include <libimobiledevice/afc.h>
 #include <libimobiledevice/lockdown.h>
 #include <libimobiledevice/installation_proxy.h>
 
@@ -55,6 +56,9 @@
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 #include <libxml/xpath.h>
+#ifndef MOBILE_BROADBAND_PROVIDER_INFO
+#define MOBILE_BROADBAND_PROVIDER_INFO DATADIR"/mobile-broadband-provider-info/serviceproviders.xml"
+#endif
 #endif
 
 #include "rb-segmented-bar.h"
@@ -83,14 +87,14 @@ typedef struct {
 	gboolean has_afc2; /* Whether AFC2 is available */
 } CompletedMessage;
 
-G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_VBOX)
+G_DEFINE_TYPE(NautilusIdeviceinfoPage, nautilus_ideviceinfo_page, GTK_TYPE_BOX)
 
 static const char UIFILE[] = NAUTILUS_EXTENSION_DIR "/nautilus-ideviceinfo.ui";
 
 static gchar *value_formatter(gdouble percent, gpointer user_data)
 {
 	gsize total_size = GPOINTER_TO_SIZE(user_data);
-	return g_format_size_for_display (percent * total_size * 1048576);
+	return g_format_size (percent * total_size * 1048576);
 }
 
 #ifdef HAVE_MOBILE_PROVIDER_INFO
@@ -513,7 +517,7 @@ end_phone:
 	/* set disk usage information */
 	char *storage_formatted_size = NULL;
 	char *markup = NULL;
-	storage_formatted_size = g_format_size_for_display (disk_total);
+	storage_formatted_size = g_format_size (disk_total);
 	markup = g_markup_printf_escaped ("<b>%s</b> (%s)", _("Storage"), storage_formatted_size);
 	gtk_label_set_markup(lbStorage, markup);
 	g_free(storage_formatted_size);
@@ -617,7 +621,7 @@ static gpointer ideviceinfo_load_data(gpointer data)
 		goto leave;
 	}
 
-	if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(dev, &client, "nautilus-ideviceinfo")) {
+	if (LOCKDOWN_E_SUCCESS != lockdownd_client_new_with_handshake(dev, &client, PACKAGE_NAME)) {
 		completed_message_free(msg);
 		client = NULL;
 		goto leave;
@@ -641,12 +645,12 @@ static gpointer ideviceinfo_load_data(gpointer data)
 	}
 
 	/* get number of applications */
-	uint16_t iport = 0;
+	lockdownd_service_descriptor_t service = NULL;
 
-	if ((lockdownd_start_service(client, "com.apple.mobile.installation_proxy", &iport) == LOCKDOWN_E_SUCCESS) && iport) {
+	if ((lockdownd_start_service(client, INSTPROXY_SERVICE_NAME, &service) == LOCKDOWN_E_SUCCESS) && service) {
 		CHECK_CANCELLED;
 		instproxy_client_t ipc = NULL;
-		if (instproxy_client_new(dev, iport, &ipc) == INSTPROXY_E_SUCCESS) {
+		if (instproxy_client_new(dev, service, &ipc) == INSTPROXY_E_SUCCESS) {
 			plist_t opts = instproxy_client_options_new();
 			plist_t apps = NULL;
 			instproxy_client_options_add(opts, "ApplicationType", "User", NULL);
@@ -661,9 +665,19 @@ static gpointer ideviceinfo_load_data(gpointer data)
 		}
 	}
 
+	if (service) {
+		lockdownd_service_descriptor_free(service);
+		service = NULL;
+	}
+
 	/* Detect whether AFC2 is available */
-	if ((lockdownd_start_service(client, "com.apple.afc2", &iport) == LOCKDOWN_E_SUCCESS) && iport) {
+	if ((lockdownd_start_service(client, AFC_SERVICE_NAME"2", &service) == LOCKDOWN_E_SUCCESS) && service) {
 		msg->has_afc2 = TRUE;
+	}
+
+	if (service) {
+		lockdownd_service_descriptor_free(service);
+		service = NULL;
 	}
 
 	g_idle_add((GSourceFunc) update_ui, msg);
@@ -762,7 +776,7 @@ GtkWidget *nautilus_ideviceinfo_page_new(const char *uuid, const char *mount_pat
 	GtkLabel *lbUUIDText = GTK_LABEL(gtk_builder_get_object (di->priv->builder, "lbUUIDText"));
 	gtk_label_set_text(lbUUIDText, di->priv->uuid);
 
-	di->priv->thread = g_thread_create(ideviceinfo_load_data, di, TRUE, NULL);
+	di->priv->thread = g_thread_new("ideviceinfo-load", ideviceinfo_load_data, di);
 
 	return GTK_WIDGET (di);
 }

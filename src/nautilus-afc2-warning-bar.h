@@ -38,14 +38,14 @@ typedef struct NautilusAfc2WarningBarPrivate NautilusAfc2WarningBarPrivate;
 
 typedef struct
 {
-        GtkHBox                 box;
+        GtkBox                 box;
 
         NautilusAfc2WarningBarPrivate *priv;
 } NautilusAfc2WarningBar;
 
 typedef struct
 {
-        GtkHBoxClass            parent_class;
+        GtkBoxClass            parent_class;
 } NautilusAfc2WarningBarClass;
 
 GType       nautilus_afc2_warning_bar_get_type          (void);

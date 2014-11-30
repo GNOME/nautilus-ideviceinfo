@@ -266,33 +266,25 @@ update_ui (CompletedMessage *msg)
 	node = plist_dict_get_item(dict, "ProductType");
 	if (node) {
 		char *devtype = NULL;
-		const char *devtypes[][2] = {
-			{"iPhone1,1", "iPhone"},
-			{"iPhone1,2", "iPhone 3G"},
-			{"iPhone2,1", "iPhone 3GS"},
-			{"iPhone3,1", "iPhone 4"},
-			{"iPod1,1", "iPod Touch"},
-			{"iPod2,1", "iPod Touch (2G)"},
-			{"iPod3,1", "iPod Touch (3G)"},
-			{"iPad1,1", "iPad"}
-		};
 		char *str = NULL;
 		char *val2 = NULL;
 		plist_get_string_val(node, &devtype);
-		val = devtype;
-		if (devtype) {
-			guint i;
-			for (i = 0; i < G_N_ELEMENTS(devtypes); i++) {
-				if (g_str_equal(devtypes[i][0], devtype)) {
-					val = g_strdup(devtypes[i][1]);
-					break;
-				}
-			}
-		}
 		if (g_str_has_prefix(devtype, "iPod"))
 			is_ipod_touch = TRUE;
 		else if (!g_str_has_prefix(devtype, "iPad"))
 			is_phone = TRUE;
+
+		plist_dict_get_item(dict, "MarketingName");
+		if (node) {
+			plist_get_string_val(node, &val);
+		} else {
+			val = g_strdup(devtype);
+		}
+
+		if (devtype) {
+			free(devtype);
+		}
+
 		node = plist_dict_get_item(dict, "ModelNumber");
 		if (node) {
 			plist_get_string_val(node, &val2);

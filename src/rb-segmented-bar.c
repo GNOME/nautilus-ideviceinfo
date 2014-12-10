@@ -59,7 +59,6 @@ static void rb_segmented_bar_get_preferred_width (GtkWidget *widget,
 static void compute_layout_size (RBSegmentedBar *bar);
 
 static AtkObject * rb_segmented_bar_get_accessible (GtkWidget *widget);
-
 enum
 {
 	PROP_0,
@@ -106,8 +105,8 @@ struct _Segment {
 	gdouble percent;
 	Color color;
 
-	guint layout_width;
-	guint layout_height;
+	gint layout_width;
+	gint layout_height;
 };
 typedef struct _Segment Segment;
 
@@ -158,13 +157,13 @@ rb_segmented_bar_class_init (RBSegmentedBarClass *klass)
 	object_class->set_property = rb_segmented_bar_set_property;
 
 	widget_class->draw = rb_segmented_bar_draw;
-	widget_class->get_preferred_width = rb_segmented_bar_get_preferred_width;
 	widget_class->get_preferred_height = rb_segmented_bar_get_preferred_height;
+	widget_class->get_preferred_width = rb_segmented_bar_get_preferred_width;
 	widget_class->size_allocate = rb_segmented_bar_size_allocate;
 	widget_class->get_accessible = rb_segmented_bar_get_accessible;
 
         /**
-         * RBSegmentedBar::show-reflection
+         * RBSegmentedBar:show-reflection:
          *
          * Set to TRUE if you want a reflection to be shown below the segmented
 	 * bar.
@@ -178,7 +177,7 @@ rb_segmented_bar_class_init (RBSegmentedBarClass *klass)
                                                                G_PARAM_READWRITE));
 
         /**
-         * RBSegmentedBar::show-labels
+         * RBSegmentedBar:show-labels:
          *
          * Set to TRUE if you want labels describing the various segments
 	 * to be shown.
@@ -191,7 +190,7 @@ rb_segmented_bar_class_init (RBSegmentedBarClass *klass)
                                                                TRUE,
                                                                G_PARAM_READWRITE));
         /**
-         * RBSegmentedBar::bar-height
+         * RBSegmentedBar:bar-height:
          *
          * Height of the segmented bar
          */
@@ -213,6 +212,8 @@ rb_segmented_bar_finalize (GObject *object)
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (RB_SEGMENTED_BAR (object));
 	g_list_foreach (priv->segments, (GFunc)rb_segment_free, NULL);
 	g_list_free (priv->segments);
+	g_free (priv->a11y_description);
+	g_free (priv->a11y_locale);
 	G_OBJECT_CLASS (rb_segmented_bar_parent_class)->finalize (object);
 } 
 
@@ -277,7 +278,7 @@ static void
 rb_segmented_bar_get_preferred_height (GtkWidget *widget, int *minimum_height, int *natural_height)
 {
 	RBSegmentedBarPrivate *priv;
-	unsigned int height;
+	int height;
 
 
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (RB_SEGMENTED_BAR (widget));
@@ -399,7 +400,7 @@ compute_layout_size (RBSegmentedBar *bar)
 		height = label_height + value_height;
 
 		segment->layout_width = width;
-		segment->layout_height = MAX ((guint)height, priv->segment_box_size*2);
+		segment->layout_height = MAX (height, priv->segment_box_size*2);
 
 		priv->layout_width += segment->layout_width + priv->segment_box_size + priv->segment_box_spacing;
 		if (it->next != NULL) {
@@ -414,7 +415,7 @@ compute_layout_size (RBSegmentedBar *bar)
 static void 
 rb_segmented_bar_size_allocate(GtkWidget *widget, GtkAllocation *allocation) 
 { 
-	guint real_height;
+	gint real_height;
 	RBSegmentedBarPrivate *priv = RB_SEGMENTED_BAR_GET_PRIVATE (widget);
 	GtkAllocation new_allocation;
 
@@ -508,21 +509,19 @@ static void rb_segmented_bar_render_segments (RBSegmentedBar *bar,
 	gdouble last;
 	GList *it;
 	RBSegmentedBarPrivate *priv;
-	gboolean is_rtl = (gtk_widget_get_direction(GTK_WIDGET(bar)) == GTK_TEXT_DIR_RTL);
 
 	last = 0.0;
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (bar);
 	grad = cairo_pattern_create_linear (0, 0, width, 0);
-	for (it = is_rtl ? g_list_last(priv->segments) : priv->segments; it != NULL; it = is_rtl ? it->prev : it->next) {
+	for (it = priv->segments; it != NULL; it = it->next) {
 		Segment *segment = (Segment *)it->data;
 		if (segment->percent > 0) {
-			gdouble percent = (segment->percent < 0.009) ? 0.009 : segment->percent;
 			cairo_pattern_add_color_stop_rgba (grad, last,
 							   segment->color.red,
 							   segment->color.green,
 							   segment->color.blue,
 							   segment->color.alpha);
-			last += percent;
+			last += segment->percent;
 			cairo_pattern_add_color_stop_rgba (grad, last,
 							   segment->color.red,
 							   segment->color.green,
@@ -779,18 +778,23 @@ static void rb_segmented_bar_render_labels (RBSegmentedBar *bar,
 }
 
 static gboolean
-rb_segmented_bar_draw (GtkWidget *widget, cairo_t *context)
+rb_segmented_bar_draw (GtkWidget *widget, cairo_t *context_)
 {
 	RBSegmentedBar *bar;
 	RBSegmentedBarPrivate *priv;
-	cairo_pattern_t *bar_pattern;
 	GtkAllocation allocation;
+	cairo_pattern_t *bar_pattern;
+	cairo_t *context;
 
 	g_return_val_if_fail (RB_IS_SEGMENTED_BAR (widget), FALSE);
 
 	bar = RB_SEGMENTED_BAR (widget);
 	priv = RB_SEGMENTED_BAR_GET_PRIVATE (bar);
 
+	/* XXX should use the context passed in, but this currently
+	 * doesn't work properly with pre-existing translation
+	 */
+	context = gdk_cairo_create (gtk_widget_get_window (widget));
 	if (priv->reflect) {
 		cairo_push_group (context);
 	}
@@ -863,6 +867,7 @@ rb_segmented_bar_draw (GtkWidget *widget, cairo_t *context)
 		rb_segmented_bar_render_labels (bar, context);
 	}
 	cairo_pattern_destroy (bar_pattern);
+	cairo_destroy (context);
 
 	return TRUE;
 }
@@ -872,6 +877,14 @@ GtkWidget *rb_segmented_bar_new (void)
 	return g_object_new (RB_TYPE_SEGMENTED_BAR, NULL);
 }
 
+/**
+ * rb_segmented_bar_set_value_formatter:
+ * @bar: a #RBSegmentedBar
+ * @formatter: (scope async): the formatter function to use
+ * @data: data to pass to the formatter
+ *
+ * Sets a value formatter function to use for the bar.
+ */
 void rb_segmented_bar_set_value_formatter (RBSegmentedBar *bar,
 					   RBSegmentedBarValueFormatter formatter,
 					   gpointer data)

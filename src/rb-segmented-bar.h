@@ -75,7 +75,6 @@ void rb_segmented_bar_update_segment (RBSegmentedBar *bar,
 void rb_segmented_bar_set_value_formatter (RBSegmentedBar *bar,
 					   RBSegmentedBarValueFormatter formatter,
 					   gpointer data);
-
 G_END_DECLS
 
 #endif /* RB_SEGMENTED_BAR:_H */

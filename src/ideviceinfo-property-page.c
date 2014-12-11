@@ -710,6 +710,8 @@ nautilus_ideviceinfo_page_dispose (GObject *object)
 		g_free (di->priv->mount_path);
 		di->priv->mount_path = NULL;
 	}
+
+	G_OBJECT_CLASS (nautilus_ideviceinfo_page_parent_class)->dispose (object);
 }
 
 static void

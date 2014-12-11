@@ -280,7 +280,10 @@ update_ui (CompletedMessage *msg)
 
 		plist_dict_get_item(dict, "MarketingName");
 		if (node) {
-			plist_get_string_val(node, &val);
+			char *tmp;
+			plist_get_string_val(node, &tmp);
+			val = g_strdup(tmp);
+			free(tmp);
 		} else {
 			val = g_strdup(devtype);
 		}
@@ -304,7 +307,7 @@ update_ui (CompletedMessage *msg)
 			gtk_label_set_text(lbDeviceModel, val);
 		}
 		if (val) {
-			free(val);
+			g_free(val);
 		}
 		val = NULL;
 	}

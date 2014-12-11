@@ -1,10 +1,12 @@
-INCLUDES = \
+AM_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\"nautilus-ideviceinfo\" \
 	-DDATADIR=\"$(datadir)\" \
 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
 	-DNAUTILUS_EXTENSION_DIR=\"$(NAUTILUS_EXTENSION_DIR)\" \
 	-I$(top_srcdir) \
-	-I$(top_builddir) \
+	-I$(top_builddir)
+
+AM_CFLAGS = \
 	$(GLOBAL_CFLAGS) \
 	$(libimobiledevice_CFLAGS) \
 	$(libglib2_CFLAGS) \

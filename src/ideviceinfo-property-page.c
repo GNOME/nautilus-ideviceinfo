@@ -693,7 +693,7 @@ leave:
 static void
 nautilus_ideviceinfo_page_dispose (GObject *object)
 {
-	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) di;
+	NautilusIdeviceinfoPage *di = (NautilusIdeviceinfoPage *) object;
 
 	if (di && di->priv) {
 		if (di->priv->builder) {

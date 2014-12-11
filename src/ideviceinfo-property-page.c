@@ -492,7 +492,6 @@ end_phone:
 	uint64_t data_free = 0;
 	uint64_t camera_usage = 0;
 	uint64_t app_usage = 0;
-	uint64_t other_usage = 0; 
 	uint64_t disk_total = 0;
 
 	dict = msg->disk_usage;
@@ -527,8 +526,6 @@ end_phone:
 	g_free(markup);
 
 	if (data_total > 0) {
-		other_usage = (data_total - data_free) - (msg->audio_usage + msg->video_usage + camera_usage + app_usage);
-
 		double percent_free = ((double)data_free/(double)data_total);
 		double percent_audio = ((double)msg->audio_usage/(double)data_total);
 		double percent_video = ((double)msg->video_usage/(double)data_total);

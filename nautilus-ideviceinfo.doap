@@ -6,7 +6,8 @@
 	<name xml:lang="en">nautilus-sendto</name>
 	<shortdesc xml:lang="en">Show information about your iOS device</shortdesc>
 	<homepage rdf:resource="http://www.libimobiledevice.org" />
-	<category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
+	<category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
+
 	<maintainer>
 		<foaf:Person>
 			<foaf:name>Bastien Nocera</foaf:name>

@@ -741,7 +741,7 @@ nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 		g_object_unref (G_OBJECT(builder));
 		container = gtk_label_new(g_strdup_printf(_("There was an error loading '%s'.\nConsider reinstalling the application."), UIFILE));
 	} else {
-		GtkAlignment *align;
+		GtkWidget *align;
 
 		di->priv->builder = builder;
 		g_object_ref (container);
@@ -754,10 +754,8 @@ nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 			     NULL);
 		gtk_widget_show(di->priv->segbar);
 
-		align = GTK_ALIGNMENT(gtk_builder_get_object (di->priv->builder, "disk_usage"));
-		gtk_alignment_set_padding(align, 4, 4, 8, 8);
+		align = GTK_WIDGET(gtk_builder_get_object (di->priv->builder, "disk_usage"));
 		gtk_container_add(GTK_CONTAINER(align), di->priv->segbar);
-
 	}
 	gtk_widget_show(container);
 	gtk_container_add(GTK_CONTAINER(di), container);

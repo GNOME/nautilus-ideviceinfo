@@ -3,8 +3,14 @@
 	 xmlns:foaf="http://xmlns.com/foaf/0.1/"
 	 xmlns:gnome="http://api.gnome.org/doap-extensions#"
 	 xmlns="http://usefulinc.com/ns/doap#">
+
 	<name xml:lang="en">nautilus-sendto</name>
 	<shortdesc xml:lang="en">Show information about your iOS device</shortdesc>
+	<description>
+		This is a nautilus property page extension that shows general, model,
+		telephony, network and storage information about an iOS device.
+	</description>
+
 	<homepage rdf:resource="http://www.libimobiledevice.org" />
 	<category rdf:resource="http://api.gnome.org/doap-extensions#apps" />
 	<programming-language>C</programming-language>

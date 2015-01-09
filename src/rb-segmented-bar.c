@@ -290,7 +290,7 @@ rb_segmented_bar_get_preferred_height (GtkWidget *widget, int *minimum_height, i
 
 	if (priv->show_labels) {
 		compute_layout_size (RB_SEGMENTED_BAR (widget));
-		height = MAX (MINIMUM_HEIGHT + priv->bar_label_spacing + priv->layout_height, height);
+		height = MAX (MINIMUM_HEIGHT + priv->bar_label_spacing + priv->layout_height, (unsigned)height);
 	}
 
 	if (minimum_height)
@@ -400,13 +400,13 @@ compute_layout_size (RBSegmentedBar *bar)
 		height = label_height + value_height;
 
 		segment->layout_width = width;
-		segment->layout_height = MAX (height, priv->segment_box_size*2);
+		segment->layout_height = MAX ((unsigned)height, priv->segment_box_size*2);
 
 		priv->layout_width += segment->layout_width + priv->segment_box_size + priv->segment_box_spacing;
 		if (it->next != NULL) {
 			priv->layout_width += priv->segment_label_spacing;
 		}
-		priv->layout_height = MAX (priv->layout_height, segment->layout_height);
+		priv->layout_height = MAX (priv->layout_height, (unsigned)segment->layout_height);
 	}
 
 	g_object_unref (G_OBJECT (layout));
@@ -431,7 +431,7 @@ rb_segmented_bar_size_allocate(GtkWidget *widget, GtkAllocation *allocation)
 	if (priv->show_labels) {
 		compute_layout_size (RB_SEGMENTED_BAR (widget));
 		new_allocation.height = MAX (priv->bar_height + priv->bar_label_spacing + priv->layout_height,
-		                         real_height);
+		                         (unsigned)real_height);
 	} else {
 		new_allocation.height = real_height;
 	}

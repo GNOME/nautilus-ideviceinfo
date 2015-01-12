@@ -3,63 +3,66 @@
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 # Itxaka Serrano <itxakaserrano@gmail.com>, 2010.
 # Jorge González <jorgegonz@svn.gnome.org>, 2010.
+# Daniel Mustieles <daniel.mustieles@gmail.com>, 2015.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-29 06:23+0000\n"
-"PO-Revision-Date: 2010-07-01 08:57+0200\n"
-"Last-Translator: Jorge González <jorgegonz@svn.gnome.org>\n"
-"Language-Team: Español <gnome-es-list@gnome.org>\n"
+"POT-Creation-Date: 2015-01-09 02:30+0000\n"
+"PO-Revision-Date: 2015-01-12 19:06+0100\n"
+"Last-Translator: Daniel Mustieles <daniel.mustieles@gmail.com>\n"
+"Language-Team: Español; Castellano <gnome-es-list@gnome.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.6\n"
 
-#: ../src/ideviceinfo-property-page.c:491 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:523 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "Almacenamiento"
 
-#: ../src/ideviceinfo-property-page.c:510
+#: ../src/ideviceinfo-property-page.c:540
 msgid "Audio"
 msgstr "Audio"
 
-#: ../src/ideviceinfo-property-page.c:513
+#: ../src/ideviceinfo-property-page.c:543
 msgid "Video"
 msgstr "Video"
 
-#: ../src/ideviceinfo-property-page.c:516
+#: ../src/ideviceinfo-property-page.c:546
 msgid "Photos"
 msgstr "Fotos"
 
-#: ../src/ideviceinfo-property-page.c:519
-#: ../src/ideviceinfo-property-page.c:524
-#: ../src/ideviceinfo-property-page.c:527
+#: ../src/ideviceinfo-property-page.c:549
+#: ../src/ideviceinfo-property-page.c:554
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Applications"
 msgstr "Aplicaciones"
 
-#: ../src/ideviceinfo-property-page.c:523
+#: ../src/ideviceinfo-property-page.c:553
 msgid "Other"
 msgstr "Otros"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Audio Files"
 msgstr "Archivos de audio"
 
-#: ../src/ideviceinfo-property-page.c:524
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Video Files"
 msgstr "Archivos de video"
 
-#: ../src/ideviceinfo-property-page.c:526
+#: ../src/ideviceinfo-property-page.c:556
 msgid "Other & Media"
 msgstr "Media y otros"
 
-#: ../src/ideviceinfo-property-page.c:531
+#: ../src/ideviceinfo-property-page.c:561
 msgid "Free"
 msgstr "Libre"
 
-#: ../src/ideviceinfo-property-page.c:700
+#: ../src/ideviceinfo-property-page.c:742
 #, c-format
 msgid ""
 "There was an error loading '%s'.\n"
@@ -76,7 +79,7 @@ msgstr "Detalles"
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "No hay soporte para examinar un sistema de archivos roto «jailbreak»"
 
-#: ../src/nautilus-afc2-warning-bar.c:86
+#: ../src/nautilus-afc2-warning-bar.c:87
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
@@ -85,69 +88,73 @@ msgstr ""
 "ocurre un problema será necesario restaurar."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Direccion Bluetooth:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Examinar un sistema de archivos roto «jailbreak»…"
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "General"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCID:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "Operador:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "Modelo:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "Firmware del modem:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Name:"
-msgstr "Nombre:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "Red"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "Telefono"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "Numero de telefono:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "Numero de serie:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Software Version:"
-msgstr "Version del software:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "UUID:"
 msgstr "UUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "Version del software:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "Modelo:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "Nombre:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "Numero de serie:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "Telefono"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "Numero de telefono:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "Operador:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "Firmware del modem:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "Red"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Direccion Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
 msgid "WiFi Address:"
 msgstr "Direccion WiFi:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Examinar un sistema de archivos roto «jailbreak»…"

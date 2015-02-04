@@ -19,8 +19,10 @@ AM_CFLAGS = \
 	$(providerinfo_CFLAGS) \
 	$(libnautilusextension_CFLAGS)
 
+BUILT_SOURCES = nautilus-ideviceinfo-resources.c nautilus-ideviceinfo-resources.h
+
 noinst_LTLIBRARIES = libideviceinfo.la
-libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h rb-segmented-bar.h rb-segmented-bar.c
+libideviceinfo_la_SOURCES = ideviceinfo-property-page.c ideviceinfo-property-page.h rb-segmented-bar.h rb-segmented-bar.c $(BUILT_SOURCES)
 libideviceinfo_la_LIBADD = $(WIDGET_LIBS) $(libgpod_LIBS) $(libxml_LIBS)
 
 noinst_PROGRAMS = test-property-tab test-rb-segmented-bar
@@ -43,5 +45,11 @@ libnautilus_ideviceinfo_la_SOURCES = \
 libnautilus_ideviceinfo_la_LDFLAGS = -module -avoid-version
 libnautilus_ideviceinfo_la_LIBADD  = $(libnautilusextension_LIBS) libideviceinfo.la
 
+resource_files = $(shell glib-compile-resources --sourcedir=$(srcdir) --generate-dependencies $(srcdir)/nautilus-ideviceinfo.gresource.xml)
+nautilus-ideviceinfo-resources.c: nautilus-ideviceinfo.gresource.xml $(resource_files)
+	$(AM_V_GEN) glib-compile-resources --target=$@ --sourcedir=$(srcdir) --generate-source --c-name nautilus_ideviceinfo $<
+nautilus-ideviceinfo-resources.h: nautilus-ideviceinfo.gresource.xml $(resource_files)
+	$(AM_V_GEN) glib-compile-resources --target=$@ --sourcedir=$(srcdir) --generate-header --c-name nautilus_ideviceinfo $<
+
 nautilus_extension_DATA = nautilus-ideviceinfo.ui
-EXTRA_DIST=$(nautilus_extension_DATA)
+EXTRA_DIST= $(resource_files) nautilus-ideviceinfo.gresource.xml

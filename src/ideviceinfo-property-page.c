@@ -27,6 +27,7 @@
 #include <locale.h>
 
 #include "ideviceinfo-property-page.h"
+#include "nautilus-ideviceinfo-resources.h"
 
 #include <libnautilus-extension/nautilus-property-page-provider.h>
 
@@ -728,35 +729,33 @@ nautilus_ideviceinfo_page_init (NautilusIdeviceinfoPage *di)
 {
 	GtkBuilder *builder;
 	GtkWidget *container;
+	GtkAlignment *align;
 
 	di->priv = G_TYPE_INSTANCE_GET_PRIVATE (di, NAUTILUS_TYPE_IDEVICEINFO_PAGE, NautilusIdeviceinfoPagePrivate);
 
 	builder = gtk_builder_new();
 	gtk_builder_set_translation_domain (builder, GETTEXT_PACKAGE);
-	gtk_builder_add_from_file (builder, UIFILE, NULL);
+	g_resources_register (nautilus_ideviceinfo_get_resource ());
+	gtk_builder_add_from_resource (builder, "/org/gnome/nautilus-ideviceinfo/nautilus-ideviceinfo.ui", NULL);
 	gtk_builder_connect_signals (builder, NULL);
 
 	container = GTK_WIDGET(gtk_builder_get_object(builder, "ideviceinfo"));
-	if (!container) {
-		g_object_unref (G_OBJECT(builder));
-		container = gtk_label_new(g_strdup_printf(_("There was an error loading '%s'.\nConsider reinstalling the application."), UIFILE));
-	} else {
-		GtkWidget *align;
+	g_assert (container);
 
-		di->priv->builder = builder;
-		g_object_ref (container);
+	di->priv->builder = builder;
+	g_object_ref (container);
 
-		/* Add segmented bar */
-		di->priv->segbar = rb_segmented_bar_new();
-		g_object_set(G_OBJECT(di->priv->segbar),
-			     "show-reflection", TRUE,
-			     "show-labels", TRUE,
-			     NULL);
-		gtk_widget_show(di->priv->segbar);
+	/* Add segmented bar */
+	di->priv->segbar = rb_segmented_bar_new();
+	g_object_set(G_OBJECT(di->priv->segbar),
+		     "show-reflection", TRUE,
+		     "show-labels", TRUE,
+		     NULL);
+	gtk_widget_show(di->priv->segbar);
 
-		align = GTK_WIDGET(gtk_builder_get_object (di->priv->builder, "disk_usage"));
-		gtk_container_add(GTK_CONTAINER(align), di->priv->segbar);
-	}
+	align = GTK_ALIGNMENT(gtk_builder_get_object (di->priv->builder, "disk_usage"));
+	gtk_container_add(GTK_CONTAINER(align), di->priv->segbar);
+
 	gtk_widget_show(container);
 	gtk_container_add(GTK_CONTAINER(di), container);
 }

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-07 07:40+0100\n"
+"POT-Creation-Date: 2015-04-20 22:08+0200\n"
 "PO-Revision-Date: 2011-10-12 23:31+0200\n"
 "Last-Translator: Gil Forcada <gilforcada@guifi.net>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
@@ -18,56 +18,47 @@ msgstr ""
 "Content-Transfer-Encoding: 8bits\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "Emmagatzematge"
 
-#: ../src/ideviceinfo-property-page.c:544
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Audio"
 msgstr "Àudio"
 
-#: ../src/ideviceinfo-property-page.c:547
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Video"
 msgstr "Vídeo"
 
-#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Photos"
 msgstr "Fotografies"
 
-#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
 #: ../src/ideviceinfo-property-page.c:558
-#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "Aplicacions"
 
-#: ../src/ideviceinfo-property-page.c:557
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Other"
 msgstr "Altres"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Audio Files"
 msgstr "Fitxers d'àudio"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Video Files"
 msgstr "Fitxers de vídeo"
 
-#: ../src/ideviceinfo-property-page.c:560
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other & Media"
 msgstr "Altres i medis"
 
-#: ../src/ideviceinfo-property-page.c:565
+#: ../src/ideviceinfo-property-page.c:562
 msgid "Free"
 msgstr "Lliure"
-
-#: ../src/ideviceinfo-property-page.c:734
-#, c-format
-msgid ""
-"There was an error loading '%s'.\n"
-"Consider reinstalling the application."
-msgstr ""
-"S'ha produït un error en carregar «%s».\n"
-"Podeu provar de reinstal·lar l'aplicació."
 
 #: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
@@ -77,78 +68,89 @@ msgstr "Dades"
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "No es pot navegar pel sistema de fitxers d'un dispositiu alliberat"
 
-#: ../src/nautilus-afc2-warning-bar.c:86
+#: ../src/nautilus-afc2-warning-bar.c:87
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
 msgstr ""
-"Si accediu al sistema de fitxers primari del dispositiu el podeu malmetre. "
-"Si es produeix algun problema us caldrà restaurar-lo."
+"Si accediu al sistema de fitxers primari del dispositiu, el podeu malmetre. "
+"Si es produeix algun problema, us caldrà restaurar-lo."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Adreça Bluetooth:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Navegueu pel sistema de fitxers del dispositiu alliberat..."
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "General"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCID:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "Operador mòbil:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "Model:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "Microprogramari del mòdem:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Name:"
-msgstr "Nom:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "Xarxa"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "Telèfon"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "Número de telèfon:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "Número de sèrie:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Software Version:"
-msgstr "Versió del programari:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "UUID:"
 msgstr "UUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr ""
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "Versió del programari:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "Model:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "Nom:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "Número de sèrie:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "Telèfon"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "Número de telèfon:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "Operador mòbil:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "Microprogramari del mòdem:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "Xarxa"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Adreça Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
 msgid "WiFi Address:"
 msgstr "Adreça wi-fi:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Navegueu pel sistema de fitxers del dispositiu alliberat..."
+
+#~ msgid ""
+#~ "There was an error loading '%s'.\n"
+#~ "Consider reinstalling the application."
+#~ msgstr ""
+#~ "S'ha produït un error en carregar «%s».\n"
+#~ "Podeu provar de reinstal·lar l'aplicació."

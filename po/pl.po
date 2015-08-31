@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-01-11 15:20+0100\n"
-"PO-Revision-Date: 2015-01-11 15:22+0100\n"
+"POT-Creation-Date: 2015-08-31 02:31+0200\n"
+"PO-Revision-Date: 2015-08-31 02:32+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -23,56 +23,47 @@ msgstr ""
 "X-Poedit-Language: Polish\n"
 "X-Poedit-Country: Poland\n"
 
-#: ../src/ideviceinfo-property-page.c:523 ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "Pamięć masowa"
 
-#: ../src/ideviceinfo-property-page.c:540
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Audio"
 msgstr "Dźwięk"
 
-#: ../src/ideviceinfo-property-page.c:543
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Video"
 msgstr "Nagrania wideo"
 
-#: ../src/ideviceinfo-property-page.c:546
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Photos"
 msgstr "Zdjęcia"
 
-#: ../src/ideviceinfo-property-page.c:549
-#: ../src/ideviceinfo-property-page.c:554
-#: ../src/ideviceinfo-property-page.c:557
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
+#: ../src/ideviceinfo-property-page.c:558
 msgid "Applications"
 msgstr "Aplikacje"
 
-#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Other"
 msgstr "Inne"
 
-#: ../src/ideviceinfo-property-page.c:554
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Audio Files"
 msgstr "Pliki dźwiękowe"
 
-#: ../src/ideviceinfo-property-page.c:554
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Video Files"
 msgstr "Pliki wideo"
 
-#: ../src/ideviceinfo-property-page.c:556
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other & Media"
 msgstr "Inne i multimedia"
 
-#: ../src/ideviceinfo-property-page.c:561
+#: ../src/ideviceinfo-property-page.c:562
 msgid "Free"
 msgstr "Wolne"
-
-#: ../src/ideviceinfo-property-page.c:742
-#, c-format
-msgid ""
-"There was an error loading '%s'.\n"
-"Consider reinstalling the application."
-msgstr ""
-"Wystąpił błąd podczas wczytywania aplikacji \"%s\".\n"
-"Proszę rozważyć ponowne zainstalowanie aplikacji."
 
 #: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
@@ -161,4 +152,4 @@ msgstr "Adres Wi-Fi:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:19
 msgid "Browse jailbroken filesystem..."
-msgstr "Przeglądaj złamany system plików..."
+msgstr "Przeglądaj złamany system plików…"

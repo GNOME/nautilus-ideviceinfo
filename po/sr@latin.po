@@ -1,13 +1,13 @@
-# SOME DESCRIPTIVE TITLE.
+# Serbian translation for nautilus-ideviceinfo.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2012.
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+# Miroslav Nikolić <miroslavnikolic@rocketmail.com>, 2012—2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-11-07 06:45+0000\n"
-"PO-Revision-Date: 2012-03-19 12:24+0200\n"
+"POT-Creation-Date: 2015-02-04 16:33+0000\n"
+"PO-Revision-Date: 2016-01-03 11:39+0200\n"
 "Last-Translator: Miroslav Nikolić <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnom@prevod.org>\n"
 "Language: sr\n"
@@ -17,56 +17,47 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n==1? 3 : n%10==1 && n%100!=11 ? 0 : "
 "n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "Skladište"
 
-#: ../src/ideviceinfo-property-page.c:544
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Audio"
 msgstr "Zvuk"
 
-#: ../src/ideviceinfo-property-page.c:547
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Video"
 msgstr "Snimci"
 
-#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Photos"
 msgstr "Fotografije"
 
-#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
 #: ../src/ideviceinfo-property-page.c:558
-#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "Programi"
 
-#: ../src/ideviceinfo-property-page.c:557
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Other"
 msgstr "Ostalo"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Audio Files"
 msgstr "Datoteke zvuka"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Video Files"
 msgstr "Datoteke snimaka"
 
-#: ../src/ideviceinfo-property-page.c:560
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other & Media"
 msgstr "Ostalo i mediji"
 
-#: ../src/ideviceinfo-property-page.c:565
+#: ../src/ideviceinfo-property-page.c:562
 msgid "Free"
 msgstr "Slobodni"
-
-#: ../src/ideviceinfo-property-page.c:734
-#, c-format
-msgid ""
-"There was an error loading '%s'.\n"
-"Consider reinstalling the application."
-msgstr ""
-"Došlo je do greške učitavanja „%s“.\n"
-"Razmotrite ponovno instaliranje programa."
 
 #: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
@@ -76,7 +67,7 @@ msgstr "Detalji"
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "Pregledanje sistema datoteka „rušenje zatvora“ nije podržano"
 
-#: ../src/nautilus-afc2-warning-bar.c:86
+#: ../src/nautilus-afc2-warning-bar.c:87
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
@@ -85,69 +76,80 @@ msgstr ""
 "dođe do problema, povraćaj će biti neophodan."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Blutut adresa:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Razgledaj sistem datoteka srušenog zatvora..."
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "Opšte"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCIB:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "Mobilni nosač:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "Model:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "Ugneždeni program modema:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Name:"
-msgstr "Naziv:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "Mreža"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "Telefon"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "Telefonski broj:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "Serijski broj:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Software Version:"
-msgstr "Izdanje softvera:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "UUID:"
 msgstr "JUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr "Nepoznato"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "Izdanje softvera:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "Model:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "Naziv:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "Serijski broj:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "Telefon"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "Telefonski broj:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "Mobilni nosač:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "Ugneždeni program modema:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCIB:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "Mreža"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Blutut adresa:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
 msgid "WiFi Address:"
 msgstr "Bežična adresa:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Razgledaj sistem datoteka srušenog zatvora..."
+
+#~ msgid ""
+#~ "There was an error loading '%s'.\n"
+#~ "Consider reinstalling the application."
+#~ msgstr ""
+#~ "Došlo je do greške učitavanja „%s“.\n"
+#~ "Razmotrite ponovno instaliranje programa."

@@ -1,0 +1,156 @@
+# Occitan translation for nautilus-ideviceinfo
+# Copyright (C) 2010 Listad translators
+# This file is distributed under the same license as the nautilus-ideviceinfo package.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: nautilus-ideviceinfo 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-02-04 16:33+0000\n"
+"PO-Revision-Date: 2010-06-29 08:36+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
+"Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
+msgid "Storage"
+msgstr "Memòria"
+
+#: ../src/ideviceinfo-property-page.c:541
+msgid "Audio"
+msgstr "Àudio"
+
+#: ../src/ideviceinfo-property-page.c:544
+msgid "Video"
+msgstr "Vidèo"
+
+#: ../src/ideviceinfo-property-page.c:547
+msgid "Photos"
+msgstr "Fòtos"
+
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
+#: ../src/ideviceinfo-property-page.c:558
+msgid "Applications"
+msgstr "Aplicacions"
+
+#: ../src/ideviceinfo-property-page.c:554
+msgid "Other"
+msgstr "Autres"
+
+#: ../src/ideviceinfo-property-page.c:555
+msgid "Audio Files"
+msgstr "Fichièrs àudio"
+
+#: ../src/ideviceinfo-property-page.c:555
+msgid "Video Files"
+msgstr "Fichièrs vidèo"
+
+#: ../src/ideviceinfo-property-page.c:557
+msgid "Other & Media"
+msgstr "Autres e mèdias"
+
+#: ../src/ideviceinfo-property-page.c:562
+msgid "Free"
+msgstr "Liure"
+
+#: ../src/nautilus-ideviceinfo.c:54
+msgid "Details"
+msgstr "Detalhs"
+
+#: ../src/nautilus-afc2-warning-bar.c:80
+msgid "Jailbroken filesystem browsing is unsupported"
+msgstr ""
+"La consultation d'un sistèma de fichièrs débridé es pas presa en carga"
+
+#: ../src/nautilus-afc2-warning-bar.c:87
+msgid ""
+"Accessing the root filesystem of the device can cause damage. If problems "
+"occur, a restore will be necessary."
+msgstr ""
+"L'accès al sistèma de fichièrs raiç de l'appareil pòt l'endommager. Se "
+"des problèmas surviennent, una restauration pòt s'avérer nécessaire."
+
+#: ../src/nautilus-ideviceinfo.ui.h:1
+msgid "General"
+msgstr "General"
+
+#: ../src/nautilus-ideviceinfo.ui.h:2
+msgid "UUID:"
+msgstr "UUID :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr ""
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "Version del logicial :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "Modèl :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "Nom :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "N° de seria :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "Telefòn"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "N° telefòn :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "Operator mobil :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "Micrologicial del modem :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCID :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "Ret"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Adreça Bluetooth :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
+msgid "WiFi Address:"
+msgstr "Adreça WiFi :"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Consultar lo sistèma de fichièrs débridé..."
+
+#~ msgid ""
+#~ "There was an error loading '%s'.\n"
+#~ "Consider reinstalling the application."
+#~ msgstr ""
+#~ "Impossible de dobrir « %s ».\n"
+#~ "Ensajatz de reïnstallar l'aplicacion."
+

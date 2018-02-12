@@ -30,8 +30,7 @@
 #include "ideviceinfo-property-page.h"
 #include "nautilus-afc2-warning-bar.h"
 
-#include <libnautilus-extension/nautilus-property-page-provider.h>
-#include <libnautilus-extension/nautilus-location-widget-provider.h>
+#include <nautilus-extension.h>
 
 #include <glib.h>
 #include <glib/gi18n-lib.h>

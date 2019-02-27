@@ -4,7 +4,7 @@
 	 xmlns:gnome="http://api.gnome.org/doap-extensions#"
 	 xmlns="http://usefulinc.com/ns/doap#">
 
-	<name xml:lang="en">nautilus-sendto</name>
+	<name xml:lang="en">nautilus-ideviceinfo</name>
 	<shortdesc xml:lang="en">Show information about your iOS device</shortdesc>
 	<description>
 		This is a nautilus property page extension that shows general, model,

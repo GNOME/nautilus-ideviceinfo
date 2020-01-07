@@ -6,8 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo master\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-31 20:29+0000\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/nautilus-ideviceinfo/"
+"issues\n"
+"POT-Creation-Date: 2019-10-17 16:55+0000\n"
 "PO-Revision-Date: 2011-08-23 06:30+0900\n"
 "Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
@@ -16,58 +17,49 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "ストレージ"
 
-#: ../src/ideviceinfo-property-page.c:544
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Audio"
 msgstr "オーディオ"
 
-#: ../src/ideviceinfo-property-page.c:547
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Video"
 msgstr "ビデオ"
 
-#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Photos"
 msgstr "写真"
 
-#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
 #: ../src/ideviceinfo-property-page.c:558
-#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "アプリケーション"
 
-#: ../src/ideviceinfo-property-page.c:557
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Other"
 msgstr "その他"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Audio Files"
 msgstr "楽曲ファイル"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Video Files"
 msgstr "ビデオ・ファイル"
 
-#: ../src/ideviceinfo-property-page.c:560
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other & Media"
 msgstr "その他＆メディア"
 
-#: ../src/ideviceinfo-property-page.c:565
+#: ../src/ideviceinfo-property-page.c:562
 msgid "Free"
 msgstr "空き"
 
-#: ../src/ideviceinfo-property-page.c:734
-#, c-format
-msgid ""
-"There was an error loading '%s'.\n"
-"Consider reinstalling the application."
-msgstr ""
-"UI ファイル ('%s') を読み込む際にエラーが発生しました。\n"
-"本アプリケーションの再インストールを検討してみて下さい。"
-
-#: ../src/nautilus-ideviceinfo.c:54
+#: ../src/nautilus-ideviceinfo.c:53
 msgid "Details"
 msgstr "詳細"
 
@@ -75,7 +67,7 @@ msgstr "詳細"
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "Jailbreak されたファイルシステムはサポートしていません"
 
-#: ../src/nautilus-afc2-warning-bar.c:86
+#: ../src/nautilus-afc2-warning-bar.c:87
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
@@ -84,69 +76,80 @@ msgstr ""
 "す。もし問題が発生した場合、リストアが必要になるでしょう。"
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Bluetooth のアドレス:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Jailbreak されたファイルシステムの参照..."
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "全般"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCID:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "携帯のキャリア:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "型式:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "ファームウェア:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Name:"
-msgstr "名称:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "ネットワーク"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "電話"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "電話番号:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "シリアル番号:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Software Version:"
-msgstr "ソフトウェアのバージョン:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "UUID:"
 msgstr "UUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr ""
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "ソフトウェアのバージョン:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "型式:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "名称:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "シリアル番号:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "電話"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "電話番号:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "携帯のキャリア:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "ファームウェア:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "ネットワーク"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Bluetooth のアドレス:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
 msgid "WiFi Address:"
 msgstr "WiFi のアドレス:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Jailbreak されたファイルシステムの参照..."
+
+#~ msgid ""
+#~ "There was an error loading '%s'.\n"
+#~ "Consider reinstalling the application."
+#~ msgstr ""
+#~ "UI ファイル ('%s') を読み込む際にエラーが発生しました。\n"
+#~ "本アプリケーションの再インストールを検討してみて下さい。"

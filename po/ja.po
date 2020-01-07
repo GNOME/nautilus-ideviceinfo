@@ -1,7 +1,9 @@
 # nautilus-ideviceinfo ja.po
-# Copyright (C) 2010 Takeshi AIHANA <takeshi.aihana@gmail.com>
+# Copyright (C) 2010-2011, 2020 Takeshi AIHANA <takeshi.aihana@gmail.com>
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2010.
+# Jiro Matsuzawa <jmatsuzawa@src.gnome.org>, 2011.
+# sicklylife <translation@sicklylife.jp>, 2020.
 #
 msgid ""
 msgstr ""
@@ -9,8 +11,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/nautilus-ideviceinfo/"
 "issues\n"
 "POT-Creation-Date: 2019-10-17 16:55+0000\n"
-"PO-Revision-Date: 2011-08-23 06:30+0900\n"
-"Last-Translator: Jiro Matsuzawa <jmatsuzawa@src.gnome.org>\n"
+"PO-Revision-Date: 2020-01-07 23:00+0900\n"
+"Last-Translator: sicklylife <translation@sicklylife.jp>\n"
 "Language-Team: Japanese <takeshi.aihana@gmail.com>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -85,7 +87,7 @@ msgstr "UUID:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "Unknown"
-msgstr ""
+msgstr "不明"
 
 #: ../src/nautilus-ideviceinfo.ui.h:4
 msgid "Software Version:"

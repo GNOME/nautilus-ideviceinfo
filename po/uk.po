@@ -2,17 +2,19 @@
 #
 # Copyright (C) 2010 Itxaka Serrano
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
-# Itxaka Serrano <itxakaserrano@gmail.com>, 2010.
 #
-# Translation by Serhij Dubyk <serhijdubyk@gmail.com>, 2011
+# Itxaka Serrano <itxakaserrano@gmail.com>, 2010.
+# Translation by Serhij Dubyk <serhijdubyk@gmail.com>, 2011.
+# Yuri Chornoivan <yurchor@ukr.net>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo 1.0\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-12 01:46+0300\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Serhij Dubyk / Сергій Дубик <dubyk@library.lviv.ua>\n"
-"Language-Team: Ukrainian Linux Team <translate@linux.org.ua>\n"
+"Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/nautilus-ideviceinfo/issu"
+"es\n"
+"POT-Creation-Date: 2019-10-17 16:55+0000\n"
+"PO-Revision-Date: 2020-03-29 15:37+0300\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,66 +22,53 @@ msgstr ""
 "X-Poedit-Language: Ukrainian\n"
 "X-Poedit-Country: UKRAINE\n"
 "X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<"
+"=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 20.03.70\n"
 
-#: ../src/ideviceinfo-property-page.c:525 ../src/nautilus-ideviceinfo.ui.h:16
+#: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
 msgid "Storage"
 msgstr "Використання пам’яті"
 
-#: ../src/ideviceinfo-property-page.c:544
+#: ../src/ideviceinfo-property-page.c:541
 msgid "Audio"
 msgstr "Аудіо"
 
-#: ../src/ideviceinfo-property-page.c:547
+#: ../src/ideviceinfo-property-page.c:544
 msgid "Video"
 msgstr "Відео"
 
-#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:547
 msgid "Photos"
 msgstr "Фотографії"
 
-#: ../src/ideviceinfo-property-page.c:553
+#: ../src/ideviceinfo-property-page.c:550
+#: ../src/ideviceinfo-property-page.c:555
 #: ../src/ideviceinfo-property-page.c:558
-#: ../src/ideviceinfo-property-page.c:561
 msgid "Applications"
 msgstr "Програми"
 
-#: ../src/ideviceinfo-property-page.c:557
+#: ../src/ideviceinfo-property-page.c:554
 msgid "Other"
 msgstr "Інше"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Audio Files"
 msgstr "Звукові файли"
 
-#: ../src/ideviceinfo-property-page.c:558
+#: ../src/ideviceinfo-property-page.c:555
 msgid "Video Files"
 msgstr "Файли відео"
 
-#: ../src/ideviceinfo-property-page.c:560
+#: ../src/ideviceinfo-property-page.c:557
 msgid "Other & Media"
 msgstr "Інші файли і мультимедіа"
 
-#: ../src/ideviceinfo-property-page.c:565
+#: ../src/ideviceinfo-property-page.c:562
 msgid "Free"
 msgstr "Безкоштовно"
 
-# Розглянемо перевстановлення програми.
-# Розгляньте можливість встановлення нового додатка.
-# Докази aplicativo переселення.
-# Розглянемо переустановити додатки.
-# Перетягніть нову установку додатків розглядається.
-# Розглянемо перевстановлення програми.
-# Це може бути необхідно перевстановити програму.
-#: ../src/ideviceinfo-property-page.c:734
-#, c-format
-msgid ""
-"There was an error loading '%s'.\n"
-"Consider reinstalling the application."
-msgstr ""
-"Помилка завантаження «%s».\n"
-"Повторне встановлення цієї програми може допомогти."
-
-#: ../src/nautilus-ideviceinfo.c:54
+#: ../src/nautilus-ideviceinfo.c:53
 msgid "Details"
 msgstr "Подробиці"
 
@@ -87,7 +76,7 @@ msgstr "Подробиці"
 msgid "Jailbroken filesystem browsing is unsupported"
 msgstr "Огляд розблокованої файлової системи не підтримується"
 
-#: ../src/nautilus-afc2-warning-bar.c:86
+#: ../src/nautilus-afc2-warning-bar.c:87
 msgid ""
 "Accessing the root filesystem of the device can cause damage. If problems "
 "occur, a restore will be necessary."
@@ -96,69 +85,87 @@ msgstr ""
 "Якщо у вас виникнуть проблеми, можливо, доведеться відновлювати."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
-msgid "Bluetooth Address:"
-msgstr "Адреса Bluetooth:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:2
-msgid "Browse jailbroken filesystem..."
-msgstr "Огляд розблокованої файлової системи…"
-
-#: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "General"
 msgstr "Загальне"
 
-#: ../src/nautilus-ideviceinfo.ui.h:4
-msgid "ICCID:"
-msgstr "ICCID:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:5
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:6
-msgid "IMSI:"
-msgstr "IMSI:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:7
-msgid "Mobile Carrier:"
-msgstr "Оператор мобільного зв’язку:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:8
-msgid "Model:"
-msgstr "Модель:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:9
-msgid "Modem Firmware:"
-msgstr "Мікропрограма модема:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:10
-msgid "Name:"
-msgstr "Назва:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:11
-msgid "Network"
-msgstr "Мережа"
-
-#: ../src/nautilus-ideviceinfo.ui.h:12
-msgid "Phone"
-msgstr "Телефон"
-
-#: ../src/nautilus-ideviceinfo.ui.h:13
-msgid "Phone Number:"
-msgstr "Номер телефону:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:14
-msgid "Serial Number:"
-msgstr "Серійний номер:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:15
-msgid "Software Version:"
-msgstr "Версія програмних засобів:"
-
-#: ../src/nautilus-ideviceinfo.ui.h:17
+#: ../src/nautilus-ideviceinfo.ui.h:2
 msgid "UUID:"
 msgstr "UUID:"
 
-#: ../src/nautilus-ideviceinfo.ui.h:18
+#: ../src/nautilus-ideviceinfo.ui.h:3
+msgid "Unknown"
+msgstr "Невідомий"
+
+#: ../src/nautilus-ideviceinfo.ui.h:4
+msgid "Software Version:"
+msgstr "Версія програмних засобів:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:5
+msgid "Model:"
+msgstr "Модель:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:6
+msgid "Name:"
+msgstr "Назва:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:7
+msgid "Serial Number:"
+msgstr "Серійний номер:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:8
+msgid "Phone"
+msgstr "Телефон"
+
+#: ../src/nautilus-ideviceinfo.ui.h:9
+msgid "Phone Number:"
+msgstr "Номер телефону:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:10
+msgid "Mobile Carrier:"
+msgstr "Оператор мобільного зв’язку:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:11
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:12
+msgid "IMSI:"
+msgstr "IMSI:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:13
+msgid "Modem Firmware:"
+msgstr "Мікропрограма модема:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:14
+msgid "ICCID:"
+msgstr "ICCID:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:15
+msgid "Network"
+msgstr "Мережа"
+
+#: ../src/nautilus-ideviceinfo.ui.h:16
+msgid "Bluetooth Address:"
+msgstr "Адреса Bluetooth:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:17
 msgid "WiFi Address:"
 msgstr "Адреса WiFi:"
+
+#: ../src/nautilus-ideviceinfo.ui.h:19
+msgid "Browse jailbroken filesystem..."
+msgstr "Огляд розблокованої файлової системи…"
+
+# Розглянемо перевстановлення програми.
+# Розгляньте можливість встановлення нового додатка.
+# Докази aplicativo переселення.
+# Розглянемо переустановити додатки.
+# Перетягніть нову установку додатків розглядається.
+# Розглянемо перевстановлення програми.
+# Це може бути необхідно перевстановити програму.
+#~ msgid ""
+#~ "There was an error loading '%s'.\n"
+#~ "Consider reinstalling the application."
+#~ msgstr ""
+#~ "Помилка завантаження «%s».\n"
+#~ "Повторне встановлення цієї програми може допомогти."

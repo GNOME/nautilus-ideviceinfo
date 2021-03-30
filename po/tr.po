@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the nautilus-ideviceinfo package.
 #
 # Necdet Yücel <necdetyucel@gmail.com>, 2015.
-# Emin Tufan Çetin <etcetin@gmail.com>, 2018.
+# Emin Tufan Çetin <etcetin@gmail.com>, 2018, 2021.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: nautilus-ideviceinfo master\n"
 "Report-Msgid-Bugs-To: https://gitlab.gnome.org/GNOME/nautilus-ideviceinfo/"
 "issues\n"
-"POT-Creation-Date: 2018-06-10 17:54+0000\n"
-"PO-Revision-Date: 2018-08-27 10:54+0300\n"
+"POT-Creation-Date: 2020-07-13 12:00+0000\n"
+"PO-Revision-Date: 2021-03-30 22:58+0300\n"
 "Last-Translator: Emin Tufan Çetin <etcetin@gmail.com>\n"
 "Language-Team: Türkçe <gnome-turk@gnome.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Gtranslator 2.91.7\n"
+"X-Generator: Poedit 2.4.2\n"
 "X-POOTLE-MTIME: 1423957610.000000\n"
 
 #: ../src/ideviceinfo-property-page.c:524 ../src/nautilus-ideviceinfo.ui.h:18
@@ -78,7 +78,7 @@ msgid ""
 "occur, a restore will be necessary."
 msgstr ""
 "Aygıtın kök dosya sistemine erişmek hasara neden olabilir. Bir sorun "
-"oluşursa geriye döndürmek gerekecektir."
+"oluşursa, geri yükleme gerekebilir."
 
 #: ../src/nautilus-ideviceinfo.ui.h:1
 msgid "General"
@@ -150,7 +150,7 @@ msgstr "Kablosuz Adresi:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:19
 msgid "Browse jailbroken filesystem..."
-msgstr "Jailbreakʼli dosya sistemine gözat..."
+msgstr "Jailbreakʼli dosya sistemine göz at..."
 
 #~ msgid ""
 #~ "There was an error loading '%s'.\n"

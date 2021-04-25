@@ -62,7 +62,7 @@ msgstr "Lliure"
 
 #: ../src/nautilus-ideviceinfo.c:54
 msgid "Details"
-msgstr "Dades"
+msgstr "Detalls"
 
 #: ../src/nautilus-afc2-warning-bar.c:80
 msgid "Jailbroken filesystem browsing is unsupported"
@@ -86,7 +86,7 @@ msgstr "UUID:"
 
 #: ../src/nautilus-ideviceinfo.ui.h:3
 msgid "Unknown"
-msgstr ""
+msgstr "Desconegut"
 
 #: ../src/nautilus-ideviceinfo.ui.h:4
 msgid "Software Version:"
